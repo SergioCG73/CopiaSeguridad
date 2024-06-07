@@ -1,6 +1,0 @@
-22 de Marzo de 2024
--------------------
-
-- Se añade función de borrado a las carga y descarga de cisternas
-
-
