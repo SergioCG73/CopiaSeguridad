@@ -1,0 +1,117 @@
+@charset "utf-8";
+/*body {
+	font: 110%/1.4 Verdana, Arial, Helvetica, sans-serif;
+    font-weight: bold;
+}*/
+
+header{	
+	/*display: flex;*/
+	background-color: black;	
+    font-size: 1.56rem;
+    font-weight: bold;
+    color: white;
+    padding: 1%;	
+}
+
+.contenedor{
+    display: flex;        
+    padding: 2%;        
+}
+
+.izquierda{  
+    padding: 1%;  
+    width: 100%;         
+}
+
+.derecha{
+    padding: 1%;
+    width: 100%;    
+}
+
+textarea{
+    width: 98%;        
+    height: inherit;
+    height: 98%;
+}
+
+fieldset{
+    display: block;    
+    /*height: inherit;    */
+    height: 100%;      
+}
+
+legend{
+    font-weight: bold;
+}
+
+.botonera{
+    display: flex;
+    text-align: center; /*con esta propiedad se centran los botones */
+    margin-top: 2rem;    
+}
+
+.boton{
+    padding: 2%;
+    font-weight: bold;
+    text-decoration: none;	
+    background-color: rgba(224, 158, 18, 0.9);
+    font-weight: bold;
+    color: white;
+    width: 35%;    
+	padding: 1% 1%;
+    margin-left: 2vh;    
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+}
+
+.boton:hover{
+    color: white;
+    box-shadow: 0 4px 16px rgba(234, 158, 18, 1);
+    transition: all 0.2s ease;
+
+}
+
+@media only screen and (max-width: 708px){
+
+label{        
+    display: block;
+    font-weight: bold;
+    font-size: 1.1rem;
+    
+}
+
+textarea{
+    font-size: 1.1rem;
+}
+
+}
+
+@media only screen and (min-width: 709px) and (max-width: 1199px){
+
+label{    
+    display:inline-block;               
+    width: 37%;
+    font-weight: bold;    
+    font-size: 1.1rem;
+    color: blue;
+}
+
+textarea{
+    font-size: 1.1rem;
+}
+}
+
+@media only screen and (min-width: 1200px){
+
+label{
+    display:inline-block;               
+    width: 40%;         
+    margin-right: 10%;
+    font-weight: bold;
+    font-size: 1.2rem;    
+}
+textarea{
+    font-size: 1.2rem;
+}
+}
