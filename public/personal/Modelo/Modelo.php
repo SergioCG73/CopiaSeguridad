@@ -14,7 +14,7 @@
         }
 
         public function RellenarSelect($consulta) {                 
-            try {                                
+            try {                                                
                 $stmt = $this->conectar->prepare($consulta);
                 $stmt->execute();
                 return $stmt->fetchAll(PDO::FETCH_ASSOC);

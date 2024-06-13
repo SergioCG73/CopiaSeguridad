@@ -8,15 +8,15 @@
     <title>Index</title>
 </head>
 <body>
-    <header>GESTIÓN DE PERSONAL</header>    
+    <header>GESTIÓN DE PERSONAL</header>
     <div class="item">
         <a class="boton" href="../portada.html">Ir a portada</a>            
     </div>
     <br>
     <div class="item">
         <a class="boton" href="Vista/addPersonal.php">Agregar nuevo empleado</a>            
-    </div>
-    <br>             
-    <?php include("Controlador/readWorker.php"); ?>
+    </div>    
+    <br>   
+        <?php include("Controlador/readWorker.php"); ?>
 </body>
 </html>
