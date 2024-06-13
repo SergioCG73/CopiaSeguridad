@@ -2,28 +2,21 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">    
+    <link href="Vista/images/favicon.png" rel="icon" type="image/png">
+    <link href="Vista/css/style.css" rel="stylesheet" type="text/css">
+    <title>Index</title>
 </head>
 <body>
-    <header>PERSONAL AQUACENIC IBÉRICA, SLU</header>
+    <header>GESTIÓN DE PERSONAL</header>    
+    <div class="item">
+        <a class="boton" href="../portada.html">Ir a portada</a>            
+    </div>
     <br>
     <div class="item">
-        <a class="boton" href="../portada.html">INICIO</a>            
+        <a class="boton" href="Vista/addPersonal.php">Agregar nuevo empleado</a>            
     </div>
-    <br>
-    <div class="item">
-        <a class="boton" href="Vista/addPersonal.php">NUEVO</a>            
-    </div>
-    <br>
-    <div class="formulario">    
-        <form name="Buscar" method="post" action="<?php $_SERVER['PHP_SELF']; ?>">                        
-            <label>Nombre Empleado: </label>
-            <input type="text" id="campo" name="campo">
-            <input name="submit" class="boton" type="submit" value="Buscar">            
-        </form>                 
-    </div>
-    <br>   
-        <?php include("Controlador/leerasalariados.php"); ?>
+    <br>             
+    <?php include("Controlador/readWorker.php"); ?>
 </body>
 </html>
