@@ -57,9 +57,18 @@ include_once("../Modelo/CreateOption.php");
     <header>DÍAS NO TRABAJADOS</header>
     <form name="formulario" method="post" action="<?php $_SERVER['PHP_SELF']; ?>">
         <select name="año">
-            <?php 
-                CreateOption("año",2024);
-                CreateOption("año",2023);
+            <?php      
+                $year = date("Y");
+                if ($year > "2024"){
+                    CreateOption("año",$year);
+                    CreateOption("año",$year-1);
+                    CreateOption("año",$year-2);
+                }
+                else
+                {
+                    CreateOption("año",$year);
+                    CreateOption("año",$year-1);
+                }                
             ?>            
         </select>
 
