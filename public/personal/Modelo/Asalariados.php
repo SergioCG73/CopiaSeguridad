@@ -55,7 +55,7 @@
 
                 echo "<script type='text/javascript'>
                         alert('Registro guardado correctamente');
-                        window.location.href='../Vista/indexPersonal.php';
+                        window.location.href='../indexPersonal.php';
                     </script>";                
             } catch(PDOException $e) {                
                 throw new Exception("Error de consulta: " .$e->getMessage());
