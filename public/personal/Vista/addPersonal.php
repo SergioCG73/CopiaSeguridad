@@ -32,7 +32,7 @@
     <br>    
     <div class="item">
         <a class="boton" href="../indexPersonal.php">Regresar</a>            
-        <input form="formulario" type="submit" value="Enviar" class="botones">        
+        <input form="formulario" type="submit" value="Registrar" class="botones">        
     </div> 
 </body>
 </html>
