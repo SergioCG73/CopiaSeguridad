@@ -2,10 +2,10 @@
 <?php    
     if (isset($_GET['dni'])){        
         require_once("../Modelo/autoload.php"); //Hacen falta los ../ porque lo estoy leyendo desde Vista/form_Editar.php        
-        $dni = $_GET['dni'];        
+        $dni = $_GET['dni'];
         $readData = new Asalariados();        
         $resultado = $readData->getOneAsalariado($dni);
-        $DNI = $resultado->DNI;        
+        $DNI = $resultado->DNI;          
         $Nombre = $resultado->Nombre;        
         $Apellidos = $resultado->Apellidos;        
         $Id_Puesto = $resultado->Id_Puesto;        
@@ -88,8 +88,7 @@
                             $valor->Id_Puesto = "Sin asignar puesto";
                             $linea = "<td class=''>$valor->Id_Puesto</br></td>";
                         break;
-                     }                            
-                 //echo $valor->Id_Puesto;
+                     }                                             
                 echo $linea;
                 echo "</td>";
                 echo "<td>";                                                                          

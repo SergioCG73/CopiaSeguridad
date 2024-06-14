@@ -21,24 +21,29 @@
             $this->conectar = $this->conectar->connect();
         }
 
-        public function getOneAsalariado(string $id){
-            try{
-                $consulta = $this->conectar->query("SELECT * FROM personal WHERE DNI='$id'");                
-                $resultado = $consulta->fetch(PDO::FETCH_OBJ);                                 
+        public function getOneAsalariado(string $dni){
+            try{                
+                $consulta = "SELECT * FROM personal WHERE DNI = :dni";                
+                $insert = $this->conectar->prepare($consulta);
+                $insert->bindParam(":dni", $dni);                
+                $insert->execute();
+                $resultado = $insert->fetch(PDO::FETCH_OBJ);                
                 return $resultado;                
             } catch(PDOException $e) {
                 throw new Exception("Error de consulta: "- $e->getMessage());
             }
+            $this->conectar = null;
         }
 
         public function getAllAsalariados(){
             try{                
-                $consulta = $this->conectar->query("SELECT * FROM personal WHERE Fecha_Baja IS NULL");                
+                $consulta = $this->conectar->query("SELECT * FROM personal WHERE Fecha_Baja IS NULL OR Fecha_Baja ='0000-00-00'");                
                 $resultado = $consulta->fetchAll(PDO::FETCH_OBJ);                
                 return $resultado;                
             } catch(PDOException $e) {
                 throw new Exception("Error de consulta: "- $e->getMessage());
             }
+            $this->conectar = null;
         }
 
         public function InsertarAsalariado(string $DNI, string $nombre, string $apellidos, int $Id_Puesto, string $Fecha_Alta){
@@ -60,6 +65,7 @@
             } catch(PDOException $e) {                
                 throw new Exception("Error de consulta: " .$e->getMessage());
             }
+            $this->conectar = null;
         }
 
         public function InsertarVacaciones(string $DNI, string $FechaInicio, string $FechaFinal, int $Tipo, string $Notas){
@@ -81,17 +87,35 @@
                     
             } catch(PDOException $e) {
                 throw new Exception("Error de consulta: " .$e->getMessage());
-            }            
+            }     
+            $this->conectar = null;       
         }       
         
-        public function getVacaciones(string $id, string $año, string $tipo){
-            try{         
+        public function getVacaciones(string $dni, string $año, string $tipo){
+            /*try{         
                 $consulta = $this->conectar->query("SELECT * FROM dias_no_trabajados WHERE DNI='$id' AND Tipo='$tipo' AND YEAR(Fecha_Inicio)=$año");                
                 $resultado1 = $consulta->fetchAll(PDO::FETCH_OBJ);                    
                                 return $resultado1;
             } catch(PDOException $e) {
                 throw new Exception("Error de consulta: "- $e->getMessage());
+            }*/
+            try{
+                if ($tipo == "100"){                    
+                    $consulta = $this->conectar->query("SELECT * FROM dias_no_trabajados WHERE DNI='$dni' AND YEAR(Fecha_Inicio)=$año AND YEAR(Fecha_Fin)=$año");
+                    $resultado = $consulta->fetchAll(PDO::FETCH_OBJ);                    
+                    return $resultado;                                                        
+                }
+                else{                                        
+                    $consulta = $this->conectar->query("SELECT * FROM dias_no_trabajados WHERE DNI='$dni' AND Tipo='$tipo' AND YEAR(Fecha_Inicio)=$año AND YEAR(Fecha_Fin)=$año");                    
+                    $resultado = $consulta->fetchAll(PDO::FETCH_OBJ);                    
+                    return $resultado;
+                }
+            } catch(PDOException $e) {
+                throw new Exception("Error de consulta: "- $e->getMessage());
             }
+
+
+            $this->conectar = null;
         }
     }
 ?>

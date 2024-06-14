@@ -1,18 +1,16 @@
-<?php        
-    if (empty($_POST)){
+<?php     
+    if (empty($_POST)){        
         $año = date("Y");        
         $tipo = "1"; //El tipo "1" corresponde a "Vacaciones"
     }
     else{
         $tipo = $_POST['tipo'] ;
         $año = $_POST['año'];        
-    }
-    
+    }  
 
-    require_once("../Modelo/autoload.php");    
+    require_once("../Modelo/autoload.php");        
     $readData = new Asalariados();        
-    $resultado1 = $readData->getVacaciones($id, $año, $tipo);            
-
+    $resultado = $readData->getVacaciones($dni, $año, $tipo);
     echo 
     "<table>
         <thead>                        
@@ -36,7 +34,7 @@
             </td>
         </thead>
             ";
-        foreach($resultado1 as $valor ){
+        foreach($resultado as $valor ){
             echo "<tr>";                            
                 echo "<td>";
                     echo $valor->Fecha_Inicio;
@@ -57,8 +55,7 @@
                 echo "<td>";
                     echo "<a target='_blank' href='?????.php'>Modificar</a>";
                 echo "</td>";
-                echo "<td>";
-                    //echo "<a target='_blank' href='agregarVacaciones2.php?id=$id'>Agregar</a>";
+                echo "<td>";                    
                 echo "</td>";
             echo "</tr>";         
         }                        
