@@ -27,16 +27,12 @@
             <option value="" selected disabled>Seleccionar puesto</option>
             <?php include_once("../Controlador/llenarselect.php"); ?>
         </select>        
-        <br>        
-        
-    </form>
-        
+        <br>                
+    </form>        
     <br>    
     <div class="item">
-        <input form="formulario" type="submit" value="Enviar" class="botones">
-        <a class="boton" href="../index.php">REGRESAR</a>            
+        <a class="boton" href="../indexPersonal.php">Regresar</a>            
+        <input form="formulario" type="submit" value="Enviar" class="botones">        
     </div> 
-    
-        
 </body>
 </html>
