@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">    
     <link href="Vista/images/favicon.png" rel="icon" type="image/png">
     <link href="Vista/css/style.css" rel="stylesheet" type="text/css">
-    <title>Index</title>
+    <title>Index Personal</title>
 </head>
 <body>
     <header>GESTIÓN DE PERSONAL</header>
