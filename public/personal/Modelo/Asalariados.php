@@ -91,31 +91,40 @@
             $this->conectar = null;       
         }       
         
-        public function getVacaciones(string $dni, string $año, string $tipo){
-            /*try{         
-                $consulta = $this->conectar->query("SELECT * FROM dias_no_trabajados WHERE DNI='$id' AND Tipo='$tipo' AND YEAR(Fecha_Inicio)=$año");                
-                $resultado1 = $consulta->fetchAll(PDO::FETCH_OBJ);                    
-                                return $resultado1;
-            } catch(PDOException $e) {
-                throw new Exception("Error de consulta: "- $e->getMessage());
-            }*/
+        public function getVacaciones(string $dni, string $año, string $tipo){            
             try{
                 if ($tipo == "100"){                    
-                    $consulta = $this->conectar->query("SELECT * FROM dias_no_trabajados WHERE DNI='$dni' AND YEAR(Fecha_Inicio)=$año AND YEAR(Fecha_Fin)=$año");
+                    $consulta = $this->conectar->query("SELECT * FROM dias_no_trabajados WHERE DNI='$dni' AND YEAR(Fecha_Inicio)=$año AND YEAR(Fecha_Fin)=$año ORDER BY Fecha_Inicio");
                     $resultado = $consulta->fetchAll(PDO::FETCH_OBJ);                    
                     return $resultado;                                                        
                 }
                 else{                                        
-                    $consulta = $this->conectar->query("SELECT * FROM dias_no_trabajados WHERE DNI='$dni' AND Tipo='$tipo' AND YEAR(Fecha_Inicio)=$año AND YEAR(Fecha_Fin)=$año");                    
+                    $consulta = $this->conectar->query("SELECT * FROM dias_no_trabajados WHERE DNI='$dni' AND Tipo='$tipo' AND YEAR(Fecha_Inicio)=$año AND YEAR(Fecha_Fin)=$año ORDER BY Fecha_Inicio");                    
                     $resultado = $consulta->fetchAll(PDO::FETCH_OBJ);                    
                     return $resultado;
                 }
             } catch(PDOException $e) {
                 throw new Exception("Error de consulta: "- $e->getMessage());
             }
-
-
             $this->conectar = null;
+        }
+
+        public function deleteWorker(string $dni){
+            try{
+                $this->strDNI = $dni;
+                $consulta = "DELETE FROM personal WHERE DNI = :dni";
+                $insert = $this->conectar->prepare($consulta);
+                $insert->bindParam(':dni', $this->strDNI);
+                $resInsert = $insert->execute();
+
+                echo "<script type='text/javascript'>
+                        alert('Registro BORRADO correctamente');
+                        window.location.href='../indexPersonal.php';
+                    </script>";
+            } catch(PDOException $e) {
+                throw new Exception("Error de consulta: " -$e->getMessage());
+            }
+            $this->conectar = null;          
         }
     }
 ?>

@@ -2,8 +2,6 @@
 include_once("../Controlador/readWorker.php");
 include_once("../Modelo/CalcularAntiguedad.php");
 include_once("../Modelo/CreateOption.php");
-
-
 ?>
 
 <!DOCTYPE html>
@@ -12,7 +10,7 @@ include_once("../Modelo/CreateOption.php");
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="images/favicon.png" rel="icon" type="image/png">
-    <link href="css/style.css" rel="stylesheet" type="text/css">    
+    <link href="css/style.css" rel="stylesheet" type="text/css">
     <title>EDITAR PERSONAL</title>
 </head>
 <body>
