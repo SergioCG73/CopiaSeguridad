@@ -115,7 +115,7 @@
                 $consulta = "DELETE FROM personal WHERE DNI = :dni";
                 $insert = $this->conectar->prepare($consulta);
                 $insert->bindParam(':dni', $this->strDNI);
-                $resInsert = $insert->execute();
+                $resInsert = $insert->execute();                
 
                 echo "<script type='text/javascript'>
                         alert('Registro BORRADO correctamente');
@@ -125,6 +125,47 @@
                 throw new Exception("Error de consulta: " -$e->getMessage());
             }
             $this->conectar = null;          
+        }
+
+        public function UpdateWorker(string $nombre, string $dni, string $apellidos, int $puesto, string $fechaalta, string $fechabaja){
+            try{
+                $this->strNombre = $nombre;
+                $this->strDNI = $dni;
+                $this->strApellidos = $apellidos;
+                $this->intPuesto = $puesto;
+                $this->strFechaAlta = $fechaalta;
+                $this->strFechaBaja = $fechabaja;
+                
+                $consulta = "UPDATE personal SET 
+                        DNI = :dni,
+                        Nombre = :nombre,
+                        Apellidos = :apellidos,
+                        Id_Puesto = :puesto, 
+                        Fecha_Alta = :fechaalta,
+                        Fecha_Baja = :fechabaja
+                        WHERE DNI = :dni";                
+
+                $insert = $this->conectar->prepare($consulta);                
+                $insert->bindParam(':dni', $this->strDNI);
+                $insert->bindParam(':nombre', $this->strNombre);                
+                $insert->bindParam(':apellidos', $this->strApellidos);
+                $insert->bindParam(':puesto', $this->intPuesto, PDO::PARAM_INT);                
+                $insert->bindParam(':fechaalta', $this->strFechaAlta);
+                $insert->bindParam(':fechabaja', $this->strFechaBaja);      
+                $resUpdate = $insert->execute();              
+                
+                echo($resUpdate); exit;
+
+                echo "<script type='text/javascript'>
+
+                        alert('Registro actualizado correctamente');
+                        window.location.href='../Vista/form_Editar.php?dni=$dni';
+                     </script>";                
+                
+            } catch (PDOException $e){                
+            throw new Exception("ERROR DE CONSULTA: " .$e->getMessage());
+            }
+            $this->conectar = null;
         }
     }
 ?>

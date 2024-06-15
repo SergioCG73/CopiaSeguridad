@@ -35,11 +35,11 @@ include_once("../Modelo/CreateOption.php");
                 </select>
 
                 <input type="hidden" id="valor" value="<?php echo $Id_Puesto?>"/>
+                <input type="hidden" name="fecha_alta" value="<?php echo $FechadeAlta_?>"/>
+                <input type="hidden" name="fecha_baja" value="<?php echo $FechadeBaja_?>"/>
                 <script src="../Controlador/js/script.js"></script>            
 
-                <br>
-                <label class="encabezado">Fecha de alta</label>   
-                <label class="encabezado">Fecha de baja</label> 
+                <br>                
                 <input type="submit" value="ACTUALIZAR">    
                 <br><br>       
             </form>
@@ -47,10 +47,22 @@ include_once("../Modelo/CreateOption.php");
         </div>
         <div id="datosantiguedad" name="datosantiguedad">
             <fieldset> <legend>ANTIGÜEDAD</legend>
-                <br>
-                <input type="date" name="fecha_alta" value="<?php echo $FechadeAlta_?>"/>  
-                <input type="date" name="fecha_baja"value="<?php echo $FechadeBaja?>"/>                        
-                <label>Antigüedad: <?php echo $Antiguedad?></label>
+                <table>
+                    <thead>
+                        <tr>
+                            <th class="encabezado">Fecha de alta</th>
+                            <th class="encabezado">Fecha de baja</th>
+                            <th class="encabezado">Antigüedad</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><input type="date" name="fecha_alta" value="<?php echo $FechadeAlta_?>"/></td>
+                            <td><input type="date" name="fecha_baja" value="<?php echo $FechadeBaja_?>"/></td>
+                            <td><?php echo $Antiguedad?></td>
+                        </tr>
+                    </tbdody>                    
+                </table>
         </div>
             </fieldset>
     </div>
