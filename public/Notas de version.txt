@@ -1,25 +1,2 @@
-- Se añade funcion de borrar en la carga y descarga de cisternas
-- Se deriva la actualización del sulfato a Actions/actualizar.php
-
-CREADOS
----------
-
-- Actions/actualizar.php
-
-BORRAR 
------
-- Actions/_lectura copy.php
-- Actions/_borrar.php
-
-
-MODICADOS
-----------
-- Includes/tablas.php
-- Actions/eliminar.php
-- muelles/formEditar.php
-- sulfato/formEditarSulfato.php
-- sulfacid/formEditarS3.php
-- p18/formEditarp18.php
-- hb10/formEditarhb10.php
-- ferrico/formEditarFerrico.php
-- filtardo/formeditar.php
+- Se añade el control de versiones por git
+- Se añade la funcionalidad de Personal
