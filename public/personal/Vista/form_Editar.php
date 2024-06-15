@@ -35,14 +35,13 @@ include_once("../Modelo/CreateOption.php");
                 </select>
 
                 <input type="hidden" id="valor" value="<?php echo $Id_Puesto?>"/>
-                <input type="hidden" name="fecha_alta" value="<?php echo $FechadeAlta_?>"/>
-                <input type="hidden" name="fecha_baja" value="<?php echo $FechadeBaja_?>"/>
+                <input type="hidden" name="fecha_alta_oculto" value="<?php echo $FechadeAlta_formateada?>"/>
+                <input type="hidden" name="fecha_baja_oculto" value="<?php echo $FechadeBaja_formateada?>"/>
                 <script src="../Controlador/js/script.js"></script>            
 
                 <br>                
                 <input type="submit" value="ACTUALIZAR">    
-                <br><br>       
-            </form>
+                <br><br>                   
             </fieldset>
         </div>
         <div id="datosantiguedad" name="datosantiguedad">
@@ -57,14 +56,15 @@ include_once("../Modelo/CreateOption.php");
                     </thead>
                     <tbody>
                         <tr>
-                            <td><input type="date" name="fecha_alta" value="<?php echo $FechadeAlta_?>"/></td>
-                            <td><input type="date" name="fecha_baja" value="<?php echo $FechadeBaja_?>"/></td>
+                            <td><input type="date" name="fecha_alta" value="<?php echo $FechadeAlta_formateada?>"/></td>
+                            <td><input type="date" name="fecha_baja" value="<?php echo $FechadeBaja_formateada?>"/></td>
                             <td><?php echo $Antiguedad?></td>
                         </tr>
                     </tbdody>                    
                 </table>
         </div>
             </fieldset>
+            </form>
     </div>
     <header>DÍAS NO TRABAJADOS</header>
     <form name="formulario" method="post" action="<?php $_SERVER['PHP_SELF']; ?>">

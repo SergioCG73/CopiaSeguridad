@@ -8,4 +8,5 @@
     $Fecha_Alta = $_POST['fecha_alta'];
     $Fecha_Baja = $_POST['fecha_baja'];
     $resultado = $updateData->UpdateWorker($nombre, $dni, $apellidos, $Id_Puesto, $Fecha_Alta, $Fecha_Baja);
+    
 ?>

@@ -134,17 +134,26 @@
                 $this->strApellidos = $apellidos;
                 $this->intPuesto = $puesto;
                 $this->strFechaAlta = $fechaalta;
-                $this->strFechaBaja = $fechabaja;
+                $this->strFechaBaja = $fechabaja;                
                 
-                $consulta = "UPDATE personal SET 
+                /*$consulta = "UPDATE personal SET 
                         DNI = :dni,
                         Nombre = :nombre,
                         Apellidos = :apellidos,
                         Id_Puesto = :puesto, 
                         Fecha_Alta = :fechaalta,
                         Fecha_Baja = :fechabaja
-                        WHERE DNI = :dni";                
-
+                        WHERE DNI = :dni";                */
+                
+                                
+                $consulta = "UPDATE personal SET 
+                    Nombre = :nombre,
+                    Apellidos = :apellidos,
+                    Id_Puesto = :puesto,
+                    Fecha_Alta = :fechaalta,
+                    Fecha_Baja = :fechabaja
+                    WHERE DNI = :dni";
+                                
                 $insert = $this->conectar->prepare($consulta);                
                 $insert->bindParam(':dni', $this->strDNI);
                 $insert->bindParam(':nombre', $this->strNombre);                
@@ -152,12 +161,9 @@
                 $insert->bindParam(':puesto', $this->intPuesto, PDO::PARAM_INT);                
                 $insert->bindParam(':fechaalta', $this->strFechaAlta);
                 $insert->bindParam(':fechabaja', $this->strFechaBaja);      
-                $resUpdate = $insert->execute();              
-                
-                echo($resUpdate); exit;
+                $resUpdate = $insert->execute();
 
                 echo "<script type='text/javascript'>
-
                         alert('Registro actualizado correctamente');
                         window.location.href='../Vista/form_Editar.php?dni=$dni';
                      </script>";                

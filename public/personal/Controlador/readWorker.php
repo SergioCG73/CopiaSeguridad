@@ -9,8 +9,8 @@
         $Nombre = $resultado->Nombre;        
         $Apellidos = $resultado->Apellidos;        
         $Id_Puesto = $resultado->Id_Puesto;        
-        $FechadeAlta = $resultado->Fecha_Alta;           
-        $FechadeBaja = $resultado->Fecha_Baja;        
+        $FechadeAlta = $resultado->Fecha_Alta;        
+        $FechadeBaja = $resultado->Fecha_Baja;             
     }
     else {                    
         require_once("Modelo/autoload.php"); // No hacen falta los ../ porque lo estoy leyendo desde readWorker.php
@@ -89,7 +89,7 @@
                             $linea = "<td class=''>$valor->Id_Puesto</br></td>";
                         break;
                      }                                             
-                echo $linea;
+                echo $linea; //Se genera en el switch...case
                 echo "</td>";
                 echo "<td>";                                                                          
                     echo "<a href='Vista/form_Editar.php?dni=$valor->DNI'>
