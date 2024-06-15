@@ -132,3 +132,16 @@ legend{
     background-color: #c5c6c8;
     color: white;
 }
+
+.container{
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+}
+
+.div{
+    margin-bottom: 1vh;
+}
+
+.center{
+    align-items: center;
+}
