@@ -15,9 +15,9 @@ include_once("../Modelo/CreateOption.php");
 </head>
 <body>
     <header>EDITAR EMPLEADO</header>
-    <div name="container">
-        <div name="datostrabajador" id="datostrabajador">
-            <fieldset> <legend>DATOS DEL TRABAJADOR </legend>
+    <div name="container" class="container">
+        <div name="datostrabajador" id="datostrabajador" class="datostrabajador">
+            <fieldset> <legend>DATOS DEL TRABAJADOR</legend>
             <form id="formulario" name="formulario" method="post" action="../Controlador/updateWorker.php"> 
                 <label for="id">DNI: </label>
                 <input type="text" id="dni" name="dni" value="<?php echo $DNI?>"/>
@@ -38,13 +38,12 @@ include_once("../Modelo/CreateOption.php");
                 <input type="hidden" name="fecha_alta_oculto" value="<?php echo $FechadeAlta_formateada?>"/>
                 <input type="hidden" name="fecha_baja_oculto" value="<?php echo $FechadeBaja_formateada?>"/>
                 <script src="../Controlador/js/script.js"></script>            
-
-                <br>                
-                <input type="submit" value="ACTUALIZAR">    
-                <br><br>                   
+            <div class="center">
+                <input type="submit" value="ACTUALIZAR">
+            </div>
             </fieldset>
         </div>
-        <div id="datosantiguedad" name="datosantiguedad">
+        <div id="datosantiguedad" name="datosantiguedad" class="datosantiguedad">
             <fieldset> <legend>ANTIGÜEDAD</legend>
                 <table>
                     <thead>
@@ -103,7 +102,7 @@ include_once("../Modelo/CreateOption.php");
 
     <?php include_once("../Controlador/leervacaciones.php"); ?>
 
-    <div class="item">
+    <div>
         <a class="boton" href="../indexPersonal.php">ATRÁS</a>            
     </div>    
 </body>
