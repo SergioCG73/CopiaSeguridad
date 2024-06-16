@@ -57,11 +57,23 @@
                 $insert = $this->conectar->prepare($consulta);            
                 $arrData = array($this->strDNI, $this->strNombre, $this->strApellidos, $this->intPuesto, $this->strFechaAlta);
                 $resInsert = $insert->execute($arrData);
-
-                echo "<script type='text/javascript'>
+                /*echo "<script type='text/javascript'>
                         alert('Registro guardado correctamente');
                         window.location.href='../indexPersonal.php';
-                    </script>";                
+                    </script>";*/
+
+                if ($resInsert) {
+                    echo "<script type='text/javascript'>
+                            alert('Registro actualizado correctamente');
+                            window.location.href='../indexPersonal.php';
+                        </script>";
+                } else {
+                    echo "<script type='text/javascript'>
+                            alert('Error al actualizar el registro');
+                            window.location.href='../indexPersonal.php';
+                        </script>";
+                }
+
             } catch(PDOException $e) {                
                 throw new Exception("Error de consulta: " .$e->getMessage());
             }
@@ -80,10 +92,22 @@
                 $arrData = array($this->strDNI, $this->strFechaInicio, $this->strFechaFin, $this->intTipo, $this->strNotas);
                 $resInsert = $insert->execute($arrData);
 
-                echo "<script type='text/javascript'>
+                /*echo "<script type='text/javascript'>
                         alert('Registro guardado correctamente');
                         window.location.href='../indexPersonal.php';
-                    </script>";
+                    </script>";*/
+                
+                if ($resInsert) {
+                    echo "<script type='text/javascript'>
+                            alert('Registro actualizado correctamente');
+                            window.location.href='../indexPersonal.php';
+                            </script>";
+                } else {
+                    echo "<script type='text/javascript'>
+                            alert('Error al actualizar el registro');
+                            window.location.href='../indexPersonal.php';
+                            </script>";
+                }
                     
             } catch(PDOException $e) {
                 throw new Exception("Error de consulta: " .$e->getMessage());
@@ -117,10 +141,23 @@
                 $insert->bindParam(':dni', $this->strDNI);
                 $resInsert = $insert->execute();                
 
-                echo "<script type='text/javascript'>
+                /*echo "<script type='text/javascript'>
                         alert('Registro BORRADO correctamente');
                         window.location.href='../indexPersonal.php';
-                    </script>";
+                    </script>";*/
+                
+                if ($resInsert) {
+                    echo "<script type='text/javascript'>
+                            alert('Registro actualizado correctamente');
+                            window.location.href='../indexPersonal.php';
+                           </script>";
+                } else {
+                    echo "<script type='text/javascript'>
+                            alert('Error al actualizar el registro');
+                            window.location.href='../indexPersonal.php';
+                            </script>";
+                }
+
             } catch(PDOException $e) {
                 throw new Exception("Error de consulta: " -$e->getMessage());
             }
@@ -134,39 +171,40 @@
                 $this->strApellidos = $apellidos;
                 $this->intPuesto = $puesto;
                 $this->strFechaAlta = $fechaalta;
-                $this->strFechaBaja = $fechabaja;                
-                
-                /*$consulta = "UPDATE personal SET 
-                        DNI = :dni,
-                        Nombre = :nombre,
-                        Apellidos = :apellidos,
-                        Id_Puesto = :puesto, 
-                        Fecha_Alta = :fechaalta,
-                        Fecha_Baja = :fechabaja
-                        WHERE DNI = :dni";                */
-                
-                                
+                $this->strFechaBaja = $fechabaja;
+
                 $consulta = "UPDATE personal SET 
-                    Nombre = :nombre,
-                    Apellidos = :apellidos,
-                    Id_Puesto = :puesto,
-                    Fecha_Alta = :fechaalta,
-                    Fecha_Baja = :fechabaja
-                    WHERE DNI = :dni";
-                                
-                $insert = $this->conectar->prepare($consulta);                
+                Nombre = :nombre,
+                Apellidos = :apellidos,
+                Id_Puesto = :puesto,
+                Fecha_Alta = :fechaalta" .                
+                ($fechabaja != "" ? ", Fecha_Baja = :fechabaja" : "") . //Operador ternario. 
+                " WHERE DNI = :dni";
+
+                $insert = $this->conectar->prepare($consulta);
                 $insert->bindParam(':dni', $this->strDNI);
-                $insert->bindParam(':nombre', $this->strNombre);                
+                $insert->bindParam(':nombre', $this->strNombre);
                 $insert->bindParam(':apellidos', $this->strApellidos);
-                $insert->bindParam(':puesto', $this->intPuesto, PDO::PARAM_INT);                
+                $insert->bindParam(':puesto', $this->intPuesto, PDO::PARAM_INT);
                 $insert->bindParam(':fechaalta', $this->strFechaAlta);
-                $insert->bindParam(':fechabaja', $this->strFechaBaja);      
+
+                if ($fechabaja != "") {
+                    $insert->bindParam(':fechabaja', $this->strFechaBaja);
+                }
+
                 $resUpdate = $insert->execute();
 
-                echo "<script type='text/javascript'>
-                        alert('Registro actualizado correctamente');
-                        window.location.href='../Vista/form_Editar.php?dni=$dni';
-                     </script>";                
+                if ($resUpdate) {
+                    echo "<script type='text/javascript'>
+                            alert('Registro actualizado correctamente');
+                            window.location.href='../Vista/form_Editar.php?dni=$dni';
+                        </script>";
+                } else {
+                    echo "<script type='text/javascript'>
+                            alert('Error al actualizar el registro');
+                            window.location.href='../Vista/form_Editar.php?dni=$dni';
+                        </script>";
+                }               
                 
             } catch (PDOException $e){                
             throw new Exception("ERROR DE CONSULTA: " .$e->getMessage());
