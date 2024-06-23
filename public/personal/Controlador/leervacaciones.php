@@ -52,7 +52,7 @@
                     include("../Modelo/tipos.php");                                
                 echo "</td>";
                 echo "<td>";                    
-                    echo "<a href='../Vista/form_Editar_Fechas.php?fechainicio=$valor->Fecha_Inicio&fechafin=$valor->Fecha_Fin&id=$valor->Id_Dia&notas=$valor->Notas&tipo=$valor->Tipo&dni=$valor->DNI'>Ver - Editar</a>";
+                    echo "<a href='../Vista/Editar_Fechas.php?fechainicio=$valor->Fecha_Inicio&fechafin=$valor->Fecha_Fin&id=$valor->Id_Dia&notas=$valor->Notas&tipo=$valor->Tipo&dni=$valor->DNI'>Ver - Editar</a>";
                 echo "</td>";                
                 echo "<td>";                    
                 echo "</td>";
