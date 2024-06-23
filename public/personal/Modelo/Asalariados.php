@@ -21,6 +21,49 @@
             $this->conectar = $this->conectar->connect();
         }
 
+
+        public function UpdateDate(int $id, string $Fecha_Inicio, string $Fecha_Fin, string $Notas, int $Tipo, string $DNI){
+            try{                
+                $this->intPuesto = $id; //Se utiliza intPuesto para no crear otra propiedad
+                $this->strFechaInicio = $Fecha_Inicio;
+                $this->strFechaFin = $Fecha_Fin;
+                $this->strNotas = $Notas;
+                $this->intTipo = $Tipo;
+                $this->strDNI = $DNI;
+                $consulta = "UPDATE vacaciones SET                
+                    Fecha_Inicio = :fechainicio,
+                    Fecha_Fin = :fechafin,
+                    Notas = :notas,
+                    Tipo = :tipo
+                    WHERE Id_Dia = :id";
+
+                $insert = $this->conectar->prepare($consulta);
+                $insert->bindParam(':fechainicio', $this->strFechaInicio);
+                $insert->bindParam(':fechafin', $this->strFechaFin);
+                $insert->bindParam(':notas', $this->strNotas);
+                $insert->bindParam(':tipo', $this->intTipo, PDO::PARAM_INT);
+                $insert->bindParam(':id', $this->intPuesto, PDO::PARAM_INT);
+
+                $resInsert= $insert->execute();
+                    
+                if ($resInsert) {
+                    echo "<script type='text/javascript'>
+                         alert('Registro actualizado correctamente');
+                         window.location.href='../Vista/form_Editar.php?dni=$DNI';
+                         </script>";
+                } else {
+                    echo "<script type='text/javascript'>
+                    alert('Error al actualizar el registro');
+                    window.location.href='..Vista/form_Editar.php?dni=$DNI';
+                    </script>";
+                }
+                
+            } catch (PDOException $e) {
+                throw new Exception("Error de consulta: ", $e->getMessage());
+            }
+            $this->conectar = null;
+        }
+
         public function getOneAsalariado(string $dni){
             try{                
                 $consulta = "SELECT * FROM personal WHERE DNI = :dni";                
