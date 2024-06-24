@@ -25,6 +25,9 @@ switch($valor->Tipo){
     case 8:
         echo "Permiso por traslado vivienda";
     break;
+    case 9:
+        echo "Permiso retribuido";
+    break;
     case 10:
         echo "Horas sindicales";
     break;    
