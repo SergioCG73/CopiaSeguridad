@@ -33,7 +33,7 @@
                             PUESTO
                         </th>
                         <th>
-                            MODIFICAR
+                            VER-ACTUALIZAR
                         </th>
                         <th>
                             BORRAR
