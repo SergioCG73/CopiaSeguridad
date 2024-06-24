@@ -12,14 +12,14 @@
 </head>
 <body>            
     <?php
-        $Id = $_GET['id'];        
+        $Id = $_GET['id'];            
         $Fecha_Inicio = $_GET['fechainicio'];        
         $Fecha_Fin = $_GET['fechafin'];
-        $Fecha_Inicio_Mostrar = date("d-m-Y", strtotime($Fecha_Fin));
-        $Fecha_Fin_Mostrar = date("d-m-Y", strtotime($Fecha_Fin));        
+        //$Fecha_Inicio_Mostrar = date("d-m-Y", strtotime($Fecha_Fin));
+        //$Fecha_Fin_Mostrar = date("d-m-Y", strtotime($Fecha_Fin));        
         $Notas = $_GET['notas'];
         $Tipo = $_GET['tipo'];
-        $DNI = $_GET['dni'];
+        $DNI = $_GET['dni'];        
     ?>
     <script>
         function update(){		
