@@ -4,6 +4,8 @@ include_once("../Modelo/CalcularAntiguedad.php");
 include_once("../Modelo/CreateOption.php");
 ?>
 
+<script src="../Controlador/js/script_tipos.js"></script>
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -83,7 +85,7 @@ include_once("../Modelo/CreateOption.php");
             ?>            
         </select>
 
-        <select name="tipo">
+        <select name="tipo">        
             <?php
                 include_once("../Controlador/filling_tipos.php"); 
                 /*CreateOption("tipo",1,"Vacaciones");
@@ -100,6 +102,8 @@ include_once("../Modelo/CreateOption.php");
         </select>            
         <input type="submit" value="BUSCAR">
     </form>
+    <script></script>
+
 
     <?php include_once("../Controlador/leervacaciones.php"); ?>
 
