@@ -178,12 +178,14 @@
         public function getVacaciones(string $dni, string $año, string $tipo){            
             try{
                 if ($tipo == "100"){                    
-                    $consulta = $this->conectar->query("SELECT * FROM dias_no_trabajados WHERE DNI='$dni' AND YEAR(Fecha_Inicio)=$año AND YEAR(Fecha_Fin)=$año ORDER BY Fecha_Inicio");
+                    //$consulta = $this->conectar->query("SELECT * FROM dias_no_trabajados WHERE DNI='$dni' AND YEAR(Fecha_Inicio)=$año AND YEAR(Fecha_Fin)=$año ORDER BY Fecha_Inicio");
+                    $consulta = $this->conectar->query("SELECT * FROM dias_no_trabajados WHERE DNI='$dni' AND YEAR(Fecha_Inicio)=$año ORDER BY Fecha_Inicio");
                     $resultado = $consulta->fetchAll(PDO::FETCH_OBJ);                    
                     return $resultado;                                                        
                 }
                 else{                                        
-                    $consulta = $this->conectar->query("SELECT * FROM dias_no_trabajados WHERE DNI='$dni' AND Tipo='$tipo' AND YEAR(Fecha_Inicio)=$año AND YEAR(Fecha_Fin)=$año ORDER BY Fecha_Inicio");                    
+                    //$consulta = $this->conectar->query("SELECT * FROM dias_no_trabajados WHERE DNI='$dni' AND Tipo='$tipo' AND YEAR(Fecha_Inicio)=$año AND YEAR(Fecha_Fin)=$año ORDER BY Fecha_Inicio");
+                    $consulta = $this->conectar->query("SELECT * FROM dias_no_trabajados WHERE DNI='$dni' AND Tipo='$tipo' AND YEAR(Fecha_Inicio)=$año ORDER BY Fecha_Inicio");                    
                     $resultado = $consulta->fetchAll(PDO::FETCH_OBJ);                    
                     return $resultado;
                 }
