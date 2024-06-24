@@ -85,7 +85,8 @@ include_once("../Modelo/CreateOption.php");
 
         <select name="tipo">
             <?php
-                CreateOption("tipo",1,"Vacaciones");
+                include_once("../Controlador/filling_tipos.php"); 
+                /*CreateOption("tipo",1,"Vacaciones");
                 CreateOption("tipo",2,"Enfermedad común");
                 CreateOption("tipo",3,"Baja laboral");
                 CreateOption("tipo",4,"Permiso maternidad/paternidad");
@@ -94,7 +95,7 @@ include_once("../Modelo/CreateOption.php");
                 CreateOption("tipo",7,"Permiso NO retribuido");
                 CreateOption("tipo",8,"Permiso por traslado vivienda");
                 CreateOption("tipo",10,"Horas sindicales");
-                CreateOption("tipo",100,"Todo");
+                CreateOption("tipo",100,"Todo");*/
             ?>
         </select>            
         <input type="submit" value="BUSCAR">
