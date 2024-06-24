@@ -21,16 +21,41 @@
             $this->conectar = $this->conectar->connect();
         }
 
+        public function deleteDate(string $id){
+            try{
+                $this->strDNI = $id; //Se coge strDNI para no crear otra propiedad
+                $consulta = "DELETE FROM dias_no_trabajados WHERE Id_Dia = :id";                
+                $delete = $this->conectar->prepare($consulta);                
+                $delete->bindParam(':id', $this->strDNI, PDO::PARAM_INT);                
+                $resDelete = $delete->execute();                               
+
+                if ($resDelete) {
+                    echo "<script type='text/javascript'>
+                        alert('Registro eliminado correctamente');
+                        window.location.href='../Vista/form_Editar.php?dni=$DNI';
+                        </script>";
+                } else {
+                    echo "<script type='text/javascript'>
+                    alert('Error al eliminar el registro');
+                    window.location.href='../Vista/form_Editar.php?dni=$DNI';
+                    </script>";
+                }
+
+            } catch(PDOException $e) {
+                throw new Exception("Error de consulta: ", $e->getMessage());
+            }
+            $this->conectar = null;
+        }
 
         public function UpdateDate(int $id, string $Fecha_Inicio, string $Fecha_Fin, string $Notas, int $Tipo, string $DNI){
-            try{                
+            try{
                 $this->intPuesto = $id; //Se utiliza intPuesto para no crear otra propiedad
                 $this->strFechaInicio = $Fecha_Inicio;
                 $this->strFechaFin = $Fecha_Fin;
                 $this->strNotas = $Notas;
                 $this->intTipo = $Tipo;
                 $this->strDNI = $DNI;
-                $consulta = "UPDATE vacaciones SET                
+                $consulta = "UPDATE dias_no_trabajados SET                
                     Fecha_Inicio = :fechainicio,
                     Fecha_Fin = :fechafin,
                     Notas = :notas,
@@ -49,7 +74,8 @@
                 if ($resInsert) {
                     echo "<script type='text/javascript'>
                          alert('Registro actualizado correctamente');
-                         window.location.href='../Vista/form_Editar.php?dni=$DNI';
+                         //window.location.href='../Vista/form_Editar.php?dni=$DNI';
+                         window.location.href='../Vista/Editar_Fechas.php?id=$id&dni=$DNI&notas=$Notas&tipo=$Tipo&fechainicio=$Fecha_Inicio&fechafin=$Fecha_Fin';
                          </script>";
                 } else {
                     echo "<script type='text/javascript'>
@@ -100,11 +126,7 @@
                 $insert = $this->conectar->prepare($consulta);            
                 $arrData = array($this->strDNI, $this->strNombre, $this->strApellidos, $this->intPuesto, $this->strFechaAlta);
                 $resInsert = $insert->execute($arrData);
-                /*echo "<script type='text/javascript'>
-                        alert('Registro guardado correctamente');
-                        window.location.href='../indexPersonal.php';
-                    </script>";*/
-
+                
                 if ($resInsert) {
                     echo "<script type='text/javascript'>
                             alert('Registro actualizado correctamente');
@@ -133,12 +155,7 @@
                 $consulta = "INSERT INTO dias_no_trabajados(DNI, Fecha_Inicio, Fecha_Fin, Tipo, Notas) VALUE (?,?,?,?,?)";
                 $insert = $this->conectar->prepare($consulta);
                 $arrData = array($this->strDNI, $this->strFechaInicio, $this->strFechaFin, $this->intTipo, $this->strNotas);
-                $resInsert = $insert->execute($arrData);
-
-                /*echo "<script type='text/javascript'>
-                        alert('Registro guardado correctamente');
-                        window.location.href='../indexPersonal.php';
-                    </script>";*/
+                $resInsert = $insert->execute($arrData);               
                 
                 if ($resInsert) {
                     echo "<script type='text/javascript'>
