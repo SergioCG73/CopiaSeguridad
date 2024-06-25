@@ -4,8 +4,6 @@ include_once("../Modelo/CalcularAntiguedad.php");
 include_once("../Modelo/CreateOption.php");
 ?>
 
-<script src="../Controlador/js/script_tipos.js"></script>
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -85,10 +83,10 @@ include_once("../Modelo/CreateOption.php");
             ?>            
         </select>
 
-        <select name="tipo">        
+        <select name="tipo" id="tipo">        
             <?php
-                include_once("../Controlador/filling_tipos.php"); 
-                /*CreateOption("tipo",1,"Vacaciones");
+                //include_once("../Controlador/filling_tipos.php"); 
+                CreateOption("tipo",1,"Vacaciones");
                 CreateOption("tipo",2,"Enfermedad común");
                 CreateOption("tipo",3,"Baja laboral");
                 CreateOption("tipo",4,"Permiso maternidad/paternidad");
@@ -96,19 +94,22 @@ include_once("../Modelo/CreateOption.php");
                 CreateOption("tipo",6,"Permiso por matrimonio");
                 CreateOption("tipo",7,"Permiso NO retribuido");
                 CreateOption("tipo",8,"Permiso por traslado vivienda");
+                CreateOption("tipo",9,"Permiso retribuido");
                 CreateOption("tipo",10,"Horas sindicales");
-                CreateOption("tipo",100,"Todo");*/
+                CreateOption("tipo",100,"Todo");
             ?>
-        </select>            
-        <input type="submit" value="BUSCAR">
+        </select>                    
+        <input type="submit" value="BUSCAR">        
     </form>
-    <script></script>
-
-
+    
     <?php include_once("../Controlador/leervacaciones.php"); ?>
+    <input type="text" id="valor" value="<?php echo $tipo;?>">    
 
     <div>
         <a class="boton" href="../indexPersonal.php">ATRÁS</a>            
     </div>    
 </body>
 </html>
+
+
+
