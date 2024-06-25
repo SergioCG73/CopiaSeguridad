@@ -8,26 +8,26 @@
     <title>Buscador</title>
 </head>
 <body>
-<div class="container">
-    <!--<div class="fila">-->
-        <header>BUSCADOR DE PRODUCCIONES POR FECHAS </header>
-    <!--</div>-->
-    <form name="Buscador" method="post" action="encabezadostabla.php" target="_blank" id="formulario">                        
-        <b>Fecha inicial:</b><input type="date" name="desde" min="2022-01-01" id="desde" required><br>
-        <b>Fecha final  :</b><input type="date" name="hasta" id="hasta" required><br>
-        <p></p>
-        <label>Producto:</label>
-        <select name="select" id="producto">
-            <option value="p18">P18</option>
-            <option value="sulfato">Sulfato Alumina</option>         
-            <option value="ferrico">Férrico</option>         
-            <option value="hb10">HB10</option>         
-            <option value="sulfacid">SulfaCID</option>         
-        </select>
-        <p></p>
-        <input type ="button" name="Regresar" class="boton" value="Regresar" form = "Buscador" onclick="history.back()">            
-        <input name="submit" class="boton" type="submit" value="Buscar" onclick="validarFechas()">            
-    </form>  
+<div class="container">    
+        <header>BUSCADOR DE PRODUCCIONES POR FECHAS </header>    
+    <fieldset><legend>Datos de la búsqueda </legend>
+        <form name="Buscador" method="post" action="encabezadostabla.php" target="_blank" id="formulario">                        
+            <b>Fecha inicial:</b><input type="date" name="desde" min="2022-01-01" id="desde" required><br>
+            <b>Fecha final  :</b><input type="date" name="hasta" id="hasta" required><br>
+            <p></p>
+            <label>Producto:</label>
+            <select name="select" id="producto">
+                <option value="p18">P18</option>
+                <option value="sulfato">Sulfato Alumina</option>         
+                <option value="ferrico">Férrico</option>         
+                <option value="hb10">HB10</option>         
+                <option value="sulfacid">SulfaCID</option>         
+            </select>
+            <p></p>
+            <input type ="button" name="Regresar" class="boton" value="Regresar" form = "Buscador" onclick="history.back()">            
+            <input name="submit" class="boton" type="submit" value="Buscar" onclick="validarFechas()">            
+        </form>  
+    </fieldset>
 
     <!--Validar que desde es menor que hasta -->
     <script>
