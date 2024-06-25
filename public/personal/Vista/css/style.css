@@ -138,10 +138,24 @@ legend{
     grid-template-columns: 2fr 1fr 1fr;
 }
 
-.div{
+/*.div{
     margin-bottom: 1vh;
-}
+}*/
 
 .center{
     align-items: center;
+}
+
+.datostrabajador{
+    display: inline-block;
+    width: 55%;        
+    margin-bottom: 1vh;
+    background-color: grey;
+}
+
+.datosantiguedad{
+    display: inline-block;
+    width: 45%;
+    margin-bottom: 1vh;
+    background-color: grey;
 }
