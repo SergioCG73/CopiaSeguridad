@@ -2,10 +2,6 @@
 
 echo "<link href='../css/Buscador/estiloencabezado.css' rel='stylesheet' type='text/css' float='left'/>";
 
-//$producto = $_REQUEST['select'];   //$producto = $_POST['select'];
-//$desde = $_REQUEST['desde'];
-//$hasta = $_REQUEST['hasta'];
-
 $producto = $_GET['producto'];
 $desde = $_GET['desde'];
 $hasta = $_GET['hasta'];
