@@ -84,8 +84,7 @@ include_once("../Modelo/CreateOption.php");
         </select>
 
         <select name="tipo" id="tipo">        
-            <?php
-                //include_once("../Controlador/filling_tipos.php"); 
+            <?php                
                 CreateOption("tipo",1,"Vacaciones");
                 CreateOption("tipo",2,"Enfermedad común");
                 CreateOption("tipo",3,"Baja laboral");
@@ -102,8 +101,7 @@ include_once("../Modelo/CreateOption.php");
         <input type="submit" value="BUSCAR">        
     </form>
     
-    <?php include_once("../Controlador/leervacaciones.php"); ?>
-    <!--<input type="text" id="valor" value="<_?php echo $tipo;?>">-->
+    <?php include_once("../Controlador/leervacaciones.php"); ?>    
 
     <div>
         <a class="boton" href="../indexPersonal.php">ATRÁS</a>            
