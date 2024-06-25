@@ -103,7 +103,7 @@ include_once("../Modelo/CreateOption.php");
     </form>
     
     <?php include_once("../Controlador/leervacaciones.php"); ?>
-    <input type="text" id="valor" value="<?php echo $tipo;?>">    
+    <!--<input type="text" id="valor" value="<_?php echo $tipo;?>">-->
 
     <div>
         <a class="boton" href="../indexPersonal.php">ATRÁS</a>            
