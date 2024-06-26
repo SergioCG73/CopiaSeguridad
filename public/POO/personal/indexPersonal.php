@@ -10,7 +10,7 @@
 <body>
     <header>GESTIÓN DE PERSONAL</header>
     <div class="item">
-        <a class="boton" href="../portada.html">Ir a portada</a>            
+        <a class="boton" href="../../portada.html">Ir a portada</a>            
     </div>
     <br>
     <div class="item">
