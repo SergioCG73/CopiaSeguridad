@@ -3,6 +3,7 @@
 
     class Asalariados extends Conexion{
         private $strDNI;
+        private $strID;
         private $strNombre;
         private $strApellidos;
         private $intPuesto;
@@ -21,23 +22,23 @@
             $this->conectar = $this->conectar->connect();
         }
 
-        public function deleteDate(string $id){
+        public function deleteDate(string $id, string $dni){
             try{
-                $this->strDNI = $id; //Se coge strDNI para no crear otra propiedad
+                $this->strID = $id; 
                 $consulta = "DELETE FROM dias_no_trabajados WHERE Id_Dia = :id";                
                 $delete = $this->conectar->prepare($consulta);                
-                $delete->bindParam(':id', $this->strDNI, PDO::PARAM_INT);                
+                $delete->bindParam(':id', $this->strID, PDO::PARAM_INT);                
                 $resDelete = $delete->execute();                               
 
                 if ($resDelete) {
                     echo "<script type='text/javascript'>
                         alert('Registro eliminado correctamente');
-                        window.location.href='../Vista/form_Editar.php?dni=$DNI';
+                        window.location.href='../Vista/form_Editar.php?dni=$dni';
                         </script>";
                 } else {
                     echo "<script type='text/javascript'>
                     alert('Error al eliminar el registro');
-                    window.location.href='../Vista/form_Editar.php?dni=$DNI';
+                    window.location.href='../Vista/form_Editar.php?dni=$dni';
                     </script>";
                 }
 
@@ -160,12 +161,12 @@
                 if ($resInsert) {
                     echo "<script type='text/javascript'>
                             alert('Registro actualizado correctamente');
-                            window.location.href='../indexPersonal.php';
+                            window.location.href='../Vista/form_Editar.php?dni=$DNI';
                             </script>";
                 } else {
                     echo "<script type='text/javascript'>
                             alert('Error al actualizar el registro');
-                            window.location.href='../indexPersonal.php';
+                            window.location.href='../Vista/form_Editar.php?dni=$DNI';
                             </script>";
                 }
                     
