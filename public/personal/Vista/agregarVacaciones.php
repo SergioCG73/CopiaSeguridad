@@ -23,16 +23,7 @@
     <label>Tipo </label>
     <select name="tipo" id="tipo">
     <?php
-                include_once("../Controlador/filling_tipos.php");  
-      /*  <option value="1">Vacaciones</option>
-        <option value="2">Enfermedad común</option>
-        <option value="3">Baja laboral</option>
-        <option value="4">Permiso maternidad/paternidad</option>
-        <option value="5">Permiso fallecimiento/enfermedad grave familiar</option>
-        <option value="6">Permiso por matrimonio</option>
-        <option value="7">Permiso NO retribuido</option>
-        <option value="8">Permiso por traslado vivienda</option>
-        <option value="10">Horas sindicales</option>*/
+                include_once("../Controlador/filling_tipos.php");     
     ?>
     </select>
     <br><br>
