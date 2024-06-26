@@ -6,7 +6,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="Vista/images/favicon.png" rel="icon" type="image/png">
+    <link href="images/favicon.png" rel="icon" type="image/png">
     <link href="css/style.css" rel="stylesheet" type="text/css">
     <title>Editar Fechas</title>
 </head>
@@ -14,22 +14,20 @@
     <?php
         $Id = $_GET['id'];            
         $Fecha_Inicio = $_GET['fechainicio'];        
-        $Fecha_Fin = $_GET['fechafin'];
-        //$Fecha_Inicio_Mostrar = date("d-m-Y", strtotime($Fecha_Fin));
-        //$Fecha_Fin_Mostrar = date("d-m-Y", strtotime($Fecha_Fin));        
+        $Fecha_Fin = $_GET['fechafin'];        
         $Notas = $_GET['notas'];
         $Tipo = $_GET['tipo'];
         $DNI = $_GET['dni'];        
     ?>
     <script>
         function update(){		
-                document.formulario.action="../Controlador/updateDates.php";
-                document.formulario.submit();
+            document.formulario.action="../Controlador/updateDates.php";
+            document.formulario.submit();
         }
 
         function deleteDate(){		
             document.formulario.action="../Controlador/deleteDate.php";
-                document.formulario.submit();
+            document.formulario.submit();
         }
     </script>
 

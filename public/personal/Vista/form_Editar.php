@@ -105,7 +105,11 @@ include_once("../Modelo/CreateOption.php");
 
     <div>
         <a class="boton" href="../indexPersonal.php">ATRÁS</a>            
-    </div>    
+    </div>
+    <div>
+        <br><br>
+        <a class="boton" href="agregarVacaciones.php?dni=<?php echo $DNI?>">AGREGAR FECHA</a>
+    </div> 
 </body>
 </html>
 
