@@ -72,5 +72,6 @@
             <input name="dni" type="hidden" value="<?php echo $DNI ?>">
             <input name="valor" id="valor" type="hidden" value="<?php echo $Tipo ?>">       
     </form>        
+        <div><a class="boton" href="form_Editar.php?dni=<?php echo $DNI ?>">ATRÁS</a></div>
 </body>
 </html>
