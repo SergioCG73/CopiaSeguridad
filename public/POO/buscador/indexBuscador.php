@@ -8,10 +8,8 @@
     <title>Buscador</title>
 </head>
 <body>
-<div class="container">
-    <!--<div class="fila">-->
-        <header>BUSCADOR DE PRODUCCIONES POR FECHAS </header>
-    <!--</div>-->
+<div class="container">    
+       <header>BUSCADOR DE PRODUCCIONES POR FECHAS </header>    
     <fieldset><legend>Datos de búsqueda </legend>
         <form name="Buscador" method="post" action="encabezadostabla.php" target="_blank" id="formulario">                        
             <table>
