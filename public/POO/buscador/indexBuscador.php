@@ -1,95 +1,55 @@
 <!DOCTYPE html>
-<html lang="es">    
+<html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">    
-    <link href="../css/Buscador/estilobuscador.css" rel="stylesheet" type="text/css" float="left"/>  
-    <link rel="icon" type="image/png" href="../Images/favicon.png">
-    <title>Buscador</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../Personal/Vista/css/style.css" rel="stylesheet" type="text/css"> 
+    <!--Evitar lectura caché -->
+    <meta http-equiv="Expires" content="0">
+    <meta http-equiv="Last-Modified" content="0">
+    <meta http-equiv="Cache-Control" content="no-cache, mustrevalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <!----------------------------------------------->
+    <title>Buscador</title>    
 </head>
 <body>
-<div class="container">    
-       <header>BUSCADOR DE PRODUCCIONES POR FECHAS </header>    
-    <fieldset><legend>Datos de búsqueda </legend>
-        <form name="Buscador" method="post" action="encabezadostabla.php" target="_blank" id="formulario">                        
-            <table>
-                <thead>
+    <header>BUSCADOR DE FABRICACIONES </header>
+    <a class="boton" href="../portada.html">Ir a portada</a><br><br><br>    
+    <form name="formulario" id="formulario" method="post" action="<?php $_SERVER['PHP_SELF']; ?>">
+    <fieldset><legend>DATOS DE BÚSQUEDA</legend>
+        <table>
+            <thead>
+                <tr>
                     <th>Fecha Inicial</th>
                     <th>Fecha Final</th>
                     <th>Producto</th>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td><input type="date" name="desde" min="2022-01-01" id="desde" required></td>
-                        <td><input type="date" name="hasta" id="hasta" required></td>
-                        <td>
-                        <select name="select" id="producto">
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><input type="date" name="fechainicial" id="fechainicial"></td>
+                    <td><input type="date" name="fechafinal" id="fechafinal"></td>
+                    <td>
+                        <select name="producto" id="producto">
                             <option value="p18">P18</option>
-                            <option value="sulfato">Sulfato Alumina</option>         
-                            <option value="ferrico">Férrico</option>         
-                            <option value="hb10">HB10</option>         
-                            <option value="sulfacid">SulfaCID</option>         
+                            <option value="sulfato">Sulfato Alumina</option>
+                            <option value="ferrico">Férrico</option>
+                            <option value="hb10">HB10</option>
+                            <option value="sulfacid">SulfaCID</option>
                         </select>
-                        </td>
-                    </tr>
-                </tbody> 
-            </table>
-            <!--<b>Fecha inicial:</b><input type="date" name="desde" min="2022-01-01" id="desde" required><br><br>
-            <b>Fecha final  :</b><input type="date" name="hasta" id="hasta" required><br>
-            <p></p>
-            <label>Producto:</label>
-            <select name="select" id="producto">
-                <option value="p18">P18</option>
-                <option value="sulfato">Sulfato Alumina</option>         
-                <option value="ferrico">Férrico</option>         
-                <option value="hb10">HB10</option>         
-                <option value="sulfacid">SulfaCID</option>         
-            </select>
-            <p></p>-->
-            <input type ="button" name="Regresar" class="boton" value="Regresar" form = "Buscador" onclick="history.back()">            
-            <input name="submit" class="boton" type="submit" value="Buscar" onclick="validarFechas()">            
-        </form>  
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <input type ="submit" name="ENVIAR">            
     </fieldset>
+    </form>
+    
+    <?php include_once("../Buscador/Controladores/readDataBase.php") ?>
 
-    <div id="resultado">MOSTRAR DATOS...
-
-        <input type ="text" value ="<?php echo $desde ?>">
-        <input type ="text" value ="<?php echo $hasta ?>">
-        <input type ="text" value ="<?php echo $producto ?>">
-
-    </div>
-
-    <!--Validar que desde es menor que hasta -->
-    <script>
-        function validarFechas(){            
-           var desde = document.getElementById("desde").value;
-           var hasta = document.getElementById("hasta").value;    
-           var producto = document.getElementById("producto").value;           
-
-           desde_js = new Date(desde);
-           hasta_js = new Date(hasta);
-           dia = desde_js.getDay();              
-           
-           if (hasta_js < desde_js){
-            event.preventDefault();
-            alert("HASTA debe ser mayor que DESDE");
-            windows.location.href = winndows.location.href;
-           }
-
-           if (dia == 1){          //Si desde es lunes...        
-                document.write("");
-                desde_js = desde_js.setDate(desde_js.getDate()-1);            
-                desde_js = new Date(desde_js);
-                desde = desde_js.toISOString().split("T")[0];   
-                window.location.href = "encabezadostabla.php?desde="+desde + "&producto="+producto + "&hasta="+hasta;
-           }
-           else{
-                document.write("");                
-                window.location.href = "encabezadostabla.php?desde="+desde + "&producto="+producto + "&hasta="+hasta;                
-           }
-        }            
-    </script>
-</div> 
-
+    <input type="hidden" id="valorproducto" value="<?php echo $producto ?>" >
+    <input type="hidden" id="valorfechainicial" value="<?php echo $fechainicial ?>" >
+    <input type="hidden" id="valorfechafinal" value="<?php echo $fechafinal ?>" >    
+    <script src="../js/script.js"></script>
 </body>
 </html>
