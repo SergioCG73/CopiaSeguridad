@@ -1,12 +1,12 @@
-<?php
-    require_once("../Modelos/autoload.php");
-    require_once("../Funciones/functions.php");
+<?php    
+    require_once("../../personal/Modelo/autoload.php");    
+    require_once("../funciones/functions.php");    
     
-if (empty($_POST)){
+if (empty($_POST['fechainicial'] or $_POST['fechafinal'])){
     echo "No hay valores que mostrar";    
     exit;
 }
-else{        
+else{                
     $fechainicial = $_POST['fechainicial'];    
     $fechafinal = $_POST['fechafinal'];
     $producto = $_POST['producto'];
@@ -22,8 +22,10 @@ else{
 
     //---------------------------------------------------------   
     
-    $readData = new Busqueda();
+    $readData = new Busqueda();    
+    echo "aquí"; exit;
     $resultado = $readData->getManufacturingData($producto, $fechainicial, $fechafinal);
+    
 
 if ($producto == "p18" or $producto == "sulfato"){    
 
