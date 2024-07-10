@@ -78,6 +78,16 @@ label{
     margin-bottom: 1vw;
 }
 
+.nombre{
+    display:inline-block;
+    font-size: 1.4vw;    
+    font-weight: bold; 
+    width: 20vw;
+    margin-bottom: 1vw;
+    color: red;
+
+}
+
 input{
     font-size: 1vw;
 }
