@@ -5,12 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="../personal/Vista/css/style.css" rel="stylesheet" type="text/css">
     <!--Evitar lectura caché -->
-    <meta http-equiv="Expires" content="0">
+<!--    <meta http-equiv="Expires" content="0">
     <meta http-equiv="Last-Modified" content="0">
     <meta http-equiv="Cache-Control" content="no-cache, mustrevalidate">
-    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Pragma" content="no-cache"> -->
     <!----------------------------------------------->
-    <title>Buscador</title>        
+    <title>Buscador</title>            
 </head>
 <body>
     <header>BUSCADOR DE FABRICACIONES </header>
@@ -47,9 +47,9 @@
     
     <?php include_once("../buscador/Controladores/readDataBase.php") ?>
 
-    <input type="text" id="valorproducto" value="<?php echo $producto ?>" >
-    <input type="text" id="valorfechainicial" value="<?php echo $fechainicial ?>" >
-    <input type="text" id="valorfechafinal" value="<?php echo $fechafinal ?>" >    
-    <script src="../js/script.js"></script>
-</body>
+    <input type="hidden" id="valorproducto" value="<?php echo $producto ?>" >
+    <input type="hidden" id="valorfechainicial" value="<?php echo $fechainicial ?>" >
+    <input type="hidden" id="valorfechafinal" value="<?php echo $fechafinal ?>" > 
+    <script src="../js/java.js"></script>       
+</body>    
 </html>
