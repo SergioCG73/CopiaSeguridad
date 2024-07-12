@@ -14,7 +14,7 @@
 </head>
 <body>
     <header>BUSCADOR DE FABRICACIONES </header>
-    <a class="boton" href="../portada.html">Ir a portada</a><br><br><br>    
+    <a class="boton" href="../../portada.html">Ir a portada</a><br><br><br>        
     <form name="formulario" id="formulario" method="post" action="<?php $_SERVER['PHP_SELF']; ?>">
     <fieldset><legend>DATOS DE BÚSQUEDA</legend>
         <table>
