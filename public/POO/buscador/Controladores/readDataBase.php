@@ -10,7 +10,6 @@ else{
     $fechainicial = $_POST['fechainicial'];    
     $fechafinal = $_POST['fechafinal'];
     $producto = $_POST['producto'];    
-
     
     //Validación de fechas ---------------------------------
 
@@ -255,9 +254,16 @@ foreach($resultado as $valor){
         </tr>
         </tbody>";        
     }
+}        
 }
 
-}
+$PRODUCTO = strtoupper($producto);
+$FECHAINICIAL = new DateTime($fechainicial);
+$FECHAINICIAL->format('d-m-Y');
+$FECHAFINAL = new DateTime($fechafinal);
+$FECHAFINAL->format('d-m-Y');
 
+echo "<br>Total fabricaciones de <span>$PRODUCTO</span> desde el <span>$FECHAINICIAL</span> hasta el <span>$FECHAFINAL</span>: <span>$total_fabricaciones</span> fabricaciones <br>"; 
+echo "Toneladas fabricadas: <span>$toneladas</span> Tm";
 
 ?>
