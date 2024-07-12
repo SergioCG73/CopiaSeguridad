@@ -10,12 +10,14 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
     //document.write(valorSeleccionado);
     //var valorSeleccionado = "<?php echo $valorSeleccionado; ?>"; // PHP incrusta el valor aquí
-    
+
     // Obtener el elemento select
     var selectElement = document.getElementById('producto');
     /*var dateElement_1 = document.getElementById('fechainicial');    
     var dateElement_2 = document.getElementById('fechafinal');   
     var SelectElementPerPage = document.getElementById('perpage');*/
+    
+    alert (valorSeleccionado);
 
     // Establecer el valor del select
     selectElement.value = valorSeleccionado;
