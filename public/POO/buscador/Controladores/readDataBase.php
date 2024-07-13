@@ -20,11 +20,17 @@ else{
         echo "Fecha FINAL menor a la fecha INICIAL"; exit;
     }
 
+    if ($fechainicial < "2022-02-20"){
+        echo "La primera fecha registrada es 20-02-2022"; exit;
+
+    }
+
     //---------------------------------------------------------       
     $readData = new Busqueda();    
     $resultado = $readData->getManufacturingData($producto, $fechainicial, $fechafinal);
 
-if ($producto == "p18" or $producto == "sulfato"){    
+if ($producto == "p18" or $producto == "sulfato"){
+    $toneladasfabricacion = 16000;
 
     echo 
     "<table>
@@ -63,12 +69,12 @@ if ($producto == "p18" or $producto == "sulfato"){
 
 foreach($resultado as $valor){
     list($FormattedInicio, $FormattedFinal, $FormattedPesoInicial, $FormatteddPesoFinal, $FormatteddDuracion, 
-    $FormatteddParado) = formatear($valor->Hora_Inicio, $valor->Hora_Finalizacion, $valor->Peso_Inicial, 
-    $valor->Peso_Final, $valor->Duracion, $valor->Tiempo_Parado);         
+    $FormatteddParado, $FormattedFabricacion) = formatear($valor->Hora_Inicio, $valor->Hora_Finalizacion, $valor->Peso_Inicial, 
+    $valor->Peso_Final, $valor->Duracion, $valor->Tiempo_Parado, $valor->NumeroFabricacion);         
 
     echo" <tbody>    
       <tr> 
-          <td>$valor->NumeroFabricacion</td>
+          <td>$FormattedFabricacion</td>
           <td>$valor->Semana</td>
           <td>$valor->Reactor</td>
           <td>$FormattedInicio</td>
@@ -79,11 +85,11 @@ foreach($resultado as $valor){
           <td>$FormatteddParado</td>          
       </tr>
     </tbody>";
-    }
-    
+    }    
 }
 
-elseif ($producto == "ferrico"){        
+elseif ($producto == "ferrico"){     
+    
     echo "<table>
             <thead>                        
                 <tr>
@@ -106,7 +112,7 @@ elseif ($producto == "ferrico"){
                         Densidad
                     </th>
                     <th>
-                        Riquza
+                        Riqueza
                     </th>
                     <th>
                         Ácido libre
@@ -118,24 +124,38 @@ elseif ($producto == "ferrico"){
             </thead>";
 
 foreach($resultado as $valor){    
-
+    list($FormattedFecha,
+         $FormattedVolumen_Inicial,
+         $FormattedVolumen_Final,
+         $FormattedDensidad,
+         $FormattedRiqueza,
+         $FormattedAcido
+         ) = 
+    formatearFerrico($valor->Fecha,
+        $valor->Volumen_Inicial,
+        $valor->Volumen_Final,
+        $valor->Densidad,
+        $valor->Riqueza,
+        $valor->Acido        
+    );
+   
     if (empty($valor->Notas)){
         $valor->Notas = "";        
     }
     else{
-        $valor->Notas = "<img src='../Images/signo_admiracion_icon.png'>";
+        $valor->Notas = "<img src='../personal/Vista/images/signo_admiracion_icon.png'>";
     }
 
     echo" <tbody>
         <tr> 
             <td>$valor->NumeroFabricacion</td>
-            <td>$valor->Semana</td>
-            <td>$valor->Fecha</td>
-            <td>$valor->Volumen_Inicial</td>
-            <td>$valor->Volumen_Final</td>
-            <td>$valor->Densidad</td>
-            <td>$valor->Riqueza</td>
-            <td>$valor->Acido</td>
+            <td>$valor->Semana</td>            
+            <td>$FormattedFecha</td>
+            <td>$FormattedVolumen_Inicial</td>
+            <td>$FormattedVolumen_Final</td>
+            <td>$FormattedDensidad</td>
+            <td>$FormattedRiqueza</td>
+            <td>$FormattedAcido</td>
             <td>$valor->Notas</td>
         </tr>
         </tbody>";        
@@ -174,24 +194,35 @@ elseif($producto =="hb10"){
         </thead>
 ";
 foreach($resultado as $valor){   
-
+    list($FormattedFecha,
+    $FormattedVolumen,
+    $FormattedDensidad,
+    $FormattedRiqueza,
+    $FormattedBasicidad
+    ) = 
+formatearHB10($valor->Fecha,
+   $valor->Volumen,
+   $valor->Densidad,
+   $valor->Riqueza,
+   $valor->Basicidad  
+);
 //Formateamos el valor de Notas.
     if (empty($valor->Notas)){
         $valor->Notas = "";        
     }
     else{
-        $valor->Notas = "<img src='../Images/signo_admiracion_icon.png'>";
+        $valor->Notas = "<img src='../personal/Vista/images/signo_admiracion_icon.png'>";
     }
 //--------------------------
     echo" <tbody>
         <tr> 
             <td>$valor->NumeroFabricacion</td>
             <td>$valor->Semana</td>
-            <td>$valor->Fecha</td>            
-            <td>$valor->Densidad</td>
-            <td>$valor->Riqueza</td>
-            <td>$valor->Basicidad</td>
-            <td>$valor->Volumen lts</td>                                
+            <td>$FormattedFecha</td>            
+            <td>$FormattedDensidad</td>
+            <td>$FormattedRiqueza</td>
+            <td>$FormattedBasicidad</td>
+            <td>$FormattedVolumen lts</td>                                
             <td>$valor->Notas</td>
         </tr>
         </tbody>";        
@@ -232,13 +263,23 @@ else{
 ";
 
 foreach($resultado as $valor){   
+    list($FormattedFecha,
+    $FormattedVolumen,
+    $FormattedDensidad,
+    $FormattedRiqueza
+    ) = 
+formatearS3($valor->Fecha,
+   $valor->Volumen,
+   $valor->Densidad,
+   $valor->Riqueza,
+);
 
     //formateamos el campo notas. Se no hay nota "---" si hay nota "abc"
     if (empty($valor->Notas)){
         $valor->Notas = "";        
     }
     else{
-        $valor->Notas = "<img src='../Images/signo_admiracion_icon.png'>";
+        $valor->Notas = "<img src='../personal/Vista/images/signo_admiracion_icon.png'>";
     }
 //---------------------------------------------------
 
@@ -246,11 +287,11 @@ foreach($resultado as $valor){
         <tr> 
             <td>$valor->NumeroFabricacion</td>
             <td>$valor->Semana</td>
-            <td>$valor->Fecha</td>            
-            <td>$valor->Densidad</td>
-            <td>$valor->Riqueza</td>
+            <td>$FormattedFecha</td>            
+            <td>$FormattedDensidad</td>
+            <td>$FormattedRiqueza</td>
             <td>$valor->ph</td>
-            <td>$valor->Volumen lts</td>                                
+            <td>$FormattedVolumen lts</td>                                
             <td>$valor->Notas</td>
         </tr>
         </tbody>";        
@@ -262,9 +303,12 @@ $primera = $resultado[0]->NumeroFabricacion;
 $ultima = $valor->NumeroFabricacion;
 $totalfabricaciones = ($ultima-$primera) + 1;
 $totalfabricaciones = number_format($totalfabricaciones, 0, '', '.');
+$toneladastotales = $totalfabricaciones * $toneladasfabricacion;
+$toneladastotales = number_format($toneladastotales, 0, "", ".");
 
 echo "<link href='Vista/css/estilo.css' rel='stylesheet' type='text/css'>";
 echo "Total fabricaciones de ". "<span>" . strtoupper($producto) . "</span>" . " listadas: <span> $totalfabricaciones </span>";
 echo "<br>";
+echo "Total toneladas fabricadas: <span>$toneladastotales</span> Tm";
 
 ?>
