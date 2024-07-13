@@ -22,7 +22,7 @@ else{
 
     //---------------------------------------------------------       
     $readData = new Busqueda();    
-    $resultado = $readData->getManufacturingData($producto, $fechainicial, $fechafinal);    
+    $resultado = $readData->getManufacturingData($producto, $fechainicial, $fechafinal);
 
 if ($producto == "p18" or $producto == "sulfato"){    
 
@@ -80,6 +80,7 @@ foreach($resultado as $valor){
       </tr>
     </tbody>";
     }
+    
 }
 
 elseif ($producto == "ferrico"){        
@@ -257,13 +258,13 @@ foreach($resultado as $valor){
 }        
 }
 
-$PRODUCTO = strtoupper($producto);
-$FECHAINICIAL = new DateTime($fechainicial);
-$FECHAINICIAL->format('d-m-Y');
-$FECHAFINAL = new DateTime($fechafinal);
-$FECHAFINAL->format('d-m-Y');
+$primera = $resultado[0]->NumeroFabricacion;    
+$ultima = $valor->NumeroFabricacion;
+$totalfabricaciones = ($ultima-$primera) + 1;
+$totalfabricaciones = number_format($totalfabricaciones, 0, '', '.');
 
-echo "<br>Total fabricaciones de <span>$PRODUCTO</span> desde el <span>$FECHAINICIAL</span> hasta el <span>$FECHAFINAL</span>: <span>$total_fabricaciones</span> fabricaciones <br>"; 
-echo "Toneladas fabricadas: <span>$toneladas</span> Tm";
+echo "<link href='Vista/css/estilo.css' rel='stylesheet' type='text/css'>";
+echo "Total fabricaciones de ". "<span>" . strtoupper($producto) . "</span>" . " listadas: <span> $totalfabricaciones </span>";
+echo "<br>";
 
 ?>
