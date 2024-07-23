@@ -35,6 +35,7 @@
 
             <button type="submit">Buscar</button>
         </form>
+            <a href="../../portada.html"><button>Portada</button></a>
         </fieldset>
     </div>
     
