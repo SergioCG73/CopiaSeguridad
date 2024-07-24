@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <link href="css/style.css" rel="stylesheet" text="text/css">
+    <link href="../lib/images/favicon.png" rel="icon" type="image/png">
     <title>Paginador</title>
 </head>
 <body>    
