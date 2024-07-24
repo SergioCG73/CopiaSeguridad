@@ -92,7 +92,7 @@
 }
 
 //FÉRRICO
-        if (!empty($data) and ($table == "ferrico")){ 
+        if (!empty($data) and ($table == "ferrico")){            
                 //-----------DATOS PARA MANTENER LOS DATOS DE BÚSQUEDA FIJADOS ---------------------
                 echo '<input type="hidden" name="star_date" id="dato1" value= "' . $startDate .'">';   
                 echo '<input type="hidden" name="end_date" id="dato2" value= "' . $endDate .'">';   
@@ -125,7 +125,7 @@
                 
                 if ($FechaHoraInicio > $FechaHoraFinal){                    
                     echo ("Hora menor a inicial");                 
-                }                
+                }
                 
                 echo "<div class='paginacion'>";
                 echo $model->createLinks(5, 'pagination', $limit, $total_registros, $startDate, 
@@ -150,7 +150,7 @@
             echo "<script src='js/script.js'> </script>";
             //-----------FIN MANTENER FIJOS ----------------------------------------------
                                     
-            if ($table == "ferrico"){                    
+            if ($table == "ferrico"){                                  
                 tablaFerrico($table, $data);                
                 echo "<div class='paginacion'>"; 
                 echo $model->createLinks(5, 'pagination', $limit, $total_registros, $startDate, $endDate, 
