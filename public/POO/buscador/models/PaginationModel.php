@@ -15,14 +15,14 @@ class PaginationModel {
         return $stmt->fetchAll(PDO::FETCH_COLUMN);
     }*/    
 
-    public function getData($table, $startDate, $endDate, $limit, $page, $offset) {        
+    public function getData($table, $startDate, $endDate, $limit, $page, $offset) {            
         if ($limit == 'all' and ($table == "p18" or $table == "sulfato")) {                        
             $stmt = $this->db->prepare("SELECT * FROM $table WHERE Hora_Inicio BETWEEN :start_datee AND :end_date");
         } elseif ($limit == 'all' and ($table == "hb10" or $table == "sulfacid" or $table == "ferrico")) {
             $stmt = $this->db->prepare("SELECT * FROM $table WHERE Fecha BETWEEN :start_date AND :end_date");            
         } elseif ($limit != 'all' and ($table == "p18" or $table == "sulfato")) {            
             $stmt = $this->db->prepare("SELECT * FROM $table WHERE Hora_Inicio BETWEEN :start_datee AND :end_date LIMIT :offset, :limite");
-        } elseif ($limit != 'all' and ($table == "hb10" or $table == "sulfacid" or $table == "ferrico")) {            
+        } elseif ($limit != 'all' and ($table == "hb10" or $table == "sulfacid" or $table == "ferrico")) {
             $stmt = $this->db->prepare("SELECT * FROM $table WHERE Fecha BETWEEN :start_datee AND :end_date LIMIT :offset, :limite");            
         }
 
