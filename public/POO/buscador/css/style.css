@@ -1,24 +1,93 @@
-header{
-    background-color: black;
-    color: white;
-    font-size: 35px;
-    margin-bottom: 10px;
-    padding: 4px;
+/* Estilo general */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    margin: 0;
+    padding: 0;    
 }
 
-fieldset{        
-    padding: 5px;
-    font-size: 20px;  
+/* Estilo del contenedor principal */
+.container {
+    width: 90%;
+    margin: 10px auto;  /*margin: 50px auto;*/
+    padding: 2px;      /*padding: 20px;*/
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 1px; /*border-radius: 8px;*/
 }
 
-legend{
+/* Estilo del fieldset */
+fieldset {
+    border: 1px solid #ccc;
+    padding: 20px;
+    border-radius: 8px;    
+}
+
+/* Estilo de la leyenda */
+legend {
+    font-size: 1.2em;
     font-weight: bold;
-    font-size: 20px;
 }
 
-div{
-    margin: 10px;
+/* Estilo del formulario para que esté en una sola línea */
+form {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
 }
+
+/* Estilo de las etiquetas */
+form label {
+    margin-right: 10px;
+}
+
+/* Estilo de los campos de entrada */
+form input[type="date"],
+form select {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+/* Estilo de la botonera */
+.botonera {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+/* Estilo de los botones */
+.botonera input[type="submit"] {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    background-color: #007bff;
+    color: #fff;
+    font-size: 0.8em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.botonera input[type="button"]:hover {
+    background-color: #0056b3;
+}
+
+.button{
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    background-color: #007bff;;     
+    color: #fff;
+    font-size: 0.8em;
+    cursor: pointer;    
+    transition: background-color 0.3s ease;
+    text-decoration: none;
+}
+
+/*Estilo para la tabla*/
 
 .styled-table
 {
@@ -118,6 +187,7 @@ th, td{
 .styled-table tbody:nth-child(even) {background: #b5b5b5}
 .styled-table tbody:nth-child(odd) {background: #FFF}*/
 
+/*Estilo para los enlaces de la paginación*/
 .paginacion{
     display: flex;
     justify-content: center;    
