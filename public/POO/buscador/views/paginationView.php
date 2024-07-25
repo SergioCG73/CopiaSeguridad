@@ -8,10 +8,11 @@
     <title>Paginador</title>
 </head>
 <body>    
-    <header>BUSCADOR</header>
-    <div name="formulario" id="formulario">
+    <!--<header>BUSCADOR</header>-->
+    <!--<div name="formulario" id="formulario">-->
+    <div name="container" id="container">
         <fieldset><legend>CAMPOS DE BÚSQUEDA</legend>
-        <form method="post" action="">
+        <form id="formulario" method="post" action="">
             <label for="start_date">Fecha de inicio:</label>
             <input type="date" id="start_date" name="start_date" required>
             
@@ -33,10 +34,13 @@
                 <option value="15">15</option>
                 <option value="all">Todos</option>
             </select>
-
-            <button type="submit">Buscar</button>
-        </form>
-            <a href="../../portada.html"><button>Portada</button></a>
+            </form>
+            <div class="botonera">
+                <!--<button type="submit">Buscar</button>-->
+                <input type="submit" form="formulario" value="Buscar">
+                <!--<a href="../../portada.html"><button>Portada</button></a>-->
+                <a class="button" href="../../portada.html">Portada</a>
+            </div>
         </fieldset>
     </div>
     
