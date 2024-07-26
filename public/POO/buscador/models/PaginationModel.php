@@ -26,8 +26,8 @@ class PaginationModel {
         
         if ($limit == 'all' and ($table == "p18" or $table == "sulfato")) {                        
             $stmt = $this->db->prepare("SELECT * FROM $table WHERE Hora_Inicio BETWEEN :start_datee AND :end_date");
-        } elseif ($limit == 'all' and ($table == "hb10" or $table == "sulfacid" or $table == "ferrico")) {
-            $stmt = $this->db->prepare("SELECT * FROM $table WHERE Fecha BETWEEN :start_date AND :end_date");            
+        } elseif ($limit == 'all' and ($table == "hb10" or $table == "sulfacid" or $table == "ferrico")) {            
+            $stmt = $this->db->prepare("SELECT * FROM $table WHERE Fecha BETWEEN :start_datee AND :end_date");            
         } elseif ($limit != 'all' and ($table == "p18" or $table == "sulfato")) {            
             $stmt = $this->db->prepare("SELECT * FROM $table WHERE Hora_Inicio BETWEEN :start_datee AND :end_date LIMIT :offset, :limite");
         } elseif ($limit != 'all' and ($table == "hb10" or $table == "sulfacid" or $table == "ferrico")) {
@@ -46,10 +46,8 @@ class PaginationModel {
             $stmt->bindParam(':end_date', $endDate);
         }
    
-        $stmt->execute();            
-        return $stmt->fetchAll(PDO::FETCH_ASSOC);        
-        $this->db = "null";
-        $stmt = "null";
+        $stmt->execute();                    
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }        
 
     public function countRegistros($table, $startDate, $endDate) {
@@ -183,6 +181,12 @@ class PaginationModel {
 
         return $html;
     }
+
+    public function closeConecction(){        
+        $this->db = null;
+    }
+    
 }
+    
 ?>
 
