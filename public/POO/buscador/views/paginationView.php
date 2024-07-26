@@ -44,7 +44,8 @@
         </fieldset>
     </div>
     
-    <?php         
+    <?php    
+//P18     
         if (!empty($data) and ($table == "p18" /*or $table == "sulfato"*/)){        
             //-----------DATOS PARA MANTENER LOS DATOS DE BÚSQUEDA FIJADOS ---------------------
             echo '<input type="hidden" name="star_date" id="dato1" value= "' . $startDate .'">';   
@@ -52,10 +53,22 @@
             echo '<input type="hidden" name="valor" id="dato3" value= "' . $table .'">';   
             echo '<input type="hidden" name="valor" id="dato4" value= "' . $limit .'">';
             echo "<script src='js/script.js'> </script>";
-            //-----------FIN MANTENER FIJOS-----------------------------------------------------
-            
+            //-----------FIN MANTENER FIJOS-----------------------------------------------------            
             tablaP18($table, $data);            
-                    echo "</tbody> </table> </div>";                                       
+            echo "</tbody> </table> </div>";                                       
+        }
+
+//SULFATO
+        if (!empty($data) and ($table == "sulfato")){        
+            //-----------DATOS PARA MANTENER LOS DATOS DE BÚSQUEDA FIJADOS ---------------------
+            echo '<input type="hidden" name="star_date" id="dato1" value= "' . $startDate .'">';   
+            echo '<input type="hidden" name="end_date" id="dato2" value= "' . $endDate .'">';   
+            echo '<input type="hidden" name="valor" id="dato3" value= "' . $table .'">';   
+            echo '<input type="hidden" name="valor" id="dato4" value= "' . $limit .'">';
+            echo "<script src='js/script.js'> </script>";
+            //-----------FIN MANTENER FIJOS-----------------------------------------------------    
+            tablaSulfato($table, $data);
+            echo "</tbody> </table> </div>";    
         }
 
 //HB10
@@ -71,6 +84,7 @@
             echo "</tbody> </table> </div>";                                       
         };
 
+//SULFACID
         if (!empty($data) and ($table == "s3" or $table == "sulfacid")){ 
             //-----------DATOS PARA MANTENER LOS DATOS DE BÚSQUEDA FIJADOS ---------------------
             echo '<input type="hidden" name="star_date" id="dato1" value= "' . $startDate .'">';   
@@ -83,19 +97,6 @@
             echo "</tbody> </table> </div>";                                       
         };
 
-//SULFATO
-    if (!empty($data) and ($table == "sulfato")){        
-            //-----------DATOS PARA MANTENER LOS DATOS DE BÚSQUEDA FIJADOS ---------------------
-            echo '<input type="hidden" name="star_date" id="dato1" value= "' . $startDate .'">';   
-            echo '<input type="hidden" name="end_date" id="dato2" value= "' . $endDate .'">';   
-            echo '<input type="hidden" name="valor" id="dato3" value= "' . $table .'">';   
-            echo '<input type="hidden" name="valor" id="dato4" value= "' . $limit .'">';
-            echo "<script src='js/script.js'> </script>";
-            //-----------FIN MANTENER FIJOS-----------------------------------------------------    
-            tablaSulfato($table, $data);
-            echo "</tbody> </table> </div>";
-}
-
 //FÉRRICO
         if (!empty($data) and ($table == "ferrico")){            
                 //-----------DATOS PARA MANTENER LOS DATOS DE BÚSQUEDA FIJADOS ---------------------
@@ -107,11 +108,11 @@
                 //-----------FIN MANTENER FIJOS---------------------------------------------
             tablaFerrico($table, $data);       
             echo "</tbody> </table> </div>";
-            }
+        }
 
 //SULFACID
-
-            if (!empty($data) and ($table == "sulfacid")){ 
+            /*if (!empty($data) and ($table == "sulfacid" or $table == "s3")){ 
+                echo "aquí"; exit;
                 //-----------DATOS PARA MANTENER LOS DATOS DE BÚSQUEDA FIJADOS ---------------------
                 echo '<input type="hidden" name="star_date" id="dato1" value= "' . $startDate .'">';   
                 echo '<input type="hidden" name="end_date" id="dato2" value= "' . $endDate .'">';   
@@ -121,7 +122,7 @@
                 //-----------FIN MANTENER FIJOS---------------------------------------------
                 tablaSulfacid($table, $data);       
                 echo "</tbody> </table> </div>";
-            }
+            }*/
     ?>  
         <?php
             if ($_SERVER['REQUEST_METHOD'] === 'POST'){                    
