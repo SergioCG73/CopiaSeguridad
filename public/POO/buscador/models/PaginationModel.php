@@ -15,7 +15,15 @@ class PaginationModel {
         return $stmt->fetchAll(PDO::FETCH_COLUMN);
     }*/    
 
-    public function getData($table, $startDate, $endDate, $limit, $page, $offset) {            
+    public function getData($table, $startDate, $endDate, $limit, $page, $offset) {
+        // Listado de nombre de tablas permitidas
+        $allowedTables = ['p18', 'sulfato', 'hb10', 'sulfacid', 's3', 'ferrico'];
+    
+        // Comprueb a si la el nombre de la tabla está permitido
+        if (!in_array($table, $allowedTables)) {
+        throw new InvalidArgumentException("Invalid table name provided.");
+    }
+        
         if ($limit == 'all' and ($table == "p18" or $table == "sulfato")) {                        
             $stmt = $this->db->prepare("SELECT * FROM $table WHERE Hora_Inicio BETWEEN :start_datee AND :end_date");
         } elseif ($limit == 'all' and ($table == "hb10" or $table == "sulfacid" or $table == "ferrico")) {
@@ -39,8 +47,10 @@ class PaginationModel {
         }
    
         $stmt->execute();            
-        return $stmt->fetchAll(PDO::FETCH_ASSOC);
-    }
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);        
+        $this->db = "null";
+        $stmt = "null";
+    }        
 
     public function countRegistros($table, $startDate, $endDate) {
         // Determina la columna apropiada basa en el nombre de la tabla
@@ -71,8 +81,7 @@ class PaginationModel {
     }    
     
     public function createLinks($links, $list_class, $limit, $total_registros, $startDate, 
-                                $endDate, $page, $offset, $table, $data) {
-                                    
+                                $endDate, $page, $offset, $table, $data) {                                    
         
         if ($limit == 'all') {
             return '';
