@@ -82,7 +82,8 @@ if (($producto == "p18") or ($producto == "sulfato")){
     }
 
 switch($Duracion){      
-    case ($Duracion >= 186400):
+    //case ($Duracion >= 186400):
+    case ($Duracion >= 400000):
         $Tiempo = "-----";        
         break;
     case ($Duracion<=3600):
@@ -100,7 +101,8 @@ switch($Duracion){
             $Tiempo = "$Tiempo'";
         }
         break;
-    case (($Duracion>3600) and ($Duracion<186400)):    
+    //case (($Duracion>3600) and ($Duracion<186400)):
+        case (($Duracion>3600) and ($Duracion<400000)):    
         $resto=$Duracion/3600;
         $div=explode('.',$resto);
         $horas=$div[0];//obtienes las horas                                 
