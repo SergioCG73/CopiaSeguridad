@@ -11,9 +11,8 @@
     <title>Absentismo</title>
 </head>
 <body>
-
 <form id="formulario" name="formulario" method="post" action="../Controlador/insertarvacaciones.php">
-    <h1><label> <?php echo $Apellidos .', ' .$Nombre ?> </label></h1>
+    <h1><label class="nombreapellidos"> <?php echo $Apellidos .', ' .$Nombre ?> </label></h1>
     <br>
     <input type="hidden" name="dni" value="<?php echo $DNI ?>">        
     <label>Fechas</label>        
@@ -29,8 +28,8 @@
     <br><br>
     <label>Notas</label>
     <input type="textarea" name="notas">
-    <br>
-    <input type="submit" value="Agregar">
+    <br>    
+    <input type="submit" value="Agregar" class="boton">
 
    
 </form>
