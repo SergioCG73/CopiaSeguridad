@@ -1,0 +1,116 @@
+body {
+	font: 100%/1.2 Verdana, Arial, Helvetica, sans-serif;
+    font-weight: bold;
+}
+
+fieldset {
+    border: 0.2vw solid black;
+    padding: 0.1vw;
+    border-radius: 0.4vw;    
+    margin-bottom: 1vw;     
+}
+
+.contenedor{
+    display: flex;        
+    justify-items: start;    
+}
+
+.botonera {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;    
+}
+
+label{
+    margin-right: 0.8vw;
+}
+
+input{
+    font-size: 1vw;
+}
+
+select {
+    margin-right: 0.8vw;
+    font-size: 1vw;
+}
+
+.boton{
+    display: block;
+	text-decoration: none;	
+    background-color: rgb(224, 158, 18);
+    font-weight: bold;
+    font-size: 1vw;
+    color: white;    
+    width: 10vw;	
+    padding: 0.3vw 0.3vw;    
+    margin-left: 1vw;
+    margin-right: 1vw;
+
+    margin-bottom: 1vw;
+    border: none;
+    border-radius: 0.1vw;
+    cursor: pointer;
+    text-align: center;
+}
+
+.boton:hover{
+	opacity: 80%;	
+    width: 10vw;
+}
+
+table {
+    width: 100%;
+    background: white;
+    margin-bottom: 1vw;
+    border: solid 1px #dddddd;
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+table tr th{
+    background-color: rgb(224, 158, 18);
+    color: white;
+}
+
+table tr th, table tr td {
+  padding: 0.5625em 0.625em;
+  font-size: 0.75vw;  
+  /*border: 0px solid #dddddd;  */
+  text-align: center;  
+
+}
+
+table tr.even, table tr.alt, table tr:nth-of-type(even) {
+  background: #c3c3bd;
+}
+
+
+.bold{
+    font-weight: bold;
+    color: red;
+}
+
+.R200{
+    color: rgb(0,176,240);
+	font-weight: bold;
+}
+
+.R201{
+	color:rgb(255, 192, 0);	
+	font-weight: bold;
+}
+
+.R202{
+	color:rgb(192, 0, 0);	
+	font-weight: bold;
+}
+
+.errorsContainer{
+    text-align: center;
+    font-weight: bold;
+    color: red;
+}
+
+a{
+    padding: 0.5vw;
+}
