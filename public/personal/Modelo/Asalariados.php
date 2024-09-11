@@ -123,7 +123,7 @@
                 $this->strApellidos = $apellidos;
                 $this->intPuesto = $Id_Puesto;            
                 $this->strFechaAlta = $Fecha_Alta;
-                $consulta = "INSERT INTO personal(DNI, Nombre, Apellidos, Id_Puesto, Fecha_Alta) VALUES (?,?,?,?,?)";                
+                $consulta = "INSERT INTO personal(DNI, Nombre, Apellidos, Id_Puesto, Fecha_Alta) VALUES (?,?,?,?,?)";       
                 $insert = $this->conectar->prepare($consulta);            
                 $arrData = array($this->strDNI, $this->strNombre, $this->strApellidos, $this->intPuesto, $this->strFechaAlta);
                 $resInsert = $insert->execute($arrData);
