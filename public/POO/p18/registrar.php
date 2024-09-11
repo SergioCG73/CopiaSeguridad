@@ -17,7 +17,7 @@
     
     //Calcular TIEMPO PARADO        
     
-    $consulta = $conexion->query("SELECT NumeroFabricacion, Hora_Finalizacion, Reactor FROM p18_prueba
+    $consulta = $conexion->query("SELECT NumeroFabricacion, Hora_Finalizacion, Reactor FROM p18
                                   WHERE NumeroFabricacion < $NumFabricacion AND Reactor = '$Reactor' ORDER BY NumeroFabricacion DESC LIMIT 1");
     
     $data = $consulta->fetch(PDO::FETCH_ASSOC);
@@ -44,7 +44,7 @@
 
     //FIN CÁLCULO DURACIÓN
     
-    $sql = $conexion->prepare("INSERT INTO p18_prueba (Hora_Inicio, Hora_Finalizacion, NumeroFabricacion, Tiempo_Parado, Reactor, Peso_Inicial, 
+    $sql = $conexion->prepare("INSERT INTO p18 (Hora_Inicio, Hora_Finalizacion, NumeroFabricacion, Tiempo_Parado, Reactor, Peso_Inicial, 
                                                        Peso_Final, Notas, Semana, Duracion)
                                VALUES ('$FechaInicio', '$FechaFinal', '$NumFabricacion', $TiempoParadoEnSegundos, '$Reactor', $PesoInicial,
                                         $PesoFinal, '$Notas', $Semana, $Duracion)");

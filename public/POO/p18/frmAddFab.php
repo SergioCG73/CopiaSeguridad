@@ -3,7 +3,7 @@
 
     echo "<h1> FORMULARIO AGREGAR FAB </h1>";
 
-    $sql = $conexion->query("SELECT NumeroFabricacion FROM p18_prueba ORDER BY NumeroFabricacion DESC LIMIT 1");
+    $sql = $conexion->query("SELECT NumeroFabricacion FROM p18 ORDER BY NumeroFabricacion DESC LIMIT 1");
 
     $lastProduction = $sql->fetch();
     $lastProduction = $lastProduction['NumeroFabricacion'];
@@ -98,7 +98,7 @@
             .then(data => {
                 console.log(data); // Mostrar la respuesta en la consola
                 alert("Fabricación añadida correctamente"); // Mostrar un mensaje de éxito
-                window.location.href = "_index.html"; // Redirigir a otra página
+                window.location.href = "indexp18.php"; // Redirigir a otra página
             })
             
             } catch (error) {

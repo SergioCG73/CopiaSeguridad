@@ -23,10 +23,12 @@ fieldset {
 
 label{
     margin-right: 0.8vw;
+    margin-top: 0.2vw;
 }
 
 input{
     font-size: 1vw;
+    margin-top: 0.2vw;
 }
 
 select {

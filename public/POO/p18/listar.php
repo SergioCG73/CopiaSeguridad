@@ -3,7 +3,7 @@
     //require_once("../../Includes/miconexion.php");    
 
     try {
-        require_once("../../Includes/miconexion.php");        
+        require_once("miconexion.php");        
     }
 
     catch(Exception $e) {
