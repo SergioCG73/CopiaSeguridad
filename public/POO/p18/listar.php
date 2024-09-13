@@ -12,6 +12,10 @@
     
     $registros = isset($_POST['registros']) ? $_POST['registros'] : 10;    
     $search_criteria = isset($_POST['search_criteria']) ? $_POST['search_criteria'] : null;  
+    //$search_criteria = isset($_POST['search_criteria']) ? $_POST['search_criteria'] : "a";  
+
+    $producciones = []; //Creamos el array producciones
+    $errors =['data'=> false];
     
     if ($search_criteria !="") {          
         $registros = "80";        
@@ -27,8 +31,9 @@
         $sql = $conexion->prepare("SELECT * FROM p18 ORDER BY NumeroFabricacion DESC LIMIT $registros");
     }
 
-    $producciones = []; //Creamos el array producciones
-    $errors =['data'=> false];
+    /*if ($search_criteria == "a") {
+        $sql = $conexion->prepare("SELECT * FROM p18 ORDER BY NumeroFabricacion DESC LIMIT $registros");
+    } */   
 
     $getProducciones = $sql->execute();  //Ejecuta el sql      
     $getProducciones = $sql->fetchAll(PDO::FETCH_ASSOC);   //Crea un array asociativo con los datos obtenidos        

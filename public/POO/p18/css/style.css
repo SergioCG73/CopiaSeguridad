@@ -1,39 +1,54 @@
 body {
 	font: 100%/1.2 Verdana, Arial, Helvetica, sans-serif;
+    font-weight: bold;    
+}
+
+header {
+    height: 3rem;    
+    background-color: black;
+    color: white;
+    font-size: 1.5rem;
     font-weight: bold;
-}
-
-fieldset {
-    border: 0.2vw solid black;
-    padding: 0.1vw;
-    border-radius: 0.4vw;    
-    margin-bottom: 1vw;     
-}
-
-.contenedor{
-    display: flex;        
-    justify-items: start;    
+    align-content: center;
+    padding: 1rem;
+    margin-bottom: 1rem;
 }
 
 .botonera {
     display: flex;
-    justify-content: flex-end;
-    align-items: flex-end;    
+    height: 4rem;    
+    border: solid 2px;    
+    justify-content:left;
+    align-items: center;
+    padding: 1rem;
+    margin-bottom: 0.6rem;
 }
 
-label{
-    margin-right: 0.8vw;
-    margin-top: 0.2vw;
+.selector{
+    display:flex;
+    /*background-color: yellow;   */
+    justify-content: center;
+    margin-right: 1.2vw;    
 }
 
-input{
-    font-size: 1vw;
-    margin-top: 0.2vw;
+.campo {
+    display: flex;
+    /*background-color: red;*/    
+    margin-right: 36vw;
 }
 
-select {
-    margin-right: 0.8vw;
-    font-size: 1vw;
+.boton1 {    
+    /*background-color: green;*/
+    height: 5rem;            
+    align-content: flex-end;
+    margin-right: 1.1rem;
+    margin-left: 14rem;
+}
+
+.boton2 {
+    /*background-color: chocolate;*/
+    height: 5rem;    
+    align-content: flex-end;
 }
 
 .boton{
@@ -47,7 +62,6 @@ select {
     padding: 0.3vw 0.3vw;    
     margin-left: 1vw;
     margin-right: 1vw;
-
     margin-bottom: 1vw;
     border: none;
     border-radius: 0.1vw;
@@ -58,6 +72,24 @@ select {
 .boton:hover{
 	opacity: 80%;	
     width: 10vw;
+}
+
+.etiqueta1 {
+    display: inline-flex;
+    /*background-color: red;*/
+    width: 5rem;    
+    justify-content: center;    
+    font-weight: bold;
+    padding-right: 1rem;    
+}
+
+.etiqueta2 {
+    display: inline-flex;
+    /*background-color: red;*/
+    width: 5rem;
+    justify-content: right;
+    font-weight: bold;
+    padding-right: 1rem;
 }
 
 table {
@@ -115,4 +147,106 @@ table tr.even, table tr.alt, table tr:nth-of-type(even) {
 
 a{
     padding: 0.5vw;
+}
+
+.datos{
+    display: inline-flex;
+    flex-direction: row;
+    flex-wrap: wrap;    
+    width: 50%;    
+    height: 80vh;
+    background-color: yellow;
+}
+
+fieldset .datos{
+    border: 0.2vw solid black;
+    padding: 0.1vw;
+    border-radius: 0.4vw;    
+    margin-bottom: 1vw;   
+    padding: 10px 0 0; /*Dar margen letras legend*/  
+    width: 45vw;
+    height: 80vh;
+}
+
+fieldset .notas {
+    border: 0.2vw solid black;
+    padding: 0.1vw;
+    border-radius: 0.4vw;    
+    margin-bottom: 1vw;   
+    padding: 10px 0 0; /*Dar margen letras legend*/  
+    width: 45vw;
+    height: 80vh;
+}
+
+.notas{    
+    display: inline-flex;
+    width: 45%;
+    height: 75%;
+    background-color: green;
+}
+
+.contenedor{
+    display: flex;        
+    padding: 2%;        
+}
+
+.izquierda{  
+    padding: 1%;  
+    width: 100%;         
+}
+
+.derecha{
+    padding: 1%;
+    width: 100%;    
+}
+
+textarea{
+    width: 98%;        
+    height: inherit;
+    height: 98%;
+}
+
+.botonera_agregar{
+    display: flex;
+    text-align: center; /*con esta propiedad se centran los botones */
+    margin-top: 2rem;    
+}
+
+.boton_agregar{
+    padding: 2%;
+    font-weight: bold;
+    text-decoration: none;	
+    background-color: rgba(224, 158, 18, 0.9);
+    font-weight: bold;
+    color: white;
+    width: 35%;    
+	padding: 1% 1%;
+    margin-left: 2vh;    
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+}
+
+.boton_agregar:hover{
+    color: white;    
+    box-shadow: 0 4px 16px rgba(224, 158, 18, 0.9);
+    transition: all 0.2s ease;
+}
+
+fieldset, .agregar{
+    display: block;        
+    height: 100%;      
+}
+
+._100px {
+    display: inline-flex;
+    width: 11.25rem;
+    /*background-color: RED;*/    
+}
+
+.gris{
+    background-color: #e0e0e0;
+    font-weight: bold;
+    width: 5rem;
+    text-align: right;    
 }
