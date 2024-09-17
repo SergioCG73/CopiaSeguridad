@@ -1,4 +1,5 @@
 <?php
+echo "editar.php";
 
 // Definir una función para manejar errores
 function miErrorHandler($errno, $errstr, $errfile, $errline) {
