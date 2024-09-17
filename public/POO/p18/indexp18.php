@@ -29,7 +29,7 @@
             </div>
             <div class="centro"></div>
             <div class="boton1">
-                <input id="btnInicio" type="button" value="Inicio" class="boton">
+                <input id="btnInicio" type="button" value="Portada" class="boton">
             </div>
             <div class="boton2">
                 <input id="btnNueva" type="button" value="Nueva Fabricación" class="boton">
