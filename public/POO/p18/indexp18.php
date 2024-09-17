@@ -24,7 +24,7 @@
                 </select>
             </div>
             <div class="campo">
-                <label class="etiqueta2">Buscar</label>
+                <label for="busqueda" class="etiqueta2">Buscar</label>
                 <input type="search" id="busqueda" name="busqueda">
             </div>
             <div class="centro"></div>

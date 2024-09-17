@@ -13,22 +13,18 @@ document.addEventListener("DOMContentLoaded", () => {
 
     btnInicio.addEventListener("click", () => {
         window.location.href = "../../portada.html";
-    });
-
-    /*btnNueva.addEventListener("click", () => {
-        window.location.href = "actions/agregar.php";        
-    });*/
+    });    
 
     btnNueva.addEventListener("click", () => {
-        fetch("actions/agregar.php", {
+        fetch("frmagregar.php", {
              method: "HEAD" })  // Use HEAD to only fetch headers
             .then(response => {
                 if (response.ok) {
-                    // If the file exists, redirect to the page
-                    window.location.href = "actions/agregar.php";
+                    // Si el fichero existe, redigire a la página.
+                    window.location.href = "frmagregar.php";
                 } else {
-                    // If the file doesn't exist, show an alert
-                    alert("Error: El archivo 'agregar.php' no se encontró.");
+                    // Si el fichero no existe muestra una alerta.
+                    alert("Error: El archivo 'frmagregar.php' no se encontró.");
                 }
             })
             .catch(error => {
@@ -145,12 +141,12 @@ document.addEventListener("DOMContentLoaded", () => {
                     <td>${tiempoParado}</td>
                     <td>${elemento.Notas}</td>
                     <td>
-                        <a href="delete.php?id=${NumeroFabricacion}" onclick="return confirm('¿Estás seguro de que deseas borrar este registro?');">
+                        <a href="actions/delete.php?id=${NumeroFabricacion}" onclick="return confirm('¿Estás seguro de que deseas borrar este registro?');">
                         <img src="images/basura_rojo_icon.png" alt="Borrar"></a>
                        
-                       <a href="editar.php?id=${NumeroFabricacion}"><img src="images/editar_azul_icon.png" alt="Editar"></a>
+                       <a href="actions/editar.php?id=${NumeroFabricacion}"><img src="images/editar_azul_icon.png" alt="Editar"></a>
                     </td>                        
                 </tr>`;
-        });
+        });        
     }
 });
