@@ -9,9 +9,7 @@
     }
 
     set_error_handler("miErrorHandler"); // Establecer el manejador de errores personalizado
-
     require_once("../miconexion.php"); // Intentar incluir el archivo
-
     restore_error_handler(); // Restaurar el manejador de errores predeterminado después de la operación
 
     $FechaInicio = $_POST['FechaInicio'];     
@@ -21,9 +19,8 @@
     $PesoInicial = $_POST['PesoInicial'];
     $PesoFinal = $_POST['PesoFinal'];    
     $Notas = $_POST['Notas'];    
-    //$Duracion = $_POST['Duracion'];        
+    //$Duracion = $_POST['Duracion'];     //Se borra porque se efectúa el cálculo más abajo   
     $TiempoParadoEnSegundos = null;
-    
     
     $errors =['errors'=> 'Registro NO añadido'];
     $msg = ['msg' => "Registro añadido correctamente"];
@@ -32,13 +29,12 @@
     
     $consulta = $conexion->query("SELECT NumeroFabricacion, Hora_Finalizacion, Reactor FROM p18
                                   WHERE NumeroFabricacion < $NumFabricacion AND Reactor = '$Reactor' ORDER BY NumeroFabricacion DESC LIMIT 1");
-    
-    $data = $consulta->fetch(PDO::FETCH_ASSOC);
 
+    $data = $consulta->fetch(PDO::FETCH_ASSOC);    
     $Hora_Inicio = new Datetime($FechaInicio);
     $HoraFinal = new Datetime($data['Hora_Finalizacion']);    //Hora finalización producción anterior a la que se desea registrar   
-    //$HoraFinalString = $HoraFinal->format('Y-m-d H:i:s'); // Formato de fecha y hora 
-
+    $HoraFinalString = $HoraFinal->format('Y-m-d H:i:s'); // Formato de fecha y hora 
+    
     $interval = $HoraFinal -> diff($Hora_Inicio);
     $TiempoParadoEnSegundos = ($interval->days * 24 * 60 * 60) + //Convert days to seconds
                               ($interval->h * 60 * 60) +         //Convert hours to seconds
@@ -60,20 +56,21 @@
     $sql = $conexion->prepare("INSERT INTO p18 (Hora_Inicio, Hora_Finalizacion, NumeroFabricacion, Tiempo_Parado, Reactor, Peso_Inicial, 
                                                        Peso_Final, Notas, Semana, Duracion)
                                VALUES ('$FechaInicio', '$FechaFinal', '$NumFabricacion', $TiempoParadoEnSegundos, '$Reactor', $PesoInicial,
-                                        $PesoFinal, '$Notas', $Semana, $Duracion)");
+                                        $PesoFinal, '$Notas', $Semana, $Duracion)"); 
     
     $insertData = $sql->execute();  //Ejecuta el sql
 
     $datos = ['Hora_Inicio' => $FechaInicio, 
-              'Hora_Final' => $FechaFinal,              
+              'Hora_Final' => $FechaFinal, 
+              'Duración' => $Duracion,
               'Reactor' => $Reactor,
-              'NumFabricacion' => $NumFabricacion,
-              'Parado' => $TiempoParadoEnSegundos,
-              'Peso_Inicial' => $PesoInicial,
-              'Peso_Final' => $PesoFinal,
-              'Notas' => $Notas,
               'Semana' => $Semana,
-              'Duración' => $Duracion];
+              'Notas' => $Notas,
+              'Peso_Final' => $PesoFinal,
+              'NumFabricacion' => $NumFabricacion,
+              'Peso_Inicial' => $PesoInicial,
+              'Parado' => $TiempoParadoEnSegundos              
+              ];        
 
     if ($sql) {                
         echo json_encode($datos);        //JSON para comprobar si los datos recibidos por la BD son correctos
@@ -81,5 +78,6 @@
     }
     else {        
         echo json_encode($errors);        
-    }
+    }       
+        
 ?>
