@@ -62,7 +62,7 @@ document.addEventListener("DOMContentLoaded", () => {
         console.log("search_criteria: ", search_criteria);
         console.log("Registros: ", registros);
     
-        fetch("listar.php", {
+        fetch("actions/listar.php", {
             method: "POST",
             body: campos
         })
@@ -144,7 +144,16 @@ document.addEventListener("DOMContentLoaded", () => {
                         <a href="actions/delete.php?id=${NumeroFabricacion}" onclick="return confirm('¿Estás seguro de que deseas borrar este registro?');">
                         <img src="images/basura_rojo_icon.png" alt="Borrar"></a>
                        
-                       <a href="actions/editar.php?id=${NumeroFabricacion}"><img src="images/editar_azul_icon.png" alt="Editar"></a>
+                       <!--<a href="actions/editar.php?id=${NumeroFabricacion}"><img src="images/editar_azul_icon.png" alt="Editar"></a>-->
+
+                       <a href="frmeditar.php?id=${NumeroFabricacion}&
+                       reactor=${Reactor}&
+                       Fecha_Inicio=${elemento.Hora_Inicio}&
+                       Peso_Inicial=${elemento.Peso_Inicial}&
+                       Fecha_Final=${elemento.Hora_Finalizacion}&
+                       Peso_Final=${elemento.Peso_Final}&
+                       Notas=${Notas}">
+                       <img src="images/editar_azul_icon.png" alt="Editar" ></a>
                     </td>                        
                 </tr>`;
         });        
