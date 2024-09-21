@@ -29,7 +29,7 @@
     }
     else {        
         $sql = $conexion->prepare("SELECT * FROM p18 ORDER BY NumeroFabricacion DESC LIMIT $registros");
-    }    
+    } 
 
     $getProducciones = $sql->execute();  //Ejecuta el sql      
     $getProducciones = $sql->fetchAll(PDO::FETCH_ASSOC);   //Crea un array asociativo con los datos obtenidos        
