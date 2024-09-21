@@ -1,3 +1,4 @@
+//V2
 document.addEventListener("DOMContentLoaded", () => {
     const search = document.getElementById("busqueda");  
     const select = document.querySelector("select");
@@ -8,6 +9,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const btnInicio = document.getElementById("btnInicio");
     const btnNueva = document.getElementById("btnNueva");
     let search_criteria = "";    
+    globalThis.Notas = "";
     tbody.innerHTML = "";    
     let registros = select.options[select.selectedIndex].value;    
 
@@ -20,18 +22,17 @@ document.addEventListener("DOMContentLoaded", () => {
              method: "HEAD" })  // Use HEAD to only fetch headers
             .then(response => {
                 if (response.ok) {
-                    // Si el fichero existe, redigire a la página.
+                    // If the file exists, redirect to the page
                     window.location.href = "frmagregar.php";
                 } else {
-                    // Si el fichero no existe muestra una alerta.
+                    // If the file doesn't exist, show an alert
                     alert("Error: El archivo 'frmagregar.php' no se encontró.");
                 }
             })
             .catch(error => {
                 console.error("Fetch error: ", error);
                 alert("Error: No se pudo verificar la existencia del archivo.");
-            });
-    });
+            });    });
     
 
     select.addEventListener("change", () => {
@@ -87,7 +88,8 @@ document.addEventListener("DOMContentLoaded", () => {
             const NumeroFabricacion = Number(elemento.NumeroFabricacion).toLocaleString('es-CL');
 
             // Formatear Reactor
-            let Reactor = elemento.Reactor;
+            //let Reactor = elemento.Reactor;
+            globalThis.Reactor = elemento.Reactor;
             if (Reactor === "R200") {
                 elemento.Reactor = `<span class="R200">${Reactor}</span>`;
             } else if (Reactor === "R201") {
@@ -120,8 +122,9 @@ document.addEventListener("DOMContentLoaded", () => {
             const tiempoParado = horasParado > 0 ? `${horasParado}h y ${minutosParado} min` : `${minutosParado} min`;
 
             // Formatear Notas
-            if (elemento.Notas != ""){
-                elemento.Notas = "abc";
+            if (elemento.Notas != ""){ 
+                Notas = elemento.Notas;         
+                elemento.Notas = "abc";                
             }
             else {
                 elemento.Notas = "";
@@ -141,11 +144,10 @@ document.addEventListener("DOMContentLoaded", () => {
                     <td>${tiempoParado}</td>
                     <td>${elemento.Notas}</td>
                     <td>
-                        <a href="actions/delete.php?id=${NumeroFabricacion}" onclick="return confirm('¿Estás seguro de que deseas borrar este registro?');">
-                        <img src="images/basura_rojo_icon.png" alt="Borrar"></a>
-                       
-                       <!--<a href="actions/editar.php?id=${NumeroFabricacion}"><img src="images/editar_azul_icon.png" alt="Editar"></a>-->
 
+                       <a href="actions/delete.php?id=${NumeroFabricacion}" onclick="return confirm('¿Estás seguro de que deseas borrar este registro?');">
+                       <img src="images/basura_rojo_icon.png" alt="Borrar"></a>
+                       
                        <a href="frmeditar.php?id=${NumeroFabricacion}&
                        reactor=${Reactor}&
                        Fecha_Inicio=${elemento.Hora_Inicio}&
@@ -153,9 +155,9 @@ document.addEventListener("DOMContentLoaded", () => {
                        Fecha_Final=${elemento.Hora_Finalizacion}&
                        Peso_Final=${elemento.Peso_Final}&
                        Notas=${Notas}">
-                       <img src="images/editar_azul_icon.png" alt="Editar" ></a>
+                       <img src="images/editar_azul_icon.png" alt="Editar"></a>                       
                     </td>                        
                 </tr>`;
-        });        
-    }
+        });
+    }   
 });
