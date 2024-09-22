@@ -23,14 +23,14 @@ $notas = $_GET['Notas'];
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Formulario para editar fabricaciones de P18 con PHP y HTML">    
     <meta name="author" content="Sergio Cano González">
-    <link href="css/style.css" rel="stylesheet" type="text/css">    
-    <title>Document</title>
+    <link href="css/stylev1.css" rel="stylesheet" type="text/css">    
+    <title>Editar</title>
 </head>
 <body>
     <header>EDITAR FABRICACIÓN P18</header>
