@@ -44,7 +44,7 @@ const formattedDate = `${year}-${month}-${day}T${formattedHours}:${formattedMinu
 const formattedDate2 = `${year2}-${month2}-${day2}T${formattedHours2}:${formattedMinutes2}`;
 
     btnAtras.addEventListener("click", (event) =>{
-        window.location.href = "_indexp18.html";
+        window.location.href = "indexp18.php";
     });
 
     btnActualizar.addEventListener("click", (event) =>{   
