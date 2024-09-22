@@ -1,0 +1,142 @@
+body {
+	font: 100%/1.2 Verdana, Arial, Helvetica, sans-serif;
+    font-weight: bold;    
+}
+
+header {
+    height: 3rem;    
+    background-color: black;
+    color: white;
+    font-size: 1.5rem;
+    font-weight: bold;
+    align-content: center;
+    padding: 1rem;
+    margin-bottom: 1rem;
+}
+
+textarea{
+    width: 98%;        
+    height: inherit;
+    height: 98%;
+}
+
+.botonera {
+    display: flex;
+    height: 4rem;    
+    border: solid 2px;    
+    justify-content:left;
+    align-items: center;
+    padding: 1rem;
+    margin-bottom: 0.6rem;
+}
+
+.boton1 {    
+    /*background-color: green;*/
+    height: 5rem;            
+    align-content: flex-end;
+    margin-right: 1.1rem;
+    margin-left: 14rem;
+}
+
+.boton2 {
+    /*background-color: chocolate;*/
+    height: 5rem;    
+    align-content: flex-end;
+}
+
+.boton{
+    display: block;
+	text-decoration: none;	
+    background-color: rgb(224, 158, 18);
+    font-weight: bold;
+    font-size: 1vw;
+    color: white;    
+    width: 10vw;	
+    padding: 0.3vw 0.3vw;    
+    margin-left: 1vw;
+    margin-right: 1vw;
+    margin-bottom: 1vw;
+    border: none;
+    border-radius: 0.1vw;
+    cursor: pointer;
+    text-align: center;
+}
+
+.boton:hover{
+	opacity: 80%;	
+    width: 10vw;
+}
+
+span{
+    color: red;
+    font-size: 18px;
+}
+
+.main-container{
+    display: inline-flex;    
+    width: 100%;
+    height: 18rem;
+    background-color: #e0e0e0;    
+    margin-bottom: 2rem;
+    align-items: center;
+}
+
+.container-left{
+    display: inline-flex;
+    width: 50%;
+    /*border: dashed 1px red;*/
+    margin-right: 1rem;
+}
+
+.container-right{
+    display: inline-flex;
+    width: 50%;
+    /*border: dashed 1px blue;*/
+    justify-content: center;
+}
+
+.datosp18 {
+    width: 95%;
+    height: 15rem;
+}
+
+.notasp18 {
+    width: 95%;
+    height: 15rem;
+}
+
+.editar {
+    display: inline-flex;
+    width: 12rem;
+}
+
+.botonera {
+    display: inline-flex;    
+    width: 100%;
+    height: 5rem;
+    /*background-color: #e0e0e0;*/
+    /*border: dashed 3px;*/
+    margin-bottom: 2rem;
+    align-items: center;
+    border: 0px;
+}
+
+.botonera_left {
+    display: inline-flex;
+    width: 50%;
+    /*border: dashed 1px red;*/
+    margin-right: 1rem;
+    justify-content: center;    
+}
+
+.botonera_right {
+    display: inline-flex;
+    width: 50%;
+    /*border: dashed 1px blue;*/
+    justify-content: center;
+}
+
+.editar {
+    display: inline-flex;
+    width: 12rem;
+}
