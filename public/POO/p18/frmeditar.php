@@ -19,6 +19,7 @@ $pesoInicial = $_GET['Peso_Inicial'];
 $horaFinal = $_GET['Fecha_Final'];
 $pesoFinal = $_GET['Peso_Final'];
 $notas = $_GET['Notas'];
+//print_r($_GET);
 ?>
 
 <!DOCTYPE html>
@@ -28,9 +29,10 @@ $notas = $_GET['Notas'];
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Formulario para editar fabricaciones de P18 con PHP y HTML">    
     <meta name="author" content="Sergio Cano González">
-    <link href="css/style.css" rel="stylesheet" type="text/css">    
-    <link rel="icon" type="image/png" href="images/favicon.png"/>
-    <title>Editar</title>
+    <link href="css/style.css" rel="stylesheet" type="text/css"/>
+    <link rel="icon" type="image/png" href="images/favicon.png"/>  
+      
+    <title>Document</title>
 </head>
 <body>
     <header>EDITAR FABRICACIÓN P18</header>
@@ -54,7 +56,8 @@ $notas = $_GET['Notas'];
             <P>
                 <lu>
                     <label class="editar">Fecha/Hora Inicio: </label>
-                    <input type="datetime-local" name="FechaInicio" min="2024-01-01" id="FechaInicial" value="<?php echo $horaInicio?>">
+                    <!--<input type="datetime-local" name="FechaInicio" min="2024-01-01" id="FechaInicial" value="<_?php echo $horaInicio?>">-->
+                    <input type="datetime-local" name="FechaInicio" min="2024-01-01" id="FechaInicial" value ="<?php echo $horaInicio?>" data-initial-value="<?php echo $horaInicio?>">
                 </lu>
             </P>
             <p>
@@ -66,7 +69,7 @@ $notas = $_GET['Notas'];
             <P>
                 <lu>
                     <label class="editar">Fecha/Hora Final: </label>
-                    <input type="datetime-local" name="FechaFinal" min="2024-01-01" id="FechaFinal" value="<?php echo $horaFinal?>">
+                    <input type="datetime-local" name="FechaFinal" min="2024-01-01" id="FechaFinal" value="<?php echo $horaFinal?>" data-initial-value="<?php echo $horaFinal?>">
                 </lu>
             </P>
             <p>
@@ -93,6 +96,4 @@ $notas = $_GET['Notas'];
     </div>
     <script src="js/script_editar.js"></script>
 </body>
-</html>	
-
-
+</html>

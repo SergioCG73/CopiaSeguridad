@@ -1,17 +1,15 @@
 document.addEventListener("DOMContentLoaded", () => {
 const NumeroFabricacion = document.getElementById('NumeroFabricacion').value;    
-const ReactorTag = document.getElementById("Reactor");       
+const ReactorTag = document.getElementById("Reactor");
 const ReactorInput = ReactorTag.getAttribute("data-initial-value");     // Va del formulario hacia la BD         
 const FechaInicialTag = document.getElementById("FechaInicial");
 const FechaInicialInput = FechaInicialTag.getAttribute("data-initial-value");    
+const InputString = FechaInicialInput;
 const FechaFinalTag = document.getElementById("FechaFinal");
 const FechaFinalInput = FechaFinalTag.getAttribute("data-initial-value");
-const InputString = FechaInicialInput;
-const InputString2 = FechaFinalInput;    
+const InputString2 = FechaFinalInput;
 const btnAtras = document.getElementById("Atras");
 const btnActualizar = document.getElementById("Actualizar");
-
-console.log (InputString);
 
 // --------------- TRANSFORMAR STRINGS EN FECHAS/HORAS ---------------------------------------------------------
 // Paso 1: Pasa el string a un objeto tipo Date
@@ -43,7 +41,6 @@ const PesoInicialTag = document.getElementById("PesoInicial");
 const PesoInicialInput = PesoInicialTag.getAttribute("value");
 const PesoFinalTag = document.getElementById("PesoFinal");
 const PesoFinalInput = PesoFinalTag.getAttribute("value");
-
 const TextoInicial = document.getElementById("Notas").value;
 let ReactorModificado = "";
 let FechaInicialModificada = "";
@@ -161,7 +158,7 @@ btnActualizar.addEventListener("click", (event) =>{
     if ((ReactorModificado == "NO" && FechaInicialModificada == "NO" && FechaFinalModificada == "NO") && 
         PesoInicialModificado == "NO" && PesoFinalModificado == "NO" &&  NotasModificadas == "NO") {
             alert ("No se efectuado ningún cambio"); 
-            window.location.href = "_indexp18.html";         
+            window.location.href = "indexp18.php";         
     }            
 
     if ((ReactorModificado == "NO" && FechaInicialModificada == "NO" && FechaFinalModificada == "NO") && 
@@ -187,7 +184,7 @@ btnActualizar.addEventListener("click", (event) =>{
                 console.log("Response: ", data);
                 console.log ("Actualizar base de datos sin calcular nada");
                 alert("Actualizados PESOS y NOTAS");
-                window.location.href = "_indexp18.html";
+                window.location.href = "indexp18.php";
             })
             .catch((error) => {
                 console.error("Fetch error: ", error);
@@ -216,7 +213,7 @@ btnActualizar.addEventListener("click", (event) =>{
             console.log("Response: ", data);
             console.log ("Actualizar reactor");
             alert("Actualizado REACTOR");
-            window.location.href = "_indexp18.html";
+            window.location.href = "indexp18.php";
         })
         .catch((error) => {
             console.error("Fetch error: ", error);
@@ -246,7 +243,7 @@ btnActualizar.addEventListener("click", (event) =>{
             console.log("Response: ", data);
             console.log ("Actualizar FECHA INICIAL");
             alert("Actualizada FECHA INICIAL");
-            window.location.href = "_indexp18.html";
+            window.location.href = "indexp18.php";
         })
         .catch((error) => {
             console.error("Fetch error: ", error);
@@ -276,7 +273,7 @@ btnActualizar.addEventListener("click", (event) =>{
             console.log("Response: ", data);
             console.log ("Actualizar FECHA FINAL");
             alert("Actualizada FECHA INICIAL");
-            window.location.href = "_indexp18.html";
+            window.location.href = "indexp18.php";
         })
         .catch((error) => {
             console.error("Fetch error: ", error);

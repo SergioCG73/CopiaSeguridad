@@ -30,7 +30,7 @@ if ($TipoUpdate == "1") {  //Se actualiza Pesos o Notas
              'Notas' => $Notas 
             ];
 
-    $sql = $conexion->prepare("UPDATE p18_prueba SET Peso_Inicial = $PesoInicial, Peso_Final = $PesoFinal, Notas = '$Notas' 
+    $sql = $conexion->prepare("UPDATE p18 SET Peso_Inicial = $PesoInicial, Peso_Final = $PesoFinal, Notas = '$Notas' 
                                WHERE NumeroFabricacion = '$NumeroFabricacion'");
     
     $updateProduccion = $sql->execute();
@@ -51,7 +51,7 @@ if ($TipoUpdate == "2"){   //Se actualiza el REACTOR
     
     //echo json_encode($post);
 
-    $sql = $conexion->prepare("SELECT NumeroFabricacion, Hora_Finalizacion FROM p18_prueba 
+    $sql = $conexion->prepare("SELECT NumeroFabricacion, Hora_Finalizacion FROM p18 
                                WHERE Reactor= '$Reactor' AND NumeroFabricacion < $NumeroFabricacion
                                ORDER BY NumeroFabricacion DESC LIMIT 1");
 
@@ -72,7 +72,7 @@ if ($TipoUpdate == "2"){   //Se actualiza el REACTOR
                "Tiempo Parado" => $TiempoParado
               ];
         
-    $sql = $conexion->prepare("UPDATE p18_prueba SET Reactor = '$Reactor', Tiempo_Parado = $TiempoParado 
+    $sql = $conexion->prepare("UPDATE p18 SET Reactor = '$Reactor', Tiempo_Parado = $TiempoParado 
                                WHERE NumeroFabricacion = '$NumeroFabricacion'");
     $updateProduccion = $sql->execute();
 
@@ -93,7 +93,7 @@ if ($TipoUpdate == "3"){ //Se actualiza FECHA INICIAL
              'Fecha Final' => $FechaFinalOutput
             ];    
 
-            $sql = $conexion->prepare("SELECT `NumeroFabricacion`, `Hora_Finalizacion` FROM `p18_prueba` 
+            $sql = $conexion->prepare("SELECT `NumeroFabricacion`, `Hora_Finalizacion` FROM `p18` 
             WHERE `NumeroFabricacion` < $NumeroFabricacion AND Reactor = '$Reactor' 
             ORDER BY NumeroFabricacion DESC LIMIT 1");
 
@@ -128,7 +128,7 @@ if ($TipoUpdate == "3"){ //Se actualiza FECHA INICIAL
                "Duracion" => $Duracion
               ];    
 
-    $sql = $conexion->prepare("UPDATE p18_prueba SET Hora_Inicio = '$FechaInicialOutput', Duracion = $Duracion, Tiempo_Parado = $TiempoParado 
+    $sql = $conexion->prepare("UPDATE p18 SET Hora_Inicio = '$FechaInicialOutput', Duracion = $Duracion, Tiempo_Parado = $TiempoParado 
                                WHERE NumeroFabricacion = $NumeroFabricacion") ;
     $updateProduccion = $sql->execute();
     echo json_encode($update); 
@@ -157,7 +157,7 @@ if ($TipoUpdate == "4") {    //Se actualiza FECHA FINAL
     $Duracion = $FechaFinalOutput_segundos - $FechaInicioOutput_segundos; 
 //---------------------- FIN CÁLCULO DURACIÓN ---------------------------------------------
 
-$sql = $conexion->prepare("UPDATE p18_prueba SET Hora_Finalizacion = '$FechaFinalOutput', Duracion = $Duracion 
+$sql = $conexion->prepare("UPDATE p18 SET Hora_Finalizacion = '$FechaFinalOutput', Duracion = $Duracion 
                            WHERE NumeroFabricacion = $NumeroFabricacion");
 $sql->execute();
 
@@ -169,7 +169,7 @@ $update =['Número fabricacion' => $NumeroFabricacion,
 //echo json_encode($update);
 
 // ------------------------ INICIO CÁLCULO TIEMPO PARADO ----------------------------------
-$sql = $conexion->prepare("SELECT NumeroFabricacion, Hora_Inicio FROM p18_prueba
+$sql = $conexion->prepare("SELECT NumeroFabricacion, Hora_Inicio FROM p18
                            WHERE NumeroFabricacion > $NumeroFabricacion AND Reactor = '$Reactor'
                            LIMIT 1");
 
@@ -200,7 +200,7 @@ else {
                'Tiempo Parado' => $TiempoParado
               ];
     
-    $sql = $conexion->prepare("UPDATE p18_prueba SET Tiempo_Parado = $TiempoParado WHERE NumeroFabricacion = $NumeroFabricacionSQL");
+    $sql = $conexion->prepare("UPDATE p18 SET Tiempo_Parado = $TiempoParado WHERE NumeroFabricacion = $NumeroFabricacionSQL");
     $updateProduccion = $sql->execute();   
     echo json_encode($update);
 }
