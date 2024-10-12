@@ -19,7 +19,6 @@ $pesoInicial = $_GET['Peso_Inicial'];
 $horaFinal = $_GET['Fecha_Final'];
 $pesoFinal = $_GET['Peso_Final'];
 $notas = $_GET['Notas'];
-//print_r($_GET);
 ?>
 
 <!DOCTYPE html>
@@ -29,7 +28,8 @@ $notas = $_GET['Notas'];
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Formulario para editar fabricaciones de P18 con PHP y HTML">    
     <meta name="author" content="Sergio Cano González">
-    <link href="css/stylev1.css" rel="stylesheet" type="text/css">    
+    <link href="css/style.css" rel="stylesheet" type="text/css">    
+    <link rel="icon" type="image/png" href="images/favicon.png"/>
     <title>Editar</title>
 </head>
 <body>

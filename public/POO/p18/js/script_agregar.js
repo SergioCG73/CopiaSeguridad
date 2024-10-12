@@ -6,12 +6,12 @@ document.addEventListener("DOMContentLoaded", () =>{
     const PesoInicial = document.getElementById("PesoInicial");
     const PesoFinal = document.getElementById("PesoFinal");
     const Notas = document.getElementById("Notas");
-    const Boton = document.getElementById("boton");        
+    const Boton = document.getElementById("boton");   
     const Regresar = document.getElementById("regresar");
 
-    Regresar.addEventListener("click", () => {
-        window.location.href = "indexp18.php";
-    })
+    Regresar.addEventListener("click", () =>{
+        window.location.href = "_indexP18.html";
+    });
 
     Boton.addEventListener("click", () => {
         if (!FechaInicio.value) {
@@ -34,7 +34,7 @@ document.addEventListener("DOMContentLoaded", () =>{
         }
 
         if (!Notas.value) {
-                Notas.value = "";                    
+                Notas.value = "";    //anterior Notas.value = "NULL";    
         }
 
         campos = new FormData();
@@ -44,7 +44,7 @@ document.addEventListener("DOMContentLoaded", () =>{
         campos.append("FechaFinal", FechaFinal.value);
         campos.append("PesoInicial", PesoInicial.value);
         campos.append("PesoFinal", PesoFinal.value);
-        campos.append("Notas", Notas.value);
+        campos.append("Notas", Notas.value);    
 
         try{
             fetch("actions/registrar.php", {
@@ -56,7 +56,7 @@ document.addEventListener("DOMContentLoaded", () =>{
         .then(data => {
             console.log(data); // Mostrar la respuesta en la consola
             alert("Fabricación añadida correctamente"); // Mostrar un mensaje de éxito
-            window.location.href = "indexp18.php"; // Redirigir a otra página
+            window.location.href = "_indexP18.html"; // Redirigir a otra página
         })
         
         } catch (error) {

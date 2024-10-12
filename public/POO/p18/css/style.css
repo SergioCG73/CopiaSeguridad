@@ -1,5 +1,5 @@
 body {
-	font: 100%/1.2 Verdana, Arial, Helvetica, sans-serif;
+	font: 100%/1.2 Verdana, Arial, Helvetica, sans-serif;    
     font-weight: bold;    
 }
 
@@ -11,7 +11,7 @@ header {
     font-weight: bold;
     align-content: center;
     padding: 1rem;
-    margin-bottom: 1rem;
+    margin-bottom: 1rem;    
 }
 
 .botonera {
@@ -201,9 +201,12 @@ fieldset .notas {
 }
 
 textarea{
+    font-family: 'Arial', sans-serif;
+    font-size: 16px;
     width: 98%;        
     height: inherit;
     height: 98%;
+    padding: 5px 5px 0px 5px;    
 }
 
 .botonera_agregar{
@@ -251,7 +254,74 @@ fieldset, .agregar{
     text-align: right;    
 }
 
+/* CSS aplicable a editar.php*/
 
+span{
+    color: red;
+    font-size: 18px;
+}
 
+.main-container{
+    display: inline-flex;    
+    width: 100%;
+    height: 18rem;
+    background-color: #e0e0e0;
+    /*border: dashed 3px;*/
+    margin-bottom: 2rem;
+    align-items: center;
+}
 
+.container-left{
+    display: inline-flex;
+    width: 50%;
+    /*border: dashed 1px red;*/
+    margin-right: 1rem;
+}
 
+.container-right{
+    display: inline-flex;
+    width: 50%;
+    /*border: dashed 1px blue;*/
+    justify-content: center;
+}
+
+.datosp18 {
+    width: 95%;
+    height: 15rem;
+}
+
+.notasp18 {
+    width: 95%;
+    height: 15rem;
+}
+
+.editar {
+    display: inline-flex;
+    width: 12rem;
+}
+
+.botonera {
+    display: inline-flex;    
+    width: 100%;
+    height: 5rem;
+    /*background-color: #e0e0e0;*/
+    /*border: dashed 3px;*/
+    margin-bottom: 2rem;
+    align-items: center;
+    border: 0px;
+}
+
+.botonera_left {
+    display: inline-flex;
+    width: 50%;
+    /*border: dashed 1px red;*/
+    margin-right: 1rem;
+    justify-content: center;    
+}
+
+.botonera_right {
+    display: inline-flex;
+    width: 50%;
+    /*border: dashed 1px blue;*/
+    justify-content: center;
+}

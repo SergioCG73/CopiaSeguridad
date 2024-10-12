@@ -4,10 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Buscador para fabricaciones de P18 con PHP, MYSQL y AJAX">
-    <meta name="author" content="Sergio Cano González">
-    <link href="css/style.css" rel="stylesheet" type="text/css">
+    <meta name="author" content="Sergio Cano González">    
+    <link href="css/style.css" rel="stylesheet" type="text/css"/>            
     <link rel="icon" type="image/png" href="images/favicon.png"/>
     <title>Policloruro (P18)</title>
+
 </head>
 <body>    
     <header>Policloruro (P18)</header>
@@ -61,7 +62,6 @@
     <section id="Paginacion"></section>
 </body>
 
-<!--<script src="script.js"></script>-->
 <script src="js/script_indexp18.js"></script>
 
 </html>
