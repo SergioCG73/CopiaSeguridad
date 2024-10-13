@@ -30,7 +30,7 @@ $notas = $_GET['Notas'];
     <meta name="description" content="Formulario para editar fabricaciones de P18 con PHP y HTML">    
     <meta name="author" content="Sergio Cano González">
     <link href="css/style.css" rel="stylesheet" type="text/css"/>
-    <link rel="icon" type="image/png" href="images/favicon.png"/>  
+    <link rel="icon" type="image/png" href="images/favicon.png"/>
       
     <title>Document</title>
 </head>

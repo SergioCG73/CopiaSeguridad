@@ -1,4 +1,3 @@
-//V2
 document.addEventListener("DOMContentLoaded", () => {
     const search = document.getElementById("busqueda");  
     const select = document.querySelector("select");
@@ -19,21 +18,22 @@ document.addEventListener("DOMContentLoaded", () => {
 
     btnNueva.addEventListener("click", () => {
         fetch("frmagregar.php", {
-             method: "HEAD" })  // Use HEAD to only fetch headers
+             method: "HEAD"})  // Use HEAD to only fetch headers
             .then(response => {
+                console.log("Respuesta: ", response);
                 if (response.ok) {
-                    // If the file exists, redirect to the page
+                    // Si el fichero existe, te redirecciona al la página
                     window.location.href = "frmagregar.php";
-                } else {
-                    // If the file doesn't exist, show an alert
+                } else {                    
+                    // Si el fichero no existe, muestra una alerta
                     alert("Error: El archivo 'frmagregar.php' no se encontró.");
                 }
             })
             .catch(error => {
                 console.error("Fetch error: ", error);
                 alert("Error: No se pudo verificar la existencia del archivo.");
-            });    });
-    
+            });
+    });    
 
     select.addEventListener("change", () => {
         registros = select.options[select.selectedIndex].value;        
@@ -144,7 +144,6 @@ document.addEventListener("DOMContentLoaded", () => {
                     <td>${tiempoParado}</td>
                     <td>${elemento.Notas}</td>
                     <td>
-
                        <a href="actions/delete.php?id=${NumeroFabricacion}" onclick="return confirm('¿Estás seguro de que deseas borrar este registro?');">
                        <img src="images/basura_rojo_icon.png" alt="Borrar"></a>
                        

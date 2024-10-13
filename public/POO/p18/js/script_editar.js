@@ -272,7 +272,7 @@ btnActualizar.addEventListener("click", (event) =>{
         .then((data) => {
             console.log("Response: ", data);
             console.log ("Actualizar FECHA FINAL");
-            alert("Actualizada FECHA INICIAL");
+            alert("Actualizada FECHA FINAL");
             window.location.href = "indexp18.php";
         })
         .catch((error) => {

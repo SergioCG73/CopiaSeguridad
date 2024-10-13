@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", () =>{
     const Reactor = document.getElementById("Reactor");
-    const Fabricacion = document.getElementById("fabricacion").value;
+    const Fabricacion = document.getElementById("Fabricacion").value;
     const FechaInicio = document.getElementById("FechaInicio");
     const FechaFinal = document.getElementById("FechaFinal"); 
     const PesoInicial = document.getElementById("PesoInicial");
@@ -34,33 +34,31 @@ document.addEventListener("DOMContentLoaded", () =>{
         }
 
         if (!Notas.value) {
-                Notas.value = "";    //anterior Notas.value = "NULL";    
+                Notas.value = null;    //anterior Notas.value = "";    
         }
 
         campos = new FormData();
-        campos.append("FechaInicio", FechaInicio.value);
+        campos.append("FechaInicio", FechaInicio.value);        
         campos.append("Reactor", Reactor.value);
-        campos.append("NumFabricacion", Fabricacion);
-        campos.append("FechaFinal", FechaFinal.value);
+        campos.append("NumFabricacion", Fabricacion);        
+        campos.append("FechaFinal", FechaFinal.value);        
         campos.append("PesoInicial", PesoInicial.value);
         campos.append("PesoFinal", PesoFinal.value);
-        campos.append("Notas", Notas.value);    
+        campos.append("Notas", Notas.value);          
 
-        try{
-            fetch("actions/registrar.php", {
-                method: "POST",
-                body: campos                               
+        fetch("actions/registrar.php", { 
+            method: "POST",
+            body: campos
         })
         .then(response => response.json())
-        .then(response => console.log(response))
+        .then(response => console.log("Response: ", response))
         .then(data => {
-            console.log(data); // Mostrar la respuesta en la consola
+            //console.log("Data: ", data); // Mostrar la respuesta en la consola
             alert("Fabricación añadida correctamente"); // Mostrar un mensaje de éxito
-            window.location.href = "_indexP18.html"; // Redirigir a otra página
+            window.location.href = "indexp18.php"; // Redirigir a otra página
         })
-        
-        } catch (error) {
+        .catch(error => {
             console.log(error);
-        }
-    });
+        })
+    });    
 });
