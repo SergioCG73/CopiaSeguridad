@@ -1,0 +1,327 @@
+body {
+	font: 100%/1.2 Verdana, Arial, Helvetica, sans-serif;    
+    font-weight: bold;    
+}
+
+header {
+    height: 3rem;    
+    background-color: black;
+    color: white;
+    font-size: 1.5rem;
+    font-weight: bold;
+    align-content: center;
+    padding: 1rem;
+    margin-bottom: 1rem;    
+}
+
+.botonera {
+    display: flex;
+    height: 4rem;    
+    border: solid 2px;    
+    justify-content:left;
+    align-items: center;
+    padding: 1rem;
+    margin-bottom: 0.6rem;
+}
+
+.selector{
+    display:flex;
+    /*background-color: yellow;   */
+    justify-content: center;
+    margin-right: 1.2vw;    
+}
+
+.campo {
+    display: flex;
+    /*background-color: red;*/    
+    margin-right: 36vw;
+}
+
+.boton1 {    
+    /*background-color: green;*/
+    height: 5rem;            
+    align-content: flex-end;
+    margin-right: 1.1rem;
+    margin-left: 14rem;
+}
+
+.boton2 {
+    /*background-color: chocolate;*/
+    height: 5rem;    
+    align-content: flex-end;
+}
+
+.boton{
+    display: block;
+	text-decoration: none;	
+    background-color: rgb(224, 158, 18);
+    font-weight: bold;
+    font-size: 1vw;
+    color: white;    
+    width: 10vw;	
+    padding: 0.3vw 0.3vw;    
+    margin-left: 1vw;
+    margin-right: 1vw;
+    margin-bottom: 1vw;
+    border: none;
+    border-radius: 0.1vw;
+    cursor: pointer;
+    text-align: center;
+}
+
+.boton:hover{
+	opacity: 80%;	
+    width: 10vw;
+}
+
+.etiqueta1 {
+    display: inline-flex;
+    /*background-color: red;*/
+    width: 5rem;    
+    justify-content: center;    
+    font-weight: bold;
+    padding-right: 1rem;    
+}
+
+.etiqueta2 {
+    display: inline-flex;
+    /*background-color: red;*/
+    width: 5rem;
+    justify-content: right;
+    font-weight: bold;
+    padding-right: 1rem;
+}
+
+table {
+    width: 100%;
+    background: white;
+    margin-bottom: 1vw;
+    border: solid 1px #dddddd;
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+table tr th{
+    background-color: rgb(224, 158, 18);
+    color: white;
+}
+
+table tr th, table tr td {
+  padding: 0.5625em 0.625em;
+  font-size: 0.75vw;  
+  /*border: 0px solid #dddddd;  */
+  text-align: center;  
+
+}
+
+table tr.even, table tr.alt, table tr:nth-of-type(even) {
+  background: #c3c3bd;
+}
+
+
+.bold{
+    font-weight: bold;
+    color: red;
+}
+
+.R200{
+    color: rgb(0,176,240);
+	font-weight: bold;
+}
+
+.R201{
+	color:rgb(255, 192, 0);	
+	font-weight: bold;
+}
+
+.R202{
+	color:rgb(192, 0, 0);	
+	font-weight: bold;
+}
+
+.errorsContainer{
+    text-align: center;
+    font-weight: bold;
+    color: red;
+}
+
+a{
+    padding: 0.5vw;
+}
+
+.datos{
+    display: inline-flex;
+    flex-direction: row;
+    flex-wrap: wrap;    
+    width: 50%;    
+    height: 80vh;
+    background-color: yellow;
+}
+
+fieldset .datos{
+    border: 0.2vw solid black;
+    padding: 0.1vw;
+    border-radius: 0.4vw;    
+    margin-bottom: 1vw;   
+    padding: 10px 0 0; /*Dar margen letras legend*/  
+    width: 45vw;
+    height: 80vh;
+}
+
+fieldset .notas {
+    border: 0.2vw solid black;
+    padding: 0.1vw;
+    border-radius: 0.4vw;    
+    margin-bottom: 1vw;   
+    padding: 10px 0 0; /*Dar margen letras legend*/  
+    width: 45vw;
+    height: 80vh;
+}
+
+.notas{    
+    display: inline-flex;
+    width: 45%;
+    height: 75%;
+    background-color: green;
+}
+
+.contenedor{
+    display: flex;        
+    padding: 2%;        
+}
+
+.izquierda{  
+    padding: 1%;  
+    width: 100%;         
+}
+
+.derecha{
+    padding: 1%;
+    width: 100%;    
+}
+
+textarea{
+    font-family: 'Arial', sans-serif;
+    font-size: 16px;
+    width: 98%;        
+    height: inherit;
+    height: 98%;
+    padding: 5px 5px 0px 5px;    
+}
+
+.botonera_agregar{
+    display: flex;
+    text-align: center; /*con esta propiedad se centran los botones */
+    margin-top: 2rem;    
+}
+
+.boton_agregar{
+    padding: 2%;
+    font-weight: bold;
+    text-decoration: none;	
+    background-color: rgba(224, 158, 18, 0.9);
+    font-weight: bold;
+    color: white;
+    width: 35%;    
+	padding: 1% 1%;
+    margin-left: 2vh;    
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+}
+
+.boton_agregar:hover{
+    color: white;    
+    box-shadow: 0 4px 16px rgba(224, 158, 18, 0.9);
+    transition: all 0.2s ease;
+}
+
+fieldset, .agregar{
+    display: block;        
+    height: 100%;      
+}
+
+._100px {
+    display: inline-flex;
+    width: 11.25rem;
+    /*background-color: RED;*/    
+}
+
+.gris{
+    background-color: #e0e0e0;
+    font-weight: bold;
+    width: 5rem;
+    text-align: right;    
+}
+
+/* CSS aplicable a editar.php*/
+
+span{
+    color: red;
+    font-size: 18px;
+}
+
+.main-container{
+    display: inline-flex;    
+    width: 100%;
+    height: 18rem;
+    background-color: #e0e0e0;
+    /*border: dashed 3px;*/
+    margin-bottom: 2rem;
+    align-items: center;
+}
+
+.container-left{
+    display: inline-flex;
+    width: 50%;
+    /*border: dashed 1px red;*/
+    margin-right: 1rem;
+}
+
+.container-right{
+    display: inline-flex;
+    width: 50%;
+    /*border: dashed 1px blue;*/
+    justify-content: center;
+}
+
+.datosp18 {
+    width: 95%;
+    height: 15rem;
+}
+
+.notasp18 {
+    width: 95%;
+    height: 15rem;
+}
+
+.editar {
+    display: inline-flex;
+    width: 12rem;
+}
+
+.botonera {
+    display: inline-flex;    
+    width: 100%;
+    height: 5rem;
+    /*background-color: #e0e0e0;*/
+    /*border: dashed 3px;*/
+    margin-bottom: 2rem;
+    align-items: center;
+    border: 0px;
+}
+
+.botonera_left {
+    display: inline-flex;
+    width: 50%;
+    /*border: dashed 1px red;*/
+    margin-right: 1rem;
+    justify-content: center;    
+}
+
+.botonera_right {
+    display: inline-flex;
+    width: 50%;
+    /*border: dashed 1px blue;*/
+    justify-content: center;
+}
