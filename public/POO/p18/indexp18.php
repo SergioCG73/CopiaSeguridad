@@ -11,32 +11,38 @@
 
 </head>
 <body>    
-    <header>Policloruro (P18)</header>
-        <div class="botonera">
-            <div class ="selector">
-                <label class="etiqueta1">Mostrar</label>
-                <select id ="mostrar" class="selector">
+<header>
+        <div class="main-container">
+            <div class="container">
+                <a href="#" class="logo">Policloruro (P18)</a>
+            </div>
+        </div>
+    </header> 
+
+    <div class="left-container">
+        <div class="selector">
+            <label>Mostrar: </label>
+            <select id ="mostrar">
                     <option value="2">2</option>
                     <option value="4">4</option>
                     <option value="6">6</option>
                     <option value="8">8</option>
                     <option value="10">10</option>
                     <option value="12">12</option>
-                </select>
-            </div>
-            <div class="campo">
-                <label for="busqueda" class="etiqueta2">Buscar</label>
-                <input type="search" id="busqueda" name="busqueda">
-            </div>
-            <div class="centro"></div>
-            <div class="boton1">
-                <input id="btnInicio" type="button" value="Portada" class="boton">
-            </div>
-            <div class="boton2">
-                <input id="btnNueva" type="button" value="Nueva Fabricación" class="boton">
-            </div>
+            </select>
         </div>
-    
+
+        <div class="buscador">
+            <label for="busqueda">Buscar: </label>
+            <input type="search" id="busqueda" name="busqueda">
+        </div>
+    </div>
+
+    <div class="right-container">                    
+        <input id="btnInicio" type="button" value="Inicio" class="btnInicio">
+        <input id="btnNueva" type="button" value="Nueva Fabricación" class="btnNueva">
+    </div>
+
     <section id="tabla_de_resultados">
         <table id="tabla">
             <thead>
