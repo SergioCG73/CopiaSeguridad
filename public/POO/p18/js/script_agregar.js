@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", () =>{
     const Regresar = document.getElementById("regresar");
 
     Regresar.addEventListener("click", () =>{
-        window.location.href = "_indexP18.html";
+        window.location.href = "indexp18.php";
     });
 
     Boton.addEventListener("click", () => {
