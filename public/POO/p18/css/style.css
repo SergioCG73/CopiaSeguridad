@@ -103,6 +103,19 @@ select {
     text-align: center;
 }
 
+.btnAgregar {
+    width: 200px;
+    margin-right: 20px;
+    text-decoration: none;	
+    background-color: rgb(224, 158, 18);
+    font-weight: bold;
+    color: white;
+    /*border: none;*/
+    border-radius: 0.1vw;
+    cursor: pointer;
+    text-align: center;
+}
+
 .btnInicio:hover, .btnNueva:hover {	
     color: black;
 }
