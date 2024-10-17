@@ -26,14 +26,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="css/style.css" rel="stylesheet" type="text/css"/>
+    <link href="css/style2.css" rel="stylesheet" type="text/css"/>
     <link rel="icon" type="image/png" href="images/favicon.png"/>
     <title>Agregar P18</title>
 </head>
 <body>
-    <header>Agregar fabricación P18</header>  
-    <div class="contenedor">
-        <div class="izquierda">
+    <header><a href="#" class="logo">Agregar fabricación P18</a></header>  
+    <div class="main-container">
+        <div class="left-container">
             <fieldset class="agregar"><legend>DATOS FABRICACIÓN</legend> 
             <p><label class="_100px">Fabricación nº: </label><input type="text" value="<?php echo $NextProduction; ?>" id="Fabricacion" readonly class="gris"></p>
             <label class="_100px">Reactor: </label>
@@ -47,7 +47,7 @@
             <p><label class="_100px">Peso Final: </label><input type="text" name="PesoFinal" id="PesoFinal"></p>
             </fieldset>
         </div>
-        <div class="derecha">
+        <div class="right-container">
             <fieldset class="agregar"><legend>NOTAS</legend>
                 <textarea name="Notas" id="Notas"></textarea>
             </fieldset>
