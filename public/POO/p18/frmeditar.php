@@ -29,15 +29,17 @@ $notas = $_GET['Notas'];
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Formulario para editar fabricaciones de P18 con PHP y HTML">    
     <meta name="author" content="Sergio Cano González">
-    <link href="css/style.css" rel="stylesheet" type="text/css"/>
-    <link rel="icon" type="image/png" href="images/favicon.png"/>
-      
-    <title>Document</title>
+    <link href="css/style3.css" rel="stylesheet" type="text/css"/>
+    <link rel="icon" type="image/png" href="images/favicon.png"/>      
+    <title>Editar fabricación</title>
 </head>
 <body>
-    <header>EDITAR FABRICACIÓN P18</header>
+    <header>
+        <a href="#" class="logo">Editar fabricación (P18)</a>
+    </header>
+
     <div class="main-container">
-        <div class="container-left">
+        <div class="left-container">
             <fieldset class="datosp18"><legend>DATOS FABRICACIÓN <span><?php echo $NumeroFabricacion?></span></legend>
             
             <!-- Se oculta porque el nº fabricación ya aparece en el legend, pero hace falta para pasárselo al js-->
@@ -80,17 +82,17 @@ $notas = $_GET['Notas'];
             </p>
             </fieldset>
         </div>
-        <div class="container-right">
+        <div class="right-container">
             <fieldset class="notasp18"><legend>NOTAS</legend>
                 <textarea name= "notas" id="Notas"><?php echo $notas ?></textarea>
             </fieldset>
         </div>
     </div>    
     <div class="botonera" id="botonera">
-        <div class="botonera_left" id="botonera_left">
+        <div class="izquierda" id="botonera_left">
             <input type="button" class="boton" id="Atras" value="Atrás">
         </div>
-        <div class="botonera_right" id="botonera_right">
+        <div class="derecha" id="botonera_right">
             <input type="button" class="boton" id="Actualizar" value="Actualizar">
         </div>
     </div>

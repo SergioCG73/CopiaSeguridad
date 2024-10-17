@@ -14,7 +14,7 @@
     
     restore_error_handler(); // Restaurar el manejador de errores predeterminado después de la operación
 
-    $sql = $conexion->query("SELECT NumeroFabricacion FROM p18_prueba ORDER BY NumeroFabricacion DESC LIMIT 1");
+    $sql = $conexion->query("SELECT NumeroFabricacion FROM p18 ORDER BY NumeroFabricacion DESC LIMIT 1");
 
     $lastProduction = $sql->fetch();
     $lastProduction = $lastProduction['NumeroFabricacion'];
@@ -26,40 +26,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="css/style2.css" rel="stylesheet" type="text/css">
+    <link href="css/style2.css" rel="stylesheet" type="text/css"/>
+    <link rel="icon" type="image/png" href="images/favicon.png"/>
     <title>Agregar P18</title>
 </head>
 <body>
-    <header>     
-        <a href="#" class="logo">Agregar fabricación P18</a>            
-    </header> 
-    
+    <header><a href="#" class="logo">Agregar fabricación P18</a></header>  
     <div class="main-container">
         <div class="left-container">
             <fieldset class="agregar"><legend>DATOS FABRICACIÓN</legend> 
-                <p><label class="_100px">Fabricación nº: </label><input type="text" value="<?php echo $NextProduction; ?>" id="Fabricacion" readonly class="gris"></p>
-                <label class="_100px">Reactor: </label>
-                <select id="Reactor">
-                        <option value="R200">R200</option>
-                        <option value="R201">R201</option>
-                </select>
-                <p><label class="_100px">Fecha/Hora Inicio: </label><input type="datetime-local" name="FechaInicio" id="FechaInicio" required></p>
-                <p><label class="_100px">Peso Inicial: </label><input type="text" name="PesoInicial" id="PesoInicial" required></p>
-                <p><label class="_100px">Fecha/Hora Final: </label><input type="datetime-local" name="FechaFinal" id="FechaFinal"></p>
-                <p><label class="_100px">Peso Final: </label><input type="text" name="PesoFinal" id="PesoFinal"></p> 
+            <p><label class="_100px">Fabricación nº: </label><input type="text" value="<?php echo $NextProduction; ?>" id="Fabricacion" readonly class="gris"></p>
+            <label class="_100px">Reactor: </label>
+            <select id="Reactor">
+                    <option value="R200">R200</option>
+                    <option value="R201">R201</option>
+            </select>
+            <p><label class="_100px">Fecha/Hora Inicio: </label><input type="datetime-local" name="FechaInicio" id="FechaInicio" required></p>
+            <p><label class="_100px">Peso Inicial: </label><input type="text" name="PesoInicial" id="PesoInicial" required></p>
+            <p><label class="_100px">Fecha/Hora Final: </label><input type="datetime-local" name="FechaFinal" id="FechaFinal"></p>
+            <p><label class="_100px">Peso Final: </label><input type="text" name="PesoFinal" id="PesoFinal"></p>
             </fieldset>
         </div>
-
         <div class="right-container">
             <fieldset class="agregar"><legend>NOTAS</legend>
-                <textarea name="Notas" id="Notas"></textarea> 
+                <textarea name="Notas" id="Notas"></textarea>
             </fieldset>
         </div>
     </div>
     
     <div class="botonera_agregar">
         <div class="izquierda">
-            <input type="button" value="Portada" id="regresar" class="btnAgregar">
+            <input type="button" value="Atrás" id="regresar" class="btnAgregar">
         </div>
         <div class="derecha">
             <input type="button" value="Agregar" id="boton" class="btnAgregar">
