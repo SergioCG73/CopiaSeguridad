@@ -1,2 +1,3 @@
-- Se añade el control de versiones por git
-- Se añade la funcionalidad de Personal
+- Se añade AJAX y JavaScript
+- Se mejorarn los cambios en las actualizaciones de fecha inicial y fecha final. Ahora al cambiar una fecha inicial o final se actualizan los registros
+  que se vean modfiicados por estos cambios.
