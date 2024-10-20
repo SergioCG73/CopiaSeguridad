@@ -1,0 +1,5 @@
+- Esta versión está realizada con HTML, PHP, AJAX y JavaScript
+- En esta versíon si hay una modificacíon en alguno de los campos de fecha inicial,
+  fecha final se produce una actualización de la base de datos en todos los registros
+  afectados.
+
