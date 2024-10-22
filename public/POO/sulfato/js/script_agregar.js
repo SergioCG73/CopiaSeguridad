@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", () =>{
         }
 
         if (!FechaFinal.value) {
-                FechaFinal.value = "2024-12-31T23:59"        
+                FechaFinal.value = "2023-12-31T23:59"        
                 globalThis.fecha2 = FechaFinal.value;
         }
 
