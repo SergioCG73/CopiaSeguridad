@@ -52,7 +52,13 @@
 // ----- CALCULO DURACIÓN        
     $FechaFinalTimeStamp = strtotime($FechaFinal);
     $Duracion = $FechaFinalTimeStamp - $FechaInicioTimeStamp;        
-// ----- FIN CÁLCULO DURACIÓN -----   
+// ----- FIN CÁLCULO DURACIÓN -----
+
+// ----- PESO FINAL ------ Se igua a Null para evitar que no se agregue la producción al no poner peso final
+if (empty($PesoFinal)) {
+    $PesoFinal = "Null";
+}
+// -----
 
     $sql = $conexion->prepare("INSERT INTO sulfato (NumeroFabricacion, Hora_Inicio, Semana, Reactor, Peso_Inicial, Hora_Finalizacion, Peso_Final, 
                                                        Duracion, Tiempo_Parado, Notas) 
