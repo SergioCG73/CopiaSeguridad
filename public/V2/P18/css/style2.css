@@ -1,0 +1,147 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;    
+    font-size: 20px;
+}
+
+body {
+    font: 100%/1.2 Verdana, Arial, Helvetica, sans-serif;
+    font-weight: bold;
+}
+
+header {
+    padding: 32px 0;
+    background-color: #2A394F;
+}
+
+.main-container {
+    display: flex;
+    justify-content: center;
+    padding: 32px 0;     
+}
+
+.logo {
+    font-size: 24px;
+    color: #15A4F9;
+    font-weight: 800;
+    text-transform: uppercase;
+    text-decoration: none;    
+    margin-left: 10px;
+}
+
+.left-container {  
+    display: inline-flex;
+    flex-wrap: nowrap;
+    width: 45%;  
+    max-width: 1000px;    
+    padding: 20px 0px 10px 0px;
+    margin-bottom: 20px;        
+    background-color: #e0e0e0
+}
+
+.right-container {
+    display: inline-flex;    
+    flex-wrap: nowrap;
+    width: 45%;        
+    max-width: 1000px;
+    margin-left: 10px;      
+    padding: 20px 0px 10px 20px;
+    margin-bottom: 20px;    
+    background-color: #e0e0e0;
+}
+
+.buscador {       
+    max-width: 500px;
+}
+
+label {                
+    margin-right: 15px;
+    padding: 5px;
+}
+
+fieldset.agregar{
+    display: inline-block;
+    width: 100%;    
+    display: block;        
+    height: 100%;      
+    padding: 10px 5px 10px 5px;
+}
+
+._100px {
+    display: inline-flex;
+    width: 11.25rem;
+    /*background-color: RED;*/    
+}
+
+.izquierda{  
+    padding: 1%;  
+    width: 100%;         
+}
+
+.derecha{
+    padding: 1%;
+    width: 100%;    
+}
+
+textarea{
+    font-family: 'Arial', sans-serif;
+    font-size: 16px;
+    width: 98%;        
+    height: inherit;
+    height: 98%;
+    padding: 5px 5px 0px 5px;    
+}
+
+.botonera_agregar{
+    display: flex;
+    text-align: center; /*con esta propiedad se centran los botones */
+    margin-top: 2rem;    
+}
+
+.btnAgregar {    
+    width: 200px;
+    height: 40px;
+    margin-right: 20px;
+    text-decoration: none;	
+    background-color: rgb(224, 158, 18);
+    font-weight: bold;
+    color: white;    
+    border-radius: 0.1vw;
+    cursor: pointer;
+    text-align: center;
+}
+
+.btnAgregar:hover{
+    color: black;    
+    box-shadow: 0 4px 16px rgba(224, 158, 18, 0.9);
+    transition: all 0.2s ease;
+}
+
+.gris{
+    background-color: #e0e0e0;
+    font-weight: bold;
+    width: 5rem;
+    text-align: center;
+    color: red;    
+}
+
+@media(max-width: 991px) {
+    .main-container {
+        padding: 32px 0;
+    }
+
+    .container {
+        max-width: 800px;
+        margin: 14px auto 14px 10px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        z-index: 1000;    
+    }
+}

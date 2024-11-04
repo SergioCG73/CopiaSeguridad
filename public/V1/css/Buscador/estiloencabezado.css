@@ -1,0 +1,410 @@
+/*----- ESTILO PARA ENCABEZADO Y TABLA DEL P18 -------*/
+.encabezadoP18 {
+    font: normal bolder 12px Verdana, Arial, Helvetica, sans-serif;
+    color: black;        
+    border: 1px solid;
+    margin: auto;        
+    width: 100%;    
+}
+
+.encabezadoP18 th{    
+    background: rgb(224, 158, 18, 0.786);	
+    color: white;
+    border: 0px solid;
+    padding: 10px;
+}
+    
+.encabezadoP18 caption{
+    margin-bottom: 20px;
+    color: rgb(224, 158, 18, 0.786);	
+}
+
+/*------- INICO ESTILO DATOS TABLA P18 -------*/
+.tablaP18{
+    font: normal /*bolder*/ 14px Verdana, Arial, Helvetica, sans-serif;       
+    margin-left: 0px;
+}
+
+
+.tablaP18 .Fab{    
+    width: 70px;
+    text-align: center;    
+    border: 0px solid;
+}
+
+.tablaP18 .Semana{    
+    width: 91px;
+    text-align: center;    
+    border: 0px solid;
+}
+
+.tablaP18 .Reactor{    
+    width: 87px;
+    text-align: center;    
+    border: 0px solid;
+}
+
+.R200{
+    width: 87px;
+    text-align: center;    
+    border: 0px solid;
+    color: rgb(0,176,240);
+}
+
+.R201{
+    width: 87px;
+    text-align: center;    
+    border: 0px solid;
+    color: rgb(255, 192, 0);	
+}
+
+.R202{
+    width: 87px;
+    text-align: center;    
+    border: 0px solid;
+    color: rgb(192, 0, 0);	
+}
+
+.tablaP18 .FechaI{        
+    width: 174px;    
+    text-align: center;    
+    border: 0px solid;
+}
+
+.tablaP18 .PesoI{
+    width: 115px;    
+    text-align: center;    
+    border: 0px solid;
+}
+
+.tablaP18 .FechaF{        
+    width: 222px;    
+    text-align: center;    
+    border: 0px solid;
+}
+
+.tablaP18 .PesoF{
+    width: 102px;    
+    text-align: center;    
+    border: 0px solid;
+}
+
+.tablaP18 .Duracion{
+    width: 97px;    
+    text-align: center;    
+    border: 0px solid;
+}
+
+.tablaP18 .Parado{
+    width: 145px;    
+    text-align: center;    
+    border: 0px solid;
+}
+
+/* FIN STYLE PARA TABLA P18 -------*/
+
+
+/*---------------- ESTILO SULFATO -------------------------------*/
+.encabezadoSul{
+    font: normal bolder 12px Verdana, Arial, Helvetica, sans-serif;    
+    border: 1px solid;
+    margin: auto;        
+    width: 100%;        
+}
+
+.encabezadoSul th {
+    background: rgb(206, 222, 30);	
+    color: white;
+    border: 0px solid;
+    padding: 10px;
+}
+
+.encabezadoSul caption{
+    margin-bottom: 20px;
+    color: rgb(206, 222, 30);	
+}
+
+/*----------------------------*/
+
+.encabezadoHB{
+    font: normal bolder 12px Verdana, Arial, Helvetica, sans-serif;
+    color: black;        
+    border: 0px solid;
+    margin: auto;        
+    width: 100%;    
+}
+
+.encabezadoHB th{    
+    background: rgb(148, 63, 63);    
+    color: white;
+    border: 0px solid;
+    padding: 10px;
+}
+
+.encabezadoHB caption{
+    margin-bottom: 20px;
+    color:rgb(148, 63, 63);
+    text-align: center;
+}
+
+.tablaHB{
+    font: normal /*bolder*/ 14px Verdana, Arial, Helvetica, sans-serif;       
+    margin-left: 0px;
+}
+
+.tablaHB .Fab{    
+    width: 127px;
+    text-align: center;    
+    border: 1px solid;
+}
+
+.tablaHB .Semana{    
+    width: 165px;
+    text-align: center;    
+    border: 1px solid;
+}
+
+.tablaHB .Fecha{        
+    width: 133px;    
+    text-align: center;    
+    border: 1px solid;
+}
+
+.tablaHB .Densidad{
+    width: 181px;    
+    text-align: center;    
+    border: 1px solid;
+}
+
+.tablaHB .DensidadError{
+    width: 181px;    
+    text-align: center;    
+    border: 1px solid;
+    background-color: red;
+    color: white;
+}
+
+.tablaHB .Riqueza{        
+    width: 158px;    
+    text-align: center;    
+    border: 1px solid;
+}
+
+.tablaHB .RiquezaError{
+    width: 158px;    
+    text-align: center;    
+    border: 1px solid;
+    background-color: red;
+    color: white;
+}
+
+.tablaHB .Basicidad{        
+    width: 185px;    
+    text-align: center;    
+    border: 1px solid;
+}
+
+.tablaHB .BasicidadError{        
+    width: 185px;    
+    text-align: center;    
+    border: 1px solid;
+    background-color: red;
+    color: white;
+}
+
+.tablaHB .Volumen{        
+    width: 172px;    
+    text-align: center;    
+    border: 1px solid;
+}
+
+.tablaHB .VolumenError{        
+    width: 172px;    
+    text-align: center;    
+    border: 1px solid;
+    background-color: red;
+    color: white;
+}
+
+
+/*----- STYLE PARA TABLA FÉRRICO ------*/
+    
+.encabezadoFe {
+    font: normal bolder 12px Verdana, Arial, Helvetica, sans-serif;    
+    border: 1px solid;
+    margin: auto;        
+    width: 100%;    
+}
+
+.encabezadoFe th{    
+    background: rgb(126, 5, 5);	    
+    color: white;
+    border: 0px solid;
+    padding: 10px;
+}
+    
+.encabezadoFe caption{
+    margin-bottom: 20px;
+    color: rgb(126, 5, 5);	    
+}
+
+/*------- INICO ESTILO DATOS TABLA FÉRRICO -------*/
+
+.tablaFe{
+    font: normal /*bolder*/ 14px Verdana, Arial, Helvetica, sans-serif;       
+    margin-left: 0px;
+}
+
+.tablaFe .Fab{    
+    width: 98px;
+    text-align: center;    
+    border: 0px solid;
+}
+
+.tablaFe .Semana{    
+    width: 125px;
+    text-align: center;    
+    border: 0px solid;
+}
+
+.tablaFe .Fecha{
+    width: 101px;
+    text-align: center;
+    border: 0px solid;
+}
+
+.tablaFe .VolumenI{
+    width: 204px;
+    text-align: center;
+    border: 0px solid;    
+}
+
+.tablaFe .VolumenF{
+    width: 187px;
+    text-align: center;
+    border: 0px solid;
+}
+
+.tablaFe .Densidad{
+    width: 136px;
+    text-align: center;
+    border: 0px solid;
+}
+
+.DensidadError{
+    width: 136px;
+    text-align: center;
+    border: 0px solid;
+    color: red;
+}
+
+.tablaFe .Riqueza{
+    width: 120px;
+    text-align: center;
+    border: 0px solid;
+}
+
+.tablaFe .Acido{
+    width: 151px;
+    text-align: center;
+    border: 0px solid;
+}
+
+/*--------------------------------------- ESTILO SULFACID -------------------------------*/
+.encabezadoS3{
+    font: normal bolder 12px Verdana, Arial, Helvetica, sans-serif;    
+    border: 1px solid;
+    margin: auto;        
+    width: 100%;        
+}
+
+.encabezadoS3 th {
+    background: rgba(140, 68, 158, 0.786);  
+    color: white;
+    border: 0px solid;
+    padding: 10px;
+}
+
+.encabezadoS3 caption{
+    margin-bottom: 20px;
+    color: rgba(140, 68, 158, 0.786);  
+}
+
+.tablaS3 {
+    font: normal /*bolder*/ 14px Verdana, Arial, Helvetica, sans-serif;       
+    margin-left: 0px;
+}
+
+.tablaS3 .Fab{
+    width: 142px;
+    text-align: center;    
+    border: 1px solid;
+}
+
+.tablaS3 .Semana{    
+    width: 178px;
+    text-align: center;    
+    border: 1px solid;
+}
+
+.tablaS3 .Fecha{    
+    width: 147px;
+    text-align: center;    
+    border: 1px solid;
+}
+
+.tablaS3 .Densidad{    
+    width: 199px;
+    text-align: center;    
+    border: 1px solid;
+}
+
+.tablaS3 .DensidadError{
+    width: 197px;    
+    text-align: center;    
+    border: 1px solid;
+    background-color: red;;
+    color: white;    
+}
+
+.tablaS3 .Riqueza{    
+    width: 177px;
+    text-align: center;    
+    border: 1px solid;
+}
+
+.tablaS3 .RiquezaError{    
+    width: 177px;
+    text-align: center;    
+    border: 1px solid;
+    background: red;
+    color: white;
+}
+
+.tablaS3 .Ph{    
+    width: 83px;
+    text-align: center;    
+    border: 1px solid;
+}
+
+.tablaS3 .PhError{    
+    width: 83px;
+    text-align: center;    
+    border: 1px solid;
+    background-color: red;
+    color: white;
+}
+
+.tablaS3 .Volumen{    
+    width: 190px;
+    text-align: center;    
+    border: 1px solid;
+}
+
+.tablaS3 .VolumenError{    
+    width: 190px;
+    text-align: center;    
+    border: 1px solid;
+    background-color: red;
+    color: white;
+}
