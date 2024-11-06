@@ -88,6 +88,10 @@
                             $valor->Id_Puesto = "Sin asignar puesto";
                             $linea = "<td class=''>$valor->Id_Puesto</br></td>";
                         break;
+                        case "9": 
+                            $valor->Id_Puesto = "Mantenimiento";
+                            $linea = "<td class=''>$valor->Id_Puesto</br></td>";
+                        break;
                      }                                             
                 echo $linea; //Se genera en el switch...case
                 echo "</td>";
