@@ -49,6 +49,7 @@
                 <th>Producciones</th>
                 <th>Volumen M216</th>
                 <th>Volumen Agua</th>
+                <th>Volumen Filtrado</th>
                 <th>Densidad</th>
                 <th>Riqueza</th>
                 <th>Basicidad</th>

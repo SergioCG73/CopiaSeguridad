@@ -19,6 +19,7 @@ $Fecha = $_POST['Fecha'];
 $Producciones = $_POST['Producciones'];              
 $VolumenM216 = $_POST['VolumenM216'];
 $VolumenAgua = $_POST['VolumenAgua'];
+$VolumenFiltrado = $_POST['VolumenFiltrado'];
 $Densidad = $_POST['Densidad'];
 $Riqueza = $_POST['Riqueza'];
 $Basicidad = $_POST['Basicidad'];
@@ -29,6 +30,7 @@ $post = ['Id Filtracion'      => $IdFiltracion,
          'Producciones'       => $Producciones,
          'VolumenM216'        => $VolumenM216,
          'VolumenAgua'        => $VolumenAgua,
+         'VolumenFiltrado'    => $VolumenFiltrado,
          'Densidad'           => $Densidad,
          'Riqueza'            => $Riqueza,
          'Basicidad'          => $Basicidad,
@@ -36,7 +38,8 @@ $post = ['Id Filtracion'      => $IdFiltracion,
         ];
 
 $sql = $conexion->prepare("UPDATE filtrado SET Fecha = '$Fecha', Producciones = '$Producciones', Volumen_M216 = $VolumenM216, 
-                           Volumen_Agua = $VolumenAgua, Densidad = $Densidad, Riqueza = $Riqueza, Basicidad = $Basicidad, Notas = '$Notas'
+                           Volumen_Filtrado = $VolumenFiltrado, Volumen_Agua = $VolumenAgua, Densidad = $Densidad, Riqueza = $Riqueza, 
+                           Basicidad = $Basicidad, Notas = '$Notas'
                            WHERE id = $IdFiltracion");
 
 $updateProduccion = $sql->execute();

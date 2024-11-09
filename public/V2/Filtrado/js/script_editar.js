@@ -1,7 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
 const IdFiltracionTag = document.getElementById("IdFiltracion");
 const IdFiltracionInput = document.getElementById("IdFiltracion").value;
-
 console.log("IdTag: ", IdFiltracionTag);
 console.log ("Id Value:", IdFiltracionInput);
 const FechaTag = document.getElementById("Fecha");
@@ -13,6 +12,8 @@ const VolumenM216Tag = document.getElementById("VolumenM216");
 const VolumenM216Input = VolumenM216Tag.getAttribute("value");
 const VolumenAguaTag = document.getElementById("VolumenAgua");
 const VolumenAguaInput = VolumenAguaTag.getAttribute("value");
+const VolumenFiltradoTag = document.getElementById("VolumenFiltrado");
+const VolumenFiltradoInput = VolumenFiltradoTag.getAttribute("value");
 const DensidadTag = document.getElementById("Densidad");
 const DensidadInput = DensidadTag.getAttribute("value");
 const RiquezaTag = document.getElementById("Riqueza");
@@ -27,6 +28,7 @@ let FechaModificada = "";
 let ProduccionesModificadas = "";
 let VolumenM216Modificado = "";
 let VolumenAguaModificado = "";
+let VolumenFiltradoModificado = "";
 let DensidadModificada = "";
 let RiquezaModificada = "";
 let BasicidadModificado = "";
@@ -98,6 +100,16 @@ btnActualizar.addEventListener("click", (event) =>{
         console.log ("Volumen Agua modificado");
     }
 
+    const VolumenFiltradoOutput = VolumenFiltradoTag.value;
+    if (VolumenFiltradoOutput == VolumenFiltradoInput) {        
+        VolumenFiltradoModificado = "NO";
+        console.log ("Volumen Filtrado NO modificado");
+    }
+    else {        
+        VolumenAguaModificado = "SI";
+        console.log ("Volumen Filtrado modificado");
+    }
+
     const DensidadOutput = DensidadTag.value;
     if (DensidadOutput == DensidadInput) {
         DensidadModificada = "NO";
@@ -129,10 +141,11 @@ btnActualizar.addEventListener("click", (event) =>{
         NotasModificadas = "SI";                
     }        
 
-    if ((FechaModificada == "NO" && ProduccionesModificadas == "NO" && VolumenM216Modificado == "NO" && VolumenAguaModificado == "NO" && DensidadModificada == "NO"               
-         && RiquezaModificada == "NO" && BasicidadModificado == "NO" && NotasModificadas == "NO")) {
+    if ((FechaModificada == "NO" && ProduccionesModificadas == "NO" && VolumenM216Modificado == "NO" && VolumenAguaModificado == "NO" && 
+         VolumenFiltradoModificado == "NO" && DensidadModificada == "NO" && RiquezaModificada == "NO" && BasicidadModificado == "NO" &&
+         NotasModificadas == "NO")) {
             alert ("No se efectuado ningún cambio"); 
-            window.location.href = "indexFiltrado.php";         
+            window.location.href = "indexFiltrado.php";
     } 
     else {        
         const campos = new FormData();
@@ -141,6 +154,7 @@ btnActualizar.addEventListener("click", (event) =>{
         campos.append("Producciones", ProduccionesOutput);        
         campos.append("VolumenM216", VolumenM216Output);
         campos.append("VolumenAgua", VolumenAguaOutput);
+        campos.append("VolumenFiltrado", VolumenFiltradoOutput);
         campos.append("Densidad", DensidadOutput);
         campos.append("Riqueza", RiquezaOutput);
         campos.append("Basicidad", BasicidadOutput);        

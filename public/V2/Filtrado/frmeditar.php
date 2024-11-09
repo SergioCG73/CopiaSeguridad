@@ -17,6 +17,7 @@ $Fecha = $_GET['Fecha'];
 $Producciones = $_GET['Producciones'];
 $VolumenM216 = $_GET['VolumenM216'];
 $VolumenAgua = $_GET['VolumenAgua'];
+$VolumenFiltrado = $_GET['VolumenFiltrado'];
 $Densidad = $_GET['Densidad'];
 $Riqueza = $_GET['Riqueza'];
 $Basicidad = $_GET['Basicidad'];
@@ -41,7 +42,6 @@ if ($Riqueza == "null") {
 if ($Basicidad == "null") {
     $Basicidad = "";
 }
-
 
 ?>
 
@@ -108,6 +108,12 @@ if ($Basicidad == "null") {
                     <lu>
                         <label class="editar">Basicidad: </label>
                         <input type="text" name="Basicidad" class="peso" id="Basicidad" value="<?php echo $Basicidad?>">
+                    </lu>
+                </p>
+                <p>
+                    <lu>
+                        <label class="editar">Volumen Filtrado: </label>
+                        <input type="text" name="VolumenFiltrado" class="peso" id="VolumenFiltrado" value="<?php echo $VolumenFiltrado?>">
                     </lu>
                 </p>
             </fieldset>

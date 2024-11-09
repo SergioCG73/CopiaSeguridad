@@ -23,7 +23,7 @@ let NotasModificadas = "";
 
 // --------------- TRANSFORMAR STRINGS EN FECHAS/HORAS ---------------------------------------------------------
 // Paso 1: Pasa el string a un objeto tipo Date
-// Adjusting the input string to a standard format for parsing
+// Ajustar el string de entra al formato estándar para parsing
 const [datePart, timePart] = inputString.split(' '); // Para Fecha inicial
 //const [hours, minutes, seconds] = timePart.split(':');
 // Crea un nuevo objeto de fecha usando la fecha y el tiempo ajustados
