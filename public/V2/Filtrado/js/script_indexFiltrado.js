@@ -84,8 +84,7 @@ document.addEventListener("DOMContentLoaded", () => {
     function FormatearDatos(response) {
         response.forEach(elemento => {
             // Formatear el número de filtrado
-            const IdFiltradoFormateado = Number(elemento.id).toLocaleString('es-CL'); 
-            
+            const IdFiltradoFormateado = Number(elemento.id).toLocaleString('es-CL');             
             const Producciones = elemento.Producciones;
             
             // Formatear Fecha        
@@ -94,8 +93,9 @@ document.addEventListener("DOMContentLoaded", () => {
             const Fecha = `${zeroPad(odate.getDate())}/${zeroPad(odate.getMonth() + 1)}/${odate.getFullYear()}`;
             
            // Formatear VOLÚMENES
-            const Volumen_M216 = Number(elemento.Volumen_M216).toLocaleString("es-CL") + " Kg";
-            const Volumen_Agua = Number(elemento.Volumen_Agua).toLocaleString("es-CL") + " Kg";
+            const Volumen_M216 = Number(elemento.Volumen_M216).toLocaleString("es-CL") + " lts";
+            const Volumen_Agua = Number(elemento.Volumen_Agua).toLocaleString("es-CL") + " lts";
+            const Volumen_Filtrado = Number(elemento.Volumen_Filtrado).toLocaleString("es-CL") + " lts";
 
           // Formatear DENSIDAD
             let DensidadFormateada = Number(elemento.Densidad);
@@ -124,7 +124,8 @@ document.addEventListener("DOMContentLoaded", () => {
                     <td>${Fecha}</td>                    
                     <td>${elemento.Producciones}</td>
                     <td>${Volumen_M216}</td>
-                    <td>${Volumen_Agua}</td>                    
+                    <td>${Volumen_Agua}</td>
+                    <td>${Volumen_Filtrado}</td>
                     <td>${DensidadFormateada}</td>
                     <td>${RiquezaFormateada}</td>
                     <td>${BasicidadFormateada}</td>
@@ -137,6 +138,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     Producciones=${elemento.Producciones}&
                     VolumenM216=${elemento.Volumen_M216}&
                     VolumenAgua=${elemento.Volumen_Agua}&
+                    VolumenFiltrado=${elemento.Volumen_Filtrado}&
                     Densidad=${elemento.Densidad}&
                     Riqueza=${elemento.Riqueza}&
                     Basicidad=${elemento.Basicidad}&
