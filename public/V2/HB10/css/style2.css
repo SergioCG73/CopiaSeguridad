@@ -100,7 +100,7 @@ textarea{
     height: 40px;
     margin-right: 20px;
     text-decoration: none;	
-    background-color: rgb(126, 5, 5);
+    background-color: rgb(255, 181, 193);
     font-weight: bold;
     color: white;    
     border-radius: 0.1vw;
@@ -110,7 +110,7 @@ textarea{
 
 .btnAgregar:hover{
     color: black;    
-    box-shadow: 0 4px 16px rgb(126, 5, 5);
+    box-shadow: 0 4px 16px rgb(255, 181, 193);
     transition: all 0.2s ease;
 }
 

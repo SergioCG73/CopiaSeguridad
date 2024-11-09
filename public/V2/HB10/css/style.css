@@ -13,7 +13,7 @@ body {
 
 .main-container {
     padding: 32px 0;
-    background-color: rgb(126, 5, 5);
+    background-color: rgb(255, 181, 193);
 }
 
 .container {
@@ -71,7 +71,7 @@ select {
     width: 100px;
     margin-right: 20px;
     text-decoration: none;	
-    background-color: rgb(126, 5, 5);
+    background-color: rgb(255, 181, 193);
     font-weight: bold;
     color: white;    
     border-radius: 0.1vw;
@@ -84,7 +84,7 @@ select {
     height: 40px;
     margin-right: 20px;
     text-decoration: none;	
-    background-color: rgb(126, 5, 5);
+    background-color: rgb(255, 181, 193);
     font-weight: bold;
     color: white;    
     border-radius: 0.1vw;
@@ -108,7 +108,7 @@ table {
 }
 
 table tr th{
-    background-color: rgb(126, 5, 5);;
+    background-color: rgb(255, 181, 193);
     padding: 0.5625em 0.625em;
     font-size: 20px;  
     /*border: 0px solid #dddddd;  */
