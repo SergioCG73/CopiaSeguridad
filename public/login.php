@@ -1,7 +1,8 @@
 <?php
 /*https://www.mauriciodeveloper.com/post/login-con-php-y-mysql-crea-un-acceso-protegido-en-tu-sitio-web-243?utm_content=<cmp-true></cmp-true>*/
 
-require_once("Includes/miconexion.php");
+//require_once("Includes/miconexion.php");
+require_once("V1/Includes/miconexion.php");
 
 $username = $_POST['usuario'];
 $password = $_POST['clave'];
