@@ -109,11 +109,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
           // Formatear Notas
           if (elemento.Notas != ""){ 
-                Notas = elemento.Notas;         
-                elemento.Notas = "abc";                
+                //Notas = elemento.Notas;         
+                //elemento.Notas = "abc";
+                Notas = "abc"
+                
             }
           else {
-                elemento.Notas = "";
+                //elemento.Notas = "";
+                Notas = "";
             }
             
             // Genera el tbody de la tabla
@@ -127,7 +130,7 @@ document.addEventListener("DOMContentLoaded", () => {
                                     <td>${DensidadFormateada}</td>
                                     <td>${RiquezaFormateada}</td>
                                     <td>${AcidoLibreFormateado}</td>
-                                    <td>${elemento.Notas}</td>
+                                    <td>${Notas}</td>
                                     <td> <a href="actions/delete.php?id=${elemento.NumeroFabricacion}" onclick="return confirm('¿Estás seguro de que deseas borrar este registro?');">
                                          <img src="../Images/basura_rojo_icon.png" alt="Borrar"></a>
 
@@ -138,7 +141,7 @@ document.addEventListener("DOMContentLoaded", () => {
                                          Densidad=${elemento.Densidad}&
                                          Riqueza=${elemento.Riqueza}&
                                          AcidoLibre=${elemento.Acido}&
-                                         Notas=${Notas}">
+                                         Notas=${elemento.Notas}">
                                         <img src="../Images/editar_azul_icon.png" alt="Editar"></a>                       
                                     </td> 
                                 </tr>`;  
