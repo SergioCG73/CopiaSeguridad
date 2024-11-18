@@ -50,8 +50,6 @@ let PesoFinalModificado = "";
 let NotasModificadas = "";
 let NotasOutput = TextoInicial;
 
-console.log ("FechaInicialInput", FechaInicialInput);
-
 document.getElementById("Notas").addEventListener("input", function() {
     NotasOutput = this.value;  // Obtiene el valor actual del textarea
 });
