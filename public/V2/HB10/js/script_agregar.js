@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", () =>{
         }
 
         if (!Volumen.value) {
-                Volumen = "NULL";                
+                Volumen.value = null;                
         }        
 
         if (!Densidad.value) {
@@ -39,7 +39,7 @@ document.addEventListener("DOMContentLoaded", () =>{
             Notas.value = null;    //anterior Notas.value = "";    
         }
 
-        console.log ("Volumen:", Fecha.value);
+        console.log ("Volumen:", Volumen.value);
 
         campos = new FormData();
         campos.append("Fecha", Fecha.value);                
