@@ -121,13 +121,14 @@ document.addEventListener("DOMContentLoaded", () => {
             const minutosParado = Math.floor((elemento.Tiempo_Parado % 3600) / 60);
             const tiempoParado = horasParado > 0 ? `${horasParado}h y ${minutosParado} min` : `${minutosParado} min`;
 
-            // Formatear Notas
+            // Formatear Notas. Se crea la variable Notas para no sobreescribir el elemento.Notas
             if (elemento.Notas != ""){ 
-                Notas = elemento.Notas;         
-                elemento.Notas = "abc";                
+                //Notas = elemento.Notas;         
+                //elemento.Notas = "abc";                
+                Notas = "abc";
             }
             else {
-                elemento.Notas = "";
+                Notas = "";
             }     
             
             // Genera el tbody de la tabla
@@ -142,7 +143,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     <td>${pesoFinal}</td>
                     <td>${duracion}</td>
                     <td>${tiempoParado}</td>
-                    <td>${elemento.Notas}</td>
+                    <td>${Notas}</td>
                     <td>
                        <a href="actions/delete.php?id=${NumeroFabricacion}" onclick="return confirm('¿Estás seguro de que deseas borrar este registro?');">
                        <img src="../Images/basura_rojo_icon.png" alt="Borrar"></a>
@@ -153,7 +154,7 @@ document.addEventListener("DOMContentLoaded", () => {
                        Peso_Inicial=${elemento.Peso_Inicial}&
                        Fecha_Final=${elemento.Hora_Finalizacion}&
                        Peso_Final=${elemento.Peso_Final}&
-                       Notas=${Notas}">
+                       Notas=${elemento.Notas}">
                        <img src="../Images/editar_azul_icon.png" alt="Editar"></a>                       
                     </td>                        
                 </tr>`;
