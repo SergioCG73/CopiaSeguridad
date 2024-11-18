@@ -43,8 +43,8 @@
                 <p><label class="_100px">Fabricación nº: </label><input type="text" value="<?php echo $NextProduction; ?>" id="Fabricacion" readonly class="gris"></p>
                 <label class="_100px">Reactor: </label>
                 <select id="Reactor">
-                        <option value="R201">R200</option>
-                        <option value="R202">R201</option>
+                        <option value="R201">R201</option>
+                        <option value="R202">R202</option>
                 </select>
                 <p><label class="_100px">Fecha/Hora Inicio: </label><input type="datetime-local" name="FechaInicio" id="FechaInicio" required></p>
                 <p><label class="_100px">Peso Inicial: </label><input type="text" name="PesoInicial" id="PesoInicial" required></p>
