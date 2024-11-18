@@ -63,7 +63,7 @@ if ($basicidad == "null") {
                 </P>
                 <p>
                     <lu>
-                        <label class="editar">Volumen Inicial: </label>
+                        <label class="editar">Volumen Filtrado: </label>
                         <input type="text" name="Volumen" class="peso" id="Volumen" value="<?php echo $volumen?>">
                     </lu>
                 </p>
@@ -83,7 +83,7 @@ if ($basicidad == "null") {
                 </p>
                 <p>
                     <lu>
-                        <label class="editar">Ácido libre: </label>
+                        <label class="editar">Basicidad: </label>
                         <input type="text" name="Basicidad" class="peso" id="Basicidad" value="<?php echo $basicidad ?>">
                     </lu>
                 </p>
