@@ -1,17 +1,17 @@
 <?php
     function miErrorHandler($errno, $errstr, $errfile, $errline) {
-        
+
         if ($errno === E_WARNING && strpos($errstr, 'require_once') !== false) { // Verifica si el error es del tipo E_WARNING
             echo "<script>alert('Error: Sergio el archivo requerido no se ha encontrado.');</script>"; // Mostrar una alerta o mensaje personalizado
         }
-            
+
         return false; // Retornar false para permitir que el manejador de errores predeterminado siga funcionando
     }
-        
+
     set_error_handler("miErrorHandler"); // Establecer el manejador de errores personalizado
-        
-    require_once("../../miconexion.php"); // Intentar incluir el archivo   
-    
+
+    require_once("../../miconexion.php"); // Intentar incluir el archivo
+
     restore_error_handler(); // Restaurar el manejador de errores predeterminado después de la operación
 
     $sql = $conexion->query("SELECT NumeroFabricacion FROM sulfato ORDER BY NumeroFabricacion DESC LIMIT 1");
@@ -26,25 +26,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Formulario para agregar fabricaciones de P18 con PHP y HTML">    
+    <meta name="description" content="Formulario para agregar fabricaciones de P18 con PHP y HTML">
     <meta name="author" content="Sergio Cano González">
     <link rel="icon" type="image/png" href="../Images/favicon.png"/>
-    <link href="css/style2.css" rel="stylesheet" type="text/css">    
+    <link href="css/style2.css" rel="stylesheet" type="text/css">
     <title>Agregar Sulfato</title>
 </head>
 <body>
-    <header>     
-        <a href="#" class="logo">Agregar fabricación Sulfato</a>            
-    </header> 
-    
+    <header>
+        <a href="#" class="logo">Agregar fabricación Sulfato</a>
+    </header>
+
     <div class="main-container">
         <div class="left-container">
-            <fieldset class="agregar"><legend>DATOS FABRICACIÓN</legend> 
+            <fieldset class="agregar"><legend>DATOS FABRICACIÓN</legend>
                 <p><label class="_100px">Fabricación nº: </label><input type="text" value="<?php echo $NextProduction; ?>" id="Fabricacion" readonly class="gris"></p>
                 <label class="_100px">Reactor: </label>
                 <select id="Reactor">
-                        <option value="R200">R200</option>
-                        <option value="R201">R201</option>
+                        <option value="R201">R200</option>
+                        <option value="R202">R201</option>
                 </select>
                 <p><label class="_100px">Fecha/Hora Inicio: </label><input type="datetime-local" name="FechaInicio" id="FechaInicio" required></p>
                 <p><label class="_100px">Peso Inicial: </label><input type="text" name="PesoInicial" id="PesoInicial" required></p>

@@ -1,10 +1,10 @@
 <?php
 
-function miErrorHandler($errno, $errstr, $errfile, $errline) { // Definir una función para manejar errores     
+function miErrorHandler($errno, $errstr, $errfile, $errline) { // Definir una función para manejar errores
     if ($errno === E_WARNING && strpos($errstr, 'require_once') !== false) { // Verifica si el error es del tipo E_WARNING
         echo "<script>alert('Error: El archivo requerido no se ha encontrado.');</script>"; // Mostrar una alerta o mensaje personalizado
     }
-    
+
     return false; // Retornar false para permitir que el manejador de errores predeterminado siga funcionando
 }
 
@@ -26,29 +26,29 @@ $notas = $_GET['Notas'];
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Formulario para editar fabricaciones de P18 con PHP y HTML">    
+    <meta name="description" content="Formulario para editar fabricaciones de P18 con PHP y HTML">
     <meta name="author" content="Sergio Cano González">
     <link rel="icon" type="image/png" href="../Images/favicon.png"/>
-    <link href="css/style3.css" rel="stylesheet" type="text/css">    
+    <link href="css/style3.css" rel="stylesheet" type="text/css">
     <title>Editar fabricación</title>
 </head>
 <body>
     <header>
-        <a href="#" class="logo">Editar fabricación sulfato</a>    
-    </header> 
+        <a href="#" class="logo">Editar fabricación sulfato</a>
+    </header>
 
     <div class="main-container">
         <div class="left-container">
-            <fieldset class="datosp18"><legend>DATOS FABRICACIÓN <span><?php echo $NumeroFabricacion?></span></legend>            
+            <fieldset class="datosp18"><legend>DATOS FABRICACIÓN <span><?php echo $NumeroFabricacion?></span></legend>
                 <!-- Se oculta porque el nº fabricación ya aparece en el legend, pero hace falta para pasárselo al js-->
                 <input type="text" name="NumeroFabricacion" id="NumeroFabricacion" class="fab" value="<?php echo $NumeroFabricacion; ?>" hidden>            
                 <p>
                     <lu>
-                        <label class="editar">Reactor: </label>                    
+                        <label class="editar">Reactor: </label>
                         <select name="Reactor" id="Reactor" data-initial-value="<?php echo $reactor; ?>">
-                            <option value="R200" <?php if ($reactor == 'R200') echo 'selected'; ?>>R200</option>
                             <option value="R201" <?php if ($reactor == 'R201') echo 'selected'; ?>>R201</option>
-                        </select>                   
+                            <option value="R202" <?php if ($reactor == 'R202') echo 'selected'; ?>>R202</option>
+                        </select>
                     </lu>
                 </p>
                 <P>
@@ -94,7 +94,7 @@ $notas = $_GET['Notas'];
             <input type="button" class="boton" id="Actualizar" value="Actualizar">
         </div>
     </div>
-    
+
     <script src="js/script_editar.js"></script>
 </body>
 </html>
