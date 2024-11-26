@@ -39,8 +39,9 @@ if ($basicidad == "null") {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Formulario para editar fabricaciones de P18 con PHP y HTML">    
+    <meta name="description" content="Formulario para editar fabricaciones de HB10 con PHP y HTML">    
     <meta name="author" content="Sergio Cano González">
+    <link rel="icon" type="image/png" href="../Images/favicon.png">
     <link href="css/style3.css" rel="stylesheet" type="text/css">    
     <title>Editar fabricación</title>
 </head>

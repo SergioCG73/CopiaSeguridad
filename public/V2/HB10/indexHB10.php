@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Férrico con PHP, MYSQL y AJAX">
+    <meta name="description" content="HB10 con PHP, MYSQL y AJAX">
     <meta name="author" content="Sergio Cano González">
+    <link rel="icon" type="image/png" href="../Images/favicon.png">
     <link href="css/style.css" rel="stylesheet" type="text/css">    
     <title>Alta Basicidad</title>
 </head>

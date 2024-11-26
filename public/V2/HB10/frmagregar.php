@@ -23,6 +23,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="css/style2.css" rel="stylesheet" type="text/css">
+    <link rel="icon" type="image/png" href="../Images/favicon.png">
     <title>Agregar HB10</title>
 </head>
 <body>
