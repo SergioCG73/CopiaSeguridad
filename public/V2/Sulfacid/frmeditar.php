@@ -46,7 +46,7 @@ if ($ph == "null") {
 </head>
 <body>
     <header>
-        <a href="#" class="logo">Editar fabricación férrico</a>
+        <a href="#" class="logo">Editar fabricación Sulfacid</a>
     </header>
 
     <div class="main-container">
