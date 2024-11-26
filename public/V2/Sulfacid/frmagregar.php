@@ -11,7 +11,7 @@
     set_error_handler("miErrorHandler"); // Establecer el manejador de errores personalizado       
     require_once("../../miconexion.php"); // Intentar incluir el archivo
     restore_error_handler(); // Restaurar el manejador de errores predeterminado después de la operación
-    $sql = $conexion->query("SELECT NumeroFabricacion FROM ferrico ORDER BY NumeroFabricacion DESC LIMIT 1");
+    $sql = $conexion->query("SELECT NumeroFabricacion FROM sulfacid ORDER BY NumeroFabricacion DESC LIMIT 1");
     $lastProduction = $sql->fetch();
     $lastProduction = $lastProduction['NumeroFabricacion'];
     $NextProduction = $lastProduction + 1;
@@ -22,7 +22,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Férrico con PHP, MYSQL y AJAX">
+    <meta name="description" content="Sulfacid con PHP, MYSQL y AJAX">
     <meta name="author" content="Sergio Cano González">
     <link rel="icon" type="image/png" href="../Images/favicon.png">
     <link href="css/style2.css" rel="stylesheet" type="text/css">
