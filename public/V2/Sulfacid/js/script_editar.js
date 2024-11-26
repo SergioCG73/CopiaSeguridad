@@ -43,7 +43,7 @@ document.getElementById("Notas").addEventListener("input", function() {
 });
 
 btnAtras.addEventListener("click", (event) =>{
-    window.location.href = "indexFerrico.php";
+    window.location.href = "indexSulfacid.php";
 });
 
 btnActualizar.addEventListener("click", (event) =>{
