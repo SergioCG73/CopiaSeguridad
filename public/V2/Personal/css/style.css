@@ -112,7 +112,7 @@ legend{
     color: white;
 }
 
-.orange{
+.operario{
     background-color: #ffda9e;
     color: white;
 }
@@ -122,24 +122,28 @@ legend{
     color: white;
 }
 
-.pink{
+.laboratorio{
     background-color: pink;
     color: white;
 }
 
-.blue{
+.jproduccion{
     background-color: #b2e2f2;
     color: white;
 }
 
-.yellow{
-    background-color: #ebf3a0;
-    color: white;
-    
+.jfabrica{
+    background-color: #a3ceef;
+    color: white;    
 }
 
-.grey{
+.calidad{
     background-color: #c5c6c8;
+    color: white;
+}
+
+.mecanico{
+    background-color:burlywood;
     color: white;
 }
 
