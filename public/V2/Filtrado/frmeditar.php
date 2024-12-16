@@ -53,6 +53,7 @@ if ($Basicidad == "null") {
     <meta name="description" content="Formulario para editar fabricaciones de P18 con PHP y HTML">
     <meta name="author" content="Sergio Cano González">
     <link href="css/style3.css" rel="stylesheet" type="text/css">
+    <link rel="icon" type="image/png" href="../Images/favicon.png">
     <title>Editar fabricación</title>
 </head>
 <body>
