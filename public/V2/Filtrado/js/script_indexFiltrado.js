@@ -117,6 +117,7 @@ document.addEventListener("DOMContentLoaded", () => {
             Notas = "";
            }
 
+           // Se usa encodeURIComponent para evitar que el signo "+" sea interpretado como un espacio en la URL
            tbody.innerHTML += `
                 <tr>
                     <td>${IdFiltradoFormateado}</td> 
