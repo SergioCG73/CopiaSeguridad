@@ -24,14 +24,14 @@ $Basicidad = $_GET['Basicidad'];
 $Notas = $_GET['Notas'];
 
 if (empty($VolumenM216)) {
-    $VolumenM216 = "";
+    $VolumenM216 = 0;
 }
 
 if (empty($VolumenAgua)) {
-    $VolumenAgua = "NULL";
+    $VolumenAgua = 0;
 }
 
-if ($Densidad == "null") {
+/*if ($Densidad == "null") {
     $Densidad = "";
 }
 
@@ -41,6 +41,18 @@ if ($Riqueza == "null") {
 
 if ($Basicidad == "null") {
     $Basicidad = "";
+}*/
+
+if (empty($Densidad)) {
+    $Densidad = 0;
+}
+
+if (empty($Riqueza)) {
+    $Riqueza = 0;
+}
+
+if (empty($Basicidad)) {
+    $Basicidad = 0;
 }
 
 ?>
