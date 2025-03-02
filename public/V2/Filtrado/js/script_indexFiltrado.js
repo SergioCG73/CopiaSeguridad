@@ -122,7 +122,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     <td>${IdFiltradoFormateado}</td> 
                     <td>${elemento.Semana}</td>
                     <td>${Fecha}</td>                    
-                    <td>${elemento.Producciones}</td>
+                    <td>${Producciones}</td>
                     <td>${Volumen_M216}</td>
                     <td>${Volumen_Agua}</td>
                     <td>${Volumen_Filtrado}</td>
@@ -135,7 +135,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
                     <a href="frmeditar.php?id=${elemento.id}&                       
                     Fecha=${elemento.Fecha}&
-                    Producciones=${elemento.Producciones}&
+                    Producciones=${encodeURIComponent(Producciones)}&
                     VolumenM216=${elemento.Volumen_M216}&
                     VolumenAgua=${elemento.Volumen_Agua}&
                     VolumenFiltrado=${elemento.Volumen_Filtrado}&
