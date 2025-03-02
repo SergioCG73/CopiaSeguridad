@@ -80,7 +80,8 @@ btnActualizar.addEventListener("click", (event) =>{
         ProduccionesModificadas = "SI";
     }
 
-    const VolumenM216Output = VolumenM216Tag.value;
+    //const VolumenM216Output = VolumenM216Tag.value;
+    let VolumenM216Output = VolumenM216Tag.value;
     if (VolumenM216Output == VolumenM216Input) {        
         VolumenM216Modificado = "NO";
         console.log ("Volumen M216 NO modificado");
@@ -90,7 +91,13 @@ btnActualizar.addEventListener("click", (event) =>{
         console.log ("Volumen M216 modificado");
     }
 
-    const VolumenAguaOutput = VolumenAguaTag.value;
+    if (!VolumenM216Output) {
+        VolumenM216Output = 0;
+        console.log ("Volumen M216 modificado a 0");
+    }
+
+    //const VolumenAguaOutput = VolumenAguaTag.value;
+    let VolumenAguaOutput = VolumenAguaTag.value;
     if (VolumenAguaOutput == VolumenAguaInput) {        
         VolumenAguaModificado = "NO";
         console.log ("Volumen Agua NO modificado");
@@ -98,6 +105,11 @@ btnActualizar.addEventListener("click", (event) =>{
     else {        
         VolumenAguaModificado = "SI";
         console.log ("Volumen Agua modificado");
+    }
+
+    if (!VolumenAguaOutput) {
+        VolumenAguaOutput = 0;
+        console.log ("Volumen Agua modificado a 0");
     }
 
     const VolumenFiltradoOutput = VolumenFiltradoTag.value;
@@ -110,7 +122,8 @@ btnActualizar.addEventListener("click", (event) =>{
         console.log ("Volumen Filtrado modificado");
     }
 
-    const DensidadOutput = DensidadTag.value;
+    //const DensidadOutput = DensidadTag.value;
+    let DensidadOutput = DensidadTag.value;
     if (DensidadOutput == DensidadInput) {
         DensidadModificada = "NO";
     }
@@ -118,7 +131,13 @@ btnActualizar.addEventListener("click", (event) =>{
         DensidadModificada = "SI";
     }
 
-    const RiquezaOutput = RiquezaTag.value;
+    if (!DensidadOutput) {
+        DensidadOutput = 0;
+        console.log("Densidad modificada a 0");
+    }
+
+    //const RiquezaOutput = RiquezaTag.value;
+    let RiquezaOutput = RiquezaTag.value;
     if (RiquezaOutput == RiquezaInput) {
         RiquezaModificada = "NO";
     }
@@ -126,13 +145,25 @@ btnActualizar.addEventListener("click", (event) =>{
         RiquezaModificada = "SI";
     }
 
-    const BasicidadOutput = BasicidadTag.value;
+    if (!RiquezaOutput) {
+        RiquezaOutput = 0;
+        console.log("Riqueza modificada a 0");
+    }
+
+    //const BasicidadOutput = BasicidadTag.value;
+    let BasicidadOutput = BasicidadTag.value;
     if (BasicidadOutput == BasicidadInput) {
         BasicidadModificado = "NO";
     }
     else {
         BasicidadModificado = "SI";
     }
+
+    if (!BasicidadOutput) {
+        BasicidadOutput = 0;
+        console.log("Basicidad modificada a 0");
+    }
+
     const NotasOutput = document.getElementById("Notas").value;
     if (NotasOutput === NotasInput) {        
         NotasModificadas = "NO";        
