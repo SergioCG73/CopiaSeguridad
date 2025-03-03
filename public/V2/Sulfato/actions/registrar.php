@@ -1,5 +1,4 @@
-<?php 
-
+<?php
     function miErrorHandler($errno, $errstr, $errfile, $errline) { // Definir una función para manejar errores     
         if ($errno === E_WARNING && strpos($errstr, 'require_once') !== false) { // Verifica si el error es del tipo E_WARNING
             echo "<script>alert('Error: El archivo requerido no se ha encontrado.');</script>"; // Mostrar una alerta o mensaje personalizado
