@@ -111,10 +111,18 @@ document.addEventListener("DOMContentLoaded", () => {
             const pesoInicial = Number(elemento.Peso_Inicial).toLocaleString("es-CL") + " Kg";
             const pesoFinal = Number(elemento.Peso_Final).toLocaleString("es-CL") + " Kg";
             
-            // Formatear DURACION
+            // Formatear DURACION V1
+            /*const horas = Math.floor(elemento.Duracion / 3600);
+            const minutos = Math.floor((elemento.Duracion % 3600) / 60);
+            const duracion = horas >= 0 ? `${horas}h y ${minutos} min` : "Falta Fecha Final";*/
+
+            // Formatear DURACION V2
+            // Formatear DURACION V2            
             const horas = Math.floor(elemento.Duracion / 3600);
             const minutos = Math.floor((elemento.Duracion % 3600) / 60);
-            const duracion = horas >= 0 ? `${horas}h y ${minutos} min` : "Falta Fecha Final";
+            const duracion = horas >= 0 
+                ? `${horas}h y ${minutos} min` 
+                : `<span class="error">Falta Fecha Final</span>`;
             
             // Format downtime
             const horasParado = Math.floor(elemento.Tiempo_Parado / 3600);
