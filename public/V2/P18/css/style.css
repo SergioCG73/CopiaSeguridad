@@ -248,6 +248,13 @@ textarea{
     padding: 5px 5px 0px 5px;    
 }
 
+.error{
+    font-size: 14px;
+    background-color: red;
+    color: white;
+    padding: 5px;
+    border-radius: 5px;
+}
 @media(max-width: 991px) {
     .main-container {
         padding: 32px 0;
