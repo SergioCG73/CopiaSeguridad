@@ -105,7 +105,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
             // Formatear hora final
             let dateFinal = new Date(elemento.Hora_Finalizacion);
-            const horaFinalizacion = `${zeroPad(dateFinal.getDate())}/${zeroPad(dateFinal.getMonth() + 1)}/${dateFinal.getFullYear()} - ${zeroPad(dateFinal.getHours())}:${zeroPad(dateFinal.getMinutes())}`;
+            let horaFinalizacion = `${zeroPad(dateFinal.getDate())}/${zeroPad(dateFinal.getMonth() + 1)}/${dateFinal.getFullYear()} - ${zeroPad(dateFinal.getHours())}:${zeroPad(dateFinal.getMinutes())}`;
+
+            if (horaFinalizacion === "31/12/2023 - 23:59" || isNaN(dateFinal.getTime()) || horaFinalizacion < horaInicio) {
+                horaFinalizacion = `<span>----------</span>`;
+            }
             
             // Formatear PESOS
             const pesoInicial = Number(elemento.Peso_Inicial).toLocaleString("es-CL") + " Kg";
