@@ -100,7 +100,7 @@ btnActualizar.addEventListener("click", (event) =>{
         console.log ("Peso Inicial modificado");
     }
 
-    const PesoFinalOutput = PesoFinalTag.value;
+    let PesoFinalOutput = PesoFinalTag.value;
     if (PesoFinalOutput == PesoFinalInput) {
         PesoFinalModificado = "NO";
         console.log ("Peso Final NO modificado");
@@ -108,6 +108,12 @@ btnActualizar.addEventListener("click", (event) =>{
     else {
         PesoFinalModificado = "SI";
         console.log ("Peso Final modificado");
+    }
+
+    if (!PesoFinalOutput) {
+        console.log("Condición Peso Final a 0");
+        PesoFinalOutput = 0;
+        console.log ("Peso Final a 0");
     }
 
     if (NotasOutput === TextoInicial) {

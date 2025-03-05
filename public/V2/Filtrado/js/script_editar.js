@@ -1,8 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
 const IdFiltracionTag = document.getElementById("IdFiltracion");
 const IdFiltracionInput = document.getElementById("IdFiltracion").value;
-console.log("IdTag: ", IdFiltracionTag);
-console.log ("Id Value:", IdFiltracionInput);
 const FechaTag = document.getElementById("Fecha");
 const FechaInput = FechaTag.getAttribute("data-initial-value");
 const inputString = FechaInput;
