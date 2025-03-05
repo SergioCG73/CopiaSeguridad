@@ -113,7 +113,7 @@ btnActualizar.addEventListener("click", (event) =>{
     if (!PesoFinalOutput) {
         console.log("Condición Peso Final a 0");
         PesoFinalOutput = 0;
-        console.log ("Peso Final a 0");
+        console.log ("Peso Final modificado a 0");
     }
 
     if (NotasOutput === TextoInicial) {

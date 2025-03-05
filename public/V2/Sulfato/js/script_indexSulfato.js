@@ -113,8 +113,8 @@ document.addEventListener("DOMContentLoaded", () => {
             }
             
             // Formatear PESOS
-            const pesoInicial = Number(elemento.Peso_Inicial).toLocaleString("es-CL") + " Kg";
-            const pesoFinal = Number(elemento.Peso_Final).toLocaleString("es-CL") + " Kg";
+            const pesoInicial = Number(elemento.Peso_Inicial).toLocaleString("es-ES") + " Kg";
+            const pesoFinal = Number(elemento.Peso_Final).toLocaleString("es-ES") + " Kg";            
             
             // Formatear DURACION V1
             /*const horas = Math.floor(elemento.Duracion / 3600);

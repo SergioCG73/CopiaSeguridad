@@ -6,10 +6,16 @@ const FechaInicialTag = document.getElementById("FechaInicial");
 const FechaInicialInput = FechaInicialTag.getAttribute("data-initial-value");    
 const FechaFinalTag = document.getElementById("FechaFinal");
 const FechaFinalInput = FechaFinalTag.getAttribute("data-initial-value");
+const PesoInicialTag = document.getElementById("PesoInicial");
+const PesoInicialInput = PesoInicialTag.getAttribute("value");
+const PesoFinalTag = document.getElementById("PesoFinal");
+const PesoFinalInput = PesoFinalTag.getAttribute("value");
 const inputString = FechaInicialInput;
 const inputString2 = FechaFinalInput;    
 const btnAtras = document.getElementById("Atras");
 const btnActualizar = document.getElementById("Actualizar");
+
+console.log ("Peso Final Input: ", PesoFinalInput);
 
 // --------------- TRANSFORMAR STRINGS EN FECHAS/HORAS ---------------------------------------------------------
 // Paso 1: Pasa el string a un objeto tipo Date
@@ -37,10 +43,10 @@ const formattedDate = `${year}-${month}-${day}T${formattedHours}:${formattedMinu
 const formattedDate2 = `${year2}-${month2}-${day2}T${formattedHours2}:${formattedMinutes2}`; // stRING fecha final en formato PHP
 // --------------- FIN TRANSFORMAR STRINGS EN FECHAS/HORAS ---------------------------------------------------------
     
-const PesoInicialTag = document.getElementById("PesoInicial");
+/*const PesoInicialTag = document.getElementById("PesoInicial");
 const PesoInicialInput = PesoInicialTag.getAttribute("value");
 const PesoFinalTag = document.getElementById("PesoFinal");
-const PesoFinalInput = PesoFinalTag.getAttribute("value");
+const PesoFinalInput = PesoFinalTag.getAttribute("value");*/
 
 const TextoInicial = document.getElementById("Notas").value;
 let ReactorModificado = "";
@@ -108,12 +114,12 @@ btnActualizar.addEventListener("click", (event) =>{
     else {
         PesoFinalModificado = "SI";
         console.log ("Peso Final modificado");
-    }
+    }    
 
     if (!PesoFinalOutput) {        
         PesoFinalOutput = 0;
         console.log ("Peso Final modificado a 0");
-    }
+    }    
 
     if (NotasOutput === TextoInicial) {
         NotasModificadas = "NO";

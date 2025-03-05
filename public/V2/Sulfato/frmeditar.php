@@ -19,6 +19,7 @@ $pesoInicial = $_GET['Peso_Inicial'];
 $horaFinal = $_GET['Fecha_Final'];
 $pesoFinal = $_GET['Peso_Final'];
 $notas = $_GET['Notas'];
+
 ?>
 
 <!DOCTYPE html>

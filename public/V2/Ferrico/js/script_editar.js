@@ -60,7 +60,7 @@ btnActualizar.addEventListener("click", (event) =>{
         FechaModificada = "SI";
     }        
 
-    const VolumenInicialOutput = VolumenInicialTag.value;
+    let VolumenInicialOutput = VolumenInicialTag.value;
     if (VolumenInicialOutput == VolumenInicialInput) {        
         VolumenInicialModificado = "NO";
         console.log ("Volumen Inicial NO modificado");
@@ -71,7 +71,12 @@ btnActualizar.addEventListener("click", (event) =>{
         console.log ("Volumen Inicial modificado");
     }
 
-    const VolumenFinalOutput = VolumenFinalTag.value;
+    if (!VolumenInicialOutput) {        
+        VolumenInicialOutput = 0;
+        console.log ("Volumen Inicial modificado a 0");
+    }
+
+    let VolumenFinalOutput = VolumenFinalTag.value;
     if (VolumenFinalOutput == VolumenFinalInput) {        
         VolumenFinalModificado = "NO";
         console.log ("Volumen Final NO modificado");
@@ -79,6 +84,11 @@ btnActualizar.addEventListener("click", (event) =>{
     else {        
         VolumenFinalModificado = "SI";
         console.log ("Volumen Final modificado");
+    }
+
+    if (!VolumenFinalOutput) {        
+        VolumenFinalOutput = 0;
+        console.log ("Volumen Final a 0");
     }
 
     const DensidadOutput = DensidadTag.value;
