@@ -51,7 +51,6 @@ let PesoFinalModificado = "";
 let NotasModificadas = "";
 let NotasOutput = TextoInicial;
 
-
 document.getElementById("Notas").addEventListener("input", function() {
     NotasOutput = this.value;  // Obtiene el valor actual del textarea
 });
@@ -86,7 +85,8 @@ btnActualizar.addEventListener("click", (event) =>{
         FechaFinalModificada = "NO";
         console.log("Fecha Final NO modificada");
     }
-    else {        FechaFinalModificada = "SI";
+    else {       
+        FechaFinalModificada = "SI";
         console.log("Fecha Final modificada");
     }
 
@@ -100,7 +100,7 @@ btnActualizar.addEventListener("click", (event) =>{
         console.log ("Peso Inicial modificado");
     }
 
-    const PesoFinalOutput = PesoFinalTag.value;
+    let PesoFinalOutput = PesoFinalTag.value;
     if (PesoFinalOutput == PesoFinalInput) {
         PesoFinalModificado = "NO";
         console.log ("Peso Final NO modificado");
@@ -108,6 +108,11 @@ btnActualizar.addEventListener("click", (event) =>{
     else {
         PesoFinalModificado = "SI";
         console.log ("Peso Final modificado");
+    }
+
+    if (!PesoFinalOutput) {        
+        PesoFinalOutput = 0;
+        console.log ("Peso Final modificado a 0");
     }
 
     if (NotasOutput === TextoInicial) {
