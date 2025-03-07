@@ -30,27 +30,33 @@ document.addEventListener("DOMContentLoaded", () =>{
         }
 
         if (!VolumenM216.value) {
-                VolumenM216.value = "NULL";                
+                //VolumenM216.value = "NULL";
+                VolumenM216.value = 0;
         }
 
         if (!VolumenAgua.value) {
-            VolumenAgua.value = "NULL";            
+            //VolumenAgua.value = "NULL";
+            VolumenAgua.value = 0;
         }
 
         if (!Densidad.value) {
-            Densidad.value = null;
+            //Densidad.value = null;
+            Densidad.value = 0;
         }
 
         if (!Riqueza.value) {
-            Riqueza.value = null;
+            //Riqueza.value = null;
+            Riqueza.value = 0;
         }
 
         if (!Basicidad.value) {
-            Basicidad.value = null;
+            //Basicidad.value = null;
+            Basicidad.value = 0;
         }
         
         if (!VolumenFiltrado.value) {
-            VolumenFiltrado.value = null;
+            //VolumenFiltrado.value = null;
+            VolumenFiltrado.value = 0;
         }
 
         if (!Notas.value) {

@@ -28,25 +28,31 @@
 // ----- FIN CALCULO SEMANA
 
 // ----- VOLÚMENES ------ Se igua a Null para evitar que no se agregue la producción al no poner volúmenes
-    if (empty($VolumenInicial)) {
-        $VolumenInicial = "NULL";
+    if (!$VolumenInicial) {
+        //$VolumenInicial = "NULL";
+        $VolumenInicial = 0;
     }
 
     if (empty($VolumenFinal)) {
-        $VolumenFinal = "NULL";
+        //$VolumenFinal = "NULL";
+        $VolumenFinal = 0;
     }
 
     if (empty($Densidad)) {
-        $Densidad = "NULL";
+        //$Densidad = "NULL";
+        $Densidad = 0;
     }
 
     if (empty($Riqueza)) {
-        $Riqueza = "NULL";
+        //$Riqueza = "NULL";
+        $Riqueza = 0;
     }
 
     if (empty($AcidoLibre)) {
-        $AcidoLibre = "NULL";
+        //$AcidoLibre = "NULL";
+        $AcidoLibre = 0;
     }
+   
 
 // ------------------    
     $sql = $conexion->prepare("INSERT INTO ferrico (NumeroFabricacion, Fecha, Semana, Volumen_Inicial, Volumen_Final, 

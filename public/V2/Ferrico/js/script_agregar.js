@@ -21,23 +21,28 @@ document.addEventListener("DOMContentLoaded", () =>{
         }
 
         if (!VolumenInicial.value) {
-                VolumenInicial.value = "NULL";                
+            //VolumenInicial.value = "NULL";
+            VolumenInicial.value = 0;
         }
 
         if (!VolumenFinal.value) {
-            VolumenFinal.value = "NULL";            
+            //VolumenFinal.value = "NULL";
+            VolumenFinal.value = 0;
         }
 
         if (!Densidad.value) {
-            Densidad.value = null;
+            //Densidad.value = null;
+            Densidad.value = 0;
         }
 
         if (!Riqueza.value) {
-            Riqueza.value = null;
+            //Riqueza.value = null;
+            Riqueza.value = 0;
         }
 
         if (!AcidoLibre.value) {
-            AcidoLibre.value = null;
+            //AcidoLibre.value = null;
+            AcidoLibre.value = 0;
         }
 
         if (!Notas.value) {

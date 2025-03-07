@@ -27,10 +27,11 @@ document.addEventListener("DOMContentLoaded", () =>{
         if (!PesoInicial.value) {
                 alert("Por favor, complete un peso inicial.");
                 return;
-        }
+        }       
 
         if (!PesoFinal.value) {
-            PesoFinal.value = "";
+            //PesoFinal.value = "";
+            PesoFinal.value = 0;
         }
 
         if (!Notas.value) {

@@ -25,23 +25,28 @@ $Notas = $_POST['Notas'];
 
 
 if (empty($VolumenInicial)) {
-    $VolumenInicial = "NULL";
+    //$VolumenInicial = "null";
+    $VolumenInicial = 0;
 }
 
 if (empty($VolumenFinal)) {
-    $VolumenFinal = "NULL";
+    //$VolumenFinal = "null";
+    $VolumenFinal = 0;
 }
 
 if (empty($Densidad)) {
-    $Densidad = "NULL";
+    //$Densidad = "NULL";
+    $Densidad = 0;
 }
 
 if (empty($Riqueza)) {
-    $Riqueza = "NULL";
+    //$Riqueza = "NULL";
+    $Riqueza = 0;
 }
 
 if (empty($AcidoLibre)) {
-    $AcidoLibre = "NULL";
+    //$AcidoLibre = "NULL";
+    $AcidoLibre = 0;
 }
 
 $post = ['Numero Fabricación' => $NumeroFabricacion,

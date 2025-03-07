@@ -33,27 +33,33 @@
 // ----- VOLÚMENES ------ Se igua a Null para evitar que no se agregue la producción al no poner volúmenes
 
     if (empty($VolumenM216)) {
-        $VolumenM216 = "NULL";
+        //$VolumenM216 = "NULL";
+        $VolumenM216 = 0;
     }
 
     if (empty($VolumenAgua)) {
-        $VolumenAgua = "NULL";
+        //$VolumenAgua = "NULL";
+        $VolumenAgua = 0;
     }
 
     if (empty($Densidad)) {
-        $Densidad = "NULL";
+        //$Densidad = "NULL";
+        $Densidad = 0;
     }
 
     if (empty($Riqueza)) {
-        $Riqueza = "NULL";
+        //$Riqueza = "NULL";
+        $Riqueza = 0;
     }
 
     if (empty($Basicidad)) {
-        $Basicidad = "NULL";
+        //$Basicidad = "NULL";
+        $Basicidad = 0;
     }
 
     if (empty($VolumenFiltrado)) {
-        $VolumenFiltrado = "NULL";
+        //$VolumenFiltrado = "NULL";
+        $VolumenFiltrado = 0;
     }
 
 

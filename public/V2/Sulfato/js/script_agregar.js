@@ -30,7 +30,8 @@ document.addEventListener("DOMContentLoaded", () =>{
         }
 
         if (!PesoFinal.value) {
-            PesoFinal.value = "";
+            //PesoFinal.value = "";
+            PesoFinal.value = 0;
         }
 
         if (!Notas.value) {

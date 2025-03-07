@@ -71,10 +71,14 @@ btnActualizar.addEventListener("click", (event) =>{
         console.log ("Volumen Inicial modificado");
     }
 
+    console.log(VolumenInicialOutput);
+
     if (!VolumenInicialOutput) {        
         VolumenInicialOutput = 0;
         console.log ("Volumen Inicial modificado a 0");
     }
+
+    console.log(VolumenInicialOutput);
 
     let VolumenFinalOutput = VolumenFinalTag.value;
     if (VolumenFinalOutput == VolumenFinalInput) {        

@@ -92,8 +92,8 @@ document.addEventListener("DOMContentLoaded", () => {
             const Fecha = `${zeroPad(odate.getDate())}/${zeroPad(odate.getMonth() + 1)}/${odate.getFullYear()}`;
             
           // Formatear VoLÚMENES
-            const Volumen_Inicial = Number(elemento.Volumen_Inicial).toLocaleString("es-CL") + " Kg";
-            const Volumen_Final = Number(elemento.Volumen_Final).toLocaleString("es-CL") + " Kg";
+            const Volumen_Inicial = Number(elemento.Volumen_Inicial).toLocaleString("es-ES") + " Kg";
+            const Volumen_Final = Number(elemento.Volumen_Final).toLocaleString("es-ES") + " Kg";
 
           // Formatear DENSIDAD
             let DensidadFormateada = Number(elemento.Densidad);

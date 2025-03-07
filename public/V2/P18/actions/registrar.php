@@ -55,9 +55,15 @@
 // ----- FIN CÁLCULO DURACIÓN -----
 
 // ----- PESO FINAL ------ Se igua a Null para evitar que no se agregue la producción al no poner peso final
-if (empty($PesoFinal)) {
+/*if (empty($PesoFinal)) {
     $PesoFinal = "Null";
+}*/
+
+if (empty($PesoFinal)) {
+    $PesoFinal = 0;
 }
+
+
 // -----
 
     $sql = $conexion->prepare("INSERT INTO p18 (NumeroFabricacion, Hora_Inicio, Semana, Reactor, Peso_Inicial, Hora_Finalizacion, Peso_Final, 
