@@ -12,6 +12,13 @@ document.addEventListener("DOMContentLoaded", () => {
     tbody.innerHTML = "";    
     let registros = select.options[select.selectedIndex].value;    
 
+    let storedValue = localStorage.getItem("selectedRegistros");
+
+    if (storedValue) {
+        registros = storedValue;
+        select.value = storedValue; // Establecer el valor del select al valor almacenado
+    }
+
     btnInicio.addEventListener("click", () => {
         window.location.href = "../../portada.html";
     });    
@@ -35,9 +42,16 @@ document.addEventListener("DOMContentLoaded", () => {
             });
     });    
 
-    select.addEventListener("change", () => {
+    /*select.addEventListener("change", () => {
         registros = select.options[select.selectedIndex].value;        
         ListarProductos(registros, search_criteria);
+    });*/
+
+    select.addEventListener("change", () => {
+        registros = select.options[select.selectedIndex].value;
+        localStorage.setItem("selectedRegistros", registros); // Guardar el valor seleccionado en localStorage
+        console.log("Registros: ", registros);
+        ListarProductos(registros, search_criteria);        
     });
 
     // LLamamos a ListarProductos al cargar la página
