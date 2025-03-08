@@ -10,7 +10,13 @@ document.addEventListener("DOMContentLoaded", () => {
     let search_criteria = "";    
     globalThis.Notas = "";    
     tbody.innerHTML = "";    
-    let registros = select.options[select.selectedIndex].value;    
+    let registrosFiltrado = select.options[select.selectedIndex].value;
+    let storedValueFiltrado = localStorage.getItem("selectedRegistros");
+
+    if (storedValueFiltrado) {
+        registrosFiltrado = storedValueFiltrado;
+        select.value = storedValueFiltrado; // Establecer el valor del select al valor almacenado
+    }
 
     btnInicio.addEventListener("click", () => {
         window.location.href = "../../portada.html";
@@ -34,13 +40,20 @@ document.addEventListener("DOMContentLoaded", () => {
             });    });
     
 
-    select.addEventListener("change", () => {
+    /*select.addEventListener("change", () => {
         registros = select.options[select.selectedIndex].value;        
         ListarProductos(registros, search_criteria);
+    });*/
+
+    select.addEventListener("change", () => {
+        registrosFiltrado = select.options[select.selectedIndex].value;
+        localStorage.setItem("selectedRegistros", registrosFiltrado); // Guardar el valor seleccionado en localStorage
+        console.log("Registros: ", registrosFiltrado);
+        ListarProductos(registrosFiltrado, search_criteria);        
     });
 
     // LLamamos a ListarProductos al cargar la página
-    ListarProductos(registros, search_criteria);
+    ListarProductos(registrosFiltrado, search_criteria);
 
     // Añade el evento escuchador para el campo de búsqueda, si este aparece
     if (search) {
