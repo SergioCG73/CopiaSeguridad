@@ -11,7 +11,6 @@ document.addEventListener("DOMContentLoaded", () => {
     globalThis.Notas = "";
     tbody.innerHTML = "";    
     let registros = select.options[select.selectedIndex].value;    
-
     let storedValue = localStorage.getItem("selectedRegistros");
 
     if (storedValue) {

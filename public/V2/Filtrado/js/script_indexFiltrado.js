@@ -1,6 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
     const search = document.getElementById("busqueda");  
-    const select = document.querySelector("select");
+    //const select = document.querySelector("select");
+    const select = document.getElementById("mostrar");
     const resultados = document.getElementById("tabla_de_resultados");        
     const tbody = document.getElementById("tbody");
     const errorsContainer = document.getElementById("errorsContainer");    
@@ -10,12 +11,12 @@ document.addEventListener("DOMContentLoaded", () => {
     let search_criteria = "";    
     globalThis.Notas = "";    
     tbody.innerHTML = "";    
-    let registrosFiltrado = select.options[select.selectedIndex].value;
-    let storedValueFiltrado = localStorage.getItem("selectedRegistros");
+    let registros = select.options[select.selectedIndex].value;    
+    let storedValue = localStorage.getItem("selectedRegistrosFiltrado");
 
-    if (storedValueFiltrado) {
-        registrosFiltrado = storedValueFiltrado;
-        select.value = storedValueFiltrado; // Establecer el valor del select al valor almacenado
+    if (storedValue) {
+        registros = storedValueFiltrado;
+        select.value = storedValue; // Establecer el valor del select al valor almacenado
     }
 
     btnInicio.addEventListener("click", () => {
@@ -46,10 +47,10 @@ document.addEventListener("DOMContentLoaded", () => {
     });*/
 
     select.addEventListener("change", () => {
-        registrosFiltrado = select.options[select.selectedIndex].value;
-        localStorage.setItem("selectedRegistros", registrosFiltrado); // Guardar el valor seleccionado en localStorage
-        console.log("Registros: ", registrosFiltrado);
-        ListarProductos(registrosFiltrado, search_criteria);        
+        registros = select.options[select.selectedIndex].value;
+        localStorage.setItem("selectedRegistrosFiltrado", registros); // Guardar el valor seleccionado en localStorage
+        console.log("Registros: ", registros);
+        ListarProductos(registros, search_criteria);        
     });
 
     // LLamamos a ListarProductos al cargar la página

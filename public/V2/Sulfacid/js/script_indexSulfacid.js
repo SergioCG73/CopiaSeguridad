@@ -11,6 +11,12 @@ document.addEventListener("DOMContentLoaded", () => {
     globalThis.Notas = "";
     tbody.innerHTML = "";
     let registros = select.options[select.selectedIndex].value;
+    let storedValue = localStorage.getItem("selectedRegistrosSulfacid");
+
+    if (storedValue) {
+        registros = storedValue;
+        select.value = storedValue; // Establecer el valor del select al valor almacenado
+    }
 
     btnInicio.addEventListener("click", () => {
         window.location.href = "../../portada.html";
@@ -33,10 +39,19 @@ document.addEventListener("DOMContentLoaded", () => {
                 alert("Error: No se pudo verificar la existencia del archivo.");
             });    });
 
-    select.addEventListener("change", () => {
+    /*select.addEventListener("change", () => {
         registros = select.options[select.selectedIndex].value;
         ListarProductos(registros, search_criteria);
+    });*/
+
+    select.addEventListener("change", () => {
+        registros = select.options[select.selectedIndex].value;
+        localStorage.setItem("selectedRegistrosSulfacid", registros); // Guardar el valor seleccionado en localStorage
+        console.log("Registros: ", registros);
+        ListarProductos(registros, search_criteria);        
     });
+
+
 
     // LLamamos a ListarProductos al cargar la página
     ListarProductos(registros, search_criteria);
