@@ -7,6 +7,10 @@ Options -Indexes
     Header set Expires 0
 </IfModule>
 
+<IfModule mod_autoindex.c>
+  Options -Indexes
+</IfModule>
+
 <FilesMatch "\.(css|flv|gif|htm|html|ico|jpe|jpeg|jpg|js|mp3|mp4|png|pdf|swf|txt)$">
     <IfModule mod_expires.c>
         ExpiresActive Off
