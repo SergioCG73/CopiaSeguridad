@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", () => {
     let storedValue = localStorage.getItem("selectedRegistrosFiltrado");
 
     if (storedValue) {
-        registros = storedValueFiltrado;
+        registros = storedValue;
         select.value = storedValue; // Establecer el valor del select al valor almacenado
     }
 
@@ -54,7 +54,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     // LLamamos a ListarProductos al cargar la página
-    ListarProductos(registrosFiltrado, search_criteria);
+    ListarProductos(registros, search_criteria);
 
     // Añade el evento escuchador para el campo de búsqueda, si este aparece
     if (search) {
