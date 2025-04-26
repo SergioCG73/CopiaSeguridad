@@ -42,11 +42,6 @@ const formattedMinutes2 = String(dateObject2.getMinutes()).padStart(2, '0');
 const formattedDate = `${year}-${month}-${day}T${formattedHours}:${formattedMinutes}`; //string Fecha inicial en formato PHP
 const formattedDate2 = `${year2}-${month2}-${day2}T${formattedHours2}:${formattedMinutes2}`; // stRING fecha final en formato PHP
 // --------------- FIN TRANSFORMAR STRINGS EN FECHAS/HORAS ---------------------------------------------------------
-    
-/*const PesoInicialTag = document.getElementById("PesoInicial");
-const PesoInicialInput = PesoInicialTag.getAttribute("value");
-const PesoFinalTag = document.getElementById("PesoFinal");
-const PesoFinalInput = PesoFinalTag.getAttribute("value");*/
 
 const TextoInicial = document.getElementById("Notas").value;
 let ReactorModificado = "";
@@ -134,9 +129,11 @@ btnActualizar.addEventListener("click", (event) =>{
             alert ("No se efectuado ningún cambio"); 
             window.location.href = "indexSulfato.php";         
     }            
-
+/*
     if ((ReactorModificado == "NO" && FechaInicialModificada == "NO" && FechaFinalModificada == "NO") && 
-        (PesoInicialModificado == "SI" || PesoFinalModificado == "SI" ||  NotasModificadas == "SI")) {         
+        (PesoInicialModificado == "SI" || PesoFinalModificado == "SI" ||  NotasModificadas == "SI")) {         */ /* ERROR*/ 
+        if ((ReactorModificado == "NO" && FechaInicialModificada == "NO") && 
+        (FechaFinalModificada == "SI" || PesoInicialModificado == "SI" || PesoFinalModificado == "SI" ||  NotasModificadas == "SI")) {              
             const campos = new FormData();
             campos.append("TipoUpdate", "1");
             campos.append("NumeroFabricacion", NumeroFabricacion);
@@ -157,7 +154,7 @@ btnActualizar.addEventListener("click", (event) =>{
             .then((data) => {
                 console.log("Response: ", data);
                 console.log ("Actualizar base de datos sin calcular nada");
-                alert("Actualizados PESOS y NOTAS");
+                alert("Actualizados PESOS, FECHA FINAL o NOTAS");
                 window.location.href = "indexSulfato.php";
             })
             .catch((error) => {
